@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only verification of every distributed file except the manifest itself."""
+"""Verify every distributed file, excluding the manifest and Git metadata."""
 from pathlib import Path, PurePosixPath
 import hashlib
 import json
@@ -21,17 +21,20 @@ def main():
         expected[name] = digest
     actual = set()
     for path in ROOT.rglob("*"):
+        relative = path.relative_to(ROOT)
+        if relative.parts and relative.parts[0] == ".git":
+            continue
         if path.is_symlink():
             raise ValueError("Unexpected symbolic link: " + str(path))
         if path.is_file() and path != manifest:
-            actual.add(path.relative_to(ROOT).as_posix())
+            actual.add(relative.as_posix())
     if actual != set(expected):
         raise ValueError("File-set mismatch: " + repr(sorted(actual ^ set(expected))))
     for name, digest in expected.items():
         if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != digest:
             raise ValueError("SHA-256 mismatch: " + name)
     print(json.dumps({"status": "passed", "files": len(expected),
-                      "scope": "All distributed bytes except SHA256SUMS.txt; no authenticity claim"}))
+                      "scope": "All distributed bytes except SHA256SUMS.txt; repository .git metadata is outside the distribution; no authenticity claim"}))
 
 
 if __name__ == "__main__":
