@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>When paying less still fails the test — Evidence Press</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="reading.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">When paying less still fails the test — Evidence
+Press</h1>
+</header>
+<h1 id="when-paying-less-still-fails-the-test">When paying less still
+fails the test</h1>
+<p><strong>An exact study of state-contingent sovereign debt shows how
+payment timing, trigger information and the choice of comparability rule
+determine what can be promised.</strong></p>
+<p><em>Evidence Press · Research creator: Anonymous · 15 October 2026 ·
+Unrefereed research</em></p>
+<p>Suppose a restructuring lowers every payment owed to one creditor.
+Has it necessarily delivered at least as much relief?</p>
+<p>For the amount paid, yes. For discounted present value, yes when the
+same positive discount factors are used. For duration, not necessarily.
+Duration measures the average timing of the payments that remain. If a
+restructuring removes proportionally more value from later dates, the
+surviving stream can become earlier even though every individual payment
+is smaller.</p>
+<p>That distinction is the starting point of this paper. It studies a
+deliberately declared screen with three separate requirements: enough
+present-value relief, enough relief during a programme period, and
+enough duration extension. It does <strong>not</strong> assert that this
+is the Paris Club's operative decision rule. The Paris Club's public
+methodology permits trade-offs and broader judgement. The mathematical
+question is narrower and exact: once a rule, contract, state space and
+information order have been declared, does the candidate pass in every
+reachable state?</p>
+<h2 id="why-endpoint-checks-can-be-wrong">Why endpoint checks can be
+wrong</h2>
+<p>Consider two payment dates, one and three years away. In one state, a
+reference agreement pays 3 and 2 while a candidate pays 2.5 and 1.5.
+Both candidate payments are lower. Without discounting, the reference's
+average payment date is 1.8 years and the candidate's is 1.75 years. The
+candidate removes one sixth of the early payment but one quarter of the
+late payment, so its remaining value is concentrated earlier.</p>
+<p>The paper embeds this effect in a continuous state variable. A simple
+construction passes the duration comparison at both endpoints but fails
+everywhere inside. A perturbation proves that this is not merely an
+equality artefact: for every parameter between 0 and 1/4, both endpoint
+margins are strictly positive while an interior interval still fails.
+The retained exact test uses the parameter 1/8.</p>
+<p><img src="../figures/duration-conflict.png"
+alt="The reference and candidate pass at the endpoints but differ throughout the interior." /></p>
+<p><em>The plot illustrates the constructed continuum. The symbolic
+proof, not the pixels, establishes the all-state result.</em></p>
+<p>There is a general identity behind the example. Write the reference
+stream as the candidate stream plus the value removed. The candidate has
+longer duration precisely when the removed value had an earlier average
+date than the reference. It has shorter duration when the removed value
+was later. Proportional reductions preserve duration.</p>
+<p>This leads to an exact rule diagnostic. If any componentwise
+reduction of an accepted stream must remain accepted, the required
+duration cannot exceed the earliest payment date that may remain. A
+higher duration threshold necessarily rejects some stream obtained only
+by reducing payments. This is a property of the acceptance rule, not a
+welfare judgement about which rule should be chosen.</p>
+<h2 id="a-payment-cap-is-conditional-on-the-rule">A payment cap is
+conditional on the rule</h2>
+<p>The first design example compares a reference paying 20 in year one
+and 50 in year three with a candidate paying <code>10 + p</code> in year
+one and 45 in year three. At a 5% accounting rate:</p>
+<ul>
+<li>present value alone permits <code>p = 6410/441</code>, about
+14.535;</li>
+<li>the programme-service condition permits <code>p = 10</code>;</li>
+<li>the separate duration condition permits only
+<code>p = 8</code>.</li>
+</ul>
+<p>At <code>p = 8</code>, the candidate pays 18 and 45, exactly 90% of
+the reference at both dates. Duration is therefore preserved under any
+common positive discount factors. Increasing only the early payment
+shifts the remaining stream forward and breaks the duration test.</p>
+<p>The number 8 is sharp for this constructed contract and this declared
+screen. It is not a universal recommendation. A specified weighted score
+permits about 11.842 at 5%; allowing a duration shortfall of about
+0.04564 years raises the separate-screen cap to 10. Exact arithmetic
+exposes the consequences of a rule, but it does not select the rule.</p>
+<p>Earlier IMF work already discusses state-contingent instruments,
+caps, floors, indicator quality and the risk that large upside payments
+consume restructuring relief. The new contribution is the exact
+application-focused calculation once the contract and decision rule are
+fixed. <a
+href="https://www.imf.org/-/media/files/publications/sdn/2020/english/sdnea2020006.pdf">Cohen
+et al. (2020)</a></p>
+<h2 id="tomorrows-information-cannot-set-todays-payment">Tomorrow's
+information cannot set today's payment</h2>
+<p>A second construction has two state variables, four dates and three
+interacting triggers. One variable is observed before the first payment;
+the other arrives later. Six trigger regions are reachable.</p>
+<p>If both variables were known in advance, a statewise calculation
+would permit an early payment of 8, 10 or 12. But a payment fixed before
+the second variable is observed must be identical in states that look
+the same today. Its feasible interval is the intersection of the
+intervals for every compatible future state. The sharp implementable
+payment is therefore 8 or 10, depending only on the information already
+available.</p>
+<p><img src="../figures/information-cap.png"
+alt="An early payment must be valid across every later state compatible with the same observation." /></p>
+<p><em>The information constraint is an intersection over
+indistinguishable states. No probabilities are assumed, so the
+difference is not an expected monetary value of information.</em></p>
+<p>This is a scalar specialisation of established adjustable robust
+optimisation, where decisions may depend only on observations available
+when they are made. The paper proves the interval result directly and
+credits the general framework to Ben-Tal and co-authors. <a
+href="https://www2.isye.gatech.edu/~nemirovs/MP_Elana_2004.pdf">Ben-Tal
+et al. (2004)</a></p>
+<h2 id="an-oblique-trigger-that-genuinely-changes-the-bound">An oblique
+trigger that genuinely changes the bound</h2>
+<p>The paper then removes three simplifying features of the first
+multi-trigger example. Old payment profiles are no longer matched, later
+payments are nonproportional, and an oblique trigger
+<code>u + v &gt;= 1</code> changes the sharp limit.</p>
+<p>The reference pays 20 in year one and 40 in year four, plus an uplift
+<code>lambda</code> in year six after the trigger. The candidate pays an
+adjustable amount <code>p</code> in year one, 20 in year three and 10 in
+year five. Accounting discounting is set to zero so the exact mechanism
+is visible.</p>
+<p>Off-trigger, the three constraints give caps of 45, 25 and 50.
+Programme service binds, so <code>p &lt;= 25</code>. On-trigger, the
+present-value and programme caps remain above the duration cap</p>
+<p><code>U_D(lambda) = (750 - 10 lambda) / (15 + lambda)</code>, for
+<code>0 &lt;= lambda &lt; 75</code>.</p>
+<p>The duration cap crosses the programme cap 25 exactly at
+<code>lambda = 75/7</code>. At the retained value
+<code>lambda = 20</code>, the trigger-on cap is <code>110/7</code>,
+about 15.714. Because every observed early state remains compatible with
+a later trigger, the robust implementable ceiling is <code>110/7</code>.
+The oblique trigger lowers the cap by <code>65/7</code> and changes the
+metric that binds.</p>
+<p>This family is still synthetic. Its value is that the substantive
+effect has a transparent closed form and cannot be dismissed as a
+compiler-only branch change.</p>
+<h2 id="what-has-actually-been-verified">What has actually been
+verified</h2>
+<p>With fixed old claims, positive discount factors and affine new
+payments inside each trigger region, present-value and programme
+comparisons are affine. Clearing the positive duration denominators
+gives a quadratic inequality. On a bounded rational polytope, a
+quadratic minimum can be found exactly by examining every face and its
+stationary set. The manuscript proves this finite method, including
+singular stationary systems.</p>
+<p>The release includes two implementations. The producer generates
+exact rational certificates. A separate low-dimensional checker imports
+neither the producer nor its optimiser: it rebuilds 16 declared domains
+and 10 trigger regions from the contract data, checks boundary ownership
+and reachability, and then verifies 48 exact minima, 252
+coefficient-determining identities and the two scalar intervals in the
+new family. A deliberately self-consistent certificate with a shortened
+domain is rejected. Ordinary and optimised Python runs agree.</p>
+<p>These checks are strong evidence about the declared implementation
+and examples. They are not formal proof-assistant verification,
+independent external reproduction, legal authentication or peer review.
+The universal claims stand on the written proofs in the manuscript.</p>
+<h2 id="the-boundary-between-mathematics-and-policy">The boundary
+between mathematics and policy</h2>
+<p>The method can establish whether a fully specified contract satisfies
+a fully specified rule over a fully specified state space. It cannot
+establish that the data represent every signed instrument, that the rule
+captures an institution's judgement, that the residual debt is
+sustainable, or that one distribution of relief is socially
+preferable.</p>
+<p>The World Bank recorded the Official Creditor Committee's
+confirmation that Zambia's March 2024 agreement met comparability
+requirements. This paper issues no contrary country verdict. A real
+audit would need complete authenticated instruments and the actual
+assessment rule. <a
+href="https://www.worldbank.org/en/news/statement/2024/03/26/world-bank-group-statement-on-debt-restructuring-agreement-for-afe-zambia">World
+Bank statement</a></p>
+<p>The defensible contribution is an exact methods synthesis with new
+closed-form diagnostics and reproducible benchmarks. It shows where
+endpoint sampling fails, when payment dominance conflicts with duration,
+how information restricts contingent promises, and how an oblique
+trigger can switch the binding constraint. Its literature search is
+documented but not exhaustive, and priority for the exact constructions
+remains unresolved.</p>
+<hr />
+<p><strong>Read the research:</strong> <a
+href="../state-contingent-comparability-v3.pdf">Full manuscript</a> · <a
+href="../README.md">Evidence and replay guide</a> · <a
+href="../CLAIMS.json">Structured claim map</a></p>
+<p><strong>Disclosure:</strong> The research, code and presentation were
+AI-assisted. All numerical examples are constructed unless explicitly
+identified as a reconstruction of a public institutional illustration.
+Figures explain the results; exact proofs and certificates establish
+them.</p>
+</body>
+</html>

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Cite this unrefereed Evidence Press research release; consult STATUS.md for the claim boundary."
+type: report
+title: "State-contingent sovereign debt: payment dominance, exact comparability and implementable bounds"
+authors:
+  - name: Anonymous
+version: 3.0.0
+date-released: '2026-10-15'
+publisher: Evidence Press
+doi: 10.5281/zenodo.23392424
+url: https://doi.org/10.5281/zenodo.23392424
+repository-code: https://github.com/ipitchford/state-contingent-comparability
+license:
+  - CC0-1.0
+  - MIT
+abstract: "Exact conditional tests of a declared sovereign-debt comparability screen, payment-dominance diagnostics, implementable payout bounds under partial information, and reproducible constructed examples. A nonproportional oblique-trigger family has a closed-form binding switch and sharp implementable cap."

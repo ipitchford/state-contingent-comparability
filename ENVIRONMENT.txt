@@ -1,0 +1,11 @@
+Preparation date: 2026-10-15
+Package version: 3.0.0
+Core verifier: Python 3.14.7; standard library only
+Preparation platform: macOS-27.0.1-arm64-arm-64bit-Mach-O
+Financial arithmetic: fractions.Fraction from numeric strings; no binary-float financial inputs
+Figure generation: optional NumPy and Matplotlib
+Document preparation: pdfTeX 1.40.29 (TeX Live 2026); pandoc 3.9
+Mathematical HTML: MathML
+Verification modes: ordinary Python and Python -O, with bytecode writing disabled (-B)
+Benchmark environment and measured timings: results/benchmark.json
+Scope: reproducibility metadata, not a universal performance guarantee

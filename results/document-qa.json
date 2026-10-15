@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "date": "2026-10-15",
+  "pdf_pages": 27,
+  "pdf_sha256": "8861e41c7d5d2584aedc346850cd5f6b66ec306a7e290d88345156bc8e8b42ce",
+  "markdown_sha256": "8b879ea5883ecc4c8719b2fa9d3f86b3efcb0c8d12f69f3b9ecbe8a0b7e02236",
+  "html_sha256": "a21295f9f7ad94f610d4cb68151816d3d3edb9fdfbd59c16271d1a38066fb37b",
+  "unresolved_pdf_references": 0,
+  "replacement_characters": 0,
+  "latex_overfull_boxes": 0,
+  "html_links_checked": 52,
+  "html": [
+    {
+      "path": "editorial/Evidence_Press_feature.html",
+      "math_expressions": 0,
+      "tables": 0,
+      "images": 2,
+      "broken_local_links": 0
+    },
+    {
+      "path": "manuscript.html",
+      "math_expressions": 338,
+      "tables": 13,
+      "images": 3,
+      "broken_local_links": 0
+    }
+  ],
+  "visual_inspection": "All 27 final pages inspected in the pre-freeze contact sheet; after the rendered-math correction, pages 1, 18, 23 and 27 were reinspected at readable scale. The corrected inequalities, title, coverage table and assurance note are legible and unclipped.",
+  "scope": "Structural and visual document QA; not scientific peer review or formal accessibility certification."
+}

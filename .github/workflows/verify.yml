@@ -1,0 +1,38 @@
+name: Verify research package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-replay:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.13']
+    steps:
+      - name: Check out frozen source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Exact producer replay
+        run: python -B code/verify.py
+      - name: Independent certificate and domain check
+        run: python -B code/check_certificates.py
+      - name: Regression and semantic negative controls
+        run: python -B code/test_revision.py
+      - name: Optimised producer replay
+        run: python -B -O code/verify.py
+      - name: Optimised independent check
+        run: python -B -O code/check_certificates.py
+      - name: Optimised regression and negative controls
+        run: python -B -O code/test_revision.py
+      - name: Distribution manifest
+        run: python -B code/check_manifest.py

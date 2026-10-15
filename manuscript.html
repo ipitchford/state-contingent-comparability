@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Anonymous" />
+  <title>State-contingent sovereign debt: payment dominance, exact comparability and implementable bounds</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="editorial/reading.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">State-contingent sovereign debt:<br />
+payment dominance, exact comparability and implementable bounds</h1>
+<p class="author">Anonymous</p>
+<p class="date">Research manuscript and reproducibility supplement<br />
+15 October 2026 | Version 3.0</p>
+<div class="abstract">
+<div class="abstract-title">Abstract</div>
+<p>State-contingent debt changes both the amount and the timing of
+sovereign payments. We study exact verification of a declared
+comparability screen, separating mathematical compliance from
+institutional judgement. With fixed old claims, positive discount
+factors and piecewise-affine new service, present-value and
+programme-service comparisons are affine, while duration produces a
+quadratic inequality over each reachable trigger region. An
+endpoint-passing construction fails duration at every interior state
+despite reducing every payment; a perturbation makes both endpoint tests
+pass strictly while retaining an interior failure. We explain this
+conflict through an exact payment-removal identity and a
+necessary-and-sufficient condition for a duration screen to accept all
+componentwise reductions. Scalar payment design yields complete feasible
+intervals, including floors; partial information intersects these
+intervals across indistinguishable states. The original early-upside
+example has a sharp cap of 8, versus 14.535 under present value alone
+and 11.842 under a specified weighted rule. A two-state-variable,
+four-date example combines three interacting triggers, six reachable
+regimes and a binding observation constraint. A second exact family uses
+unmatched old claims and nonproportional later payments: an oblique
+trigger changes the binding constraint and lowers the implementable cap
+from 25 to <span class="math inline">\(110/7\)</span>, with an exact
+switch at uplift <span class="math inline">\(75/7\)</span>. An
+input-bound implementation and a separate low-dimensional checker
+independently reconstruct certificate domains and trigger regions before
+checking the calculations. A structured primary-source review positions
+the contribution as an exact, application-focused methods synthesis. The
+results do not authenticate contracts, recover undisclosed institutional
+preferences, establish social welfare or issue a country-level
+verdict.</p>
+</div>
+</header>
+<div class="center">
+<p>State-contingent sovereign debt:</p>
+<p>payment dominance, exact comparability and implementable bounds</p>
+<p>Research manuscript and reproducibility supplement<br />
+15 October 2026 | Version 3.0<br />
+Anonymous | Prepared for Evidence Press<br />
+<a
+href="https://doi.org/10.5281/zenodo.23392424">doi:10.5281/zenodo.23392424</a></p>
+</div>
+<h1 id="the-question-and-the-argument">The question and the
+argument</h1>
+<p>When payments depend on future economic outcomes, an agreement that
+appears comparable in a baseline scenario may cease to be so elsewhere.
+The verification question is precise: given complete old and new
+cash-flow maps, a scenario set, discount conventions and an acceptance
+rule, does the rule hold in every reachable state? The design question
+adds a decision: which payments can be promised without violating that
+rule, using only the information available when the promise is
+fixed?</p>
+<p>The central difficulty is not only uncertainty about amounts.
+Duration measures relative timing. A candidate can pay less at every
+date and nevertheless have a shorter discounted duration. Consequently,
+a rule which insists separately on at least as much duration extension
+can reject an unambiguous reduction in the candidate’s payment
+obligations. The paper develops this observation into a general
+diagnostic, then shows how the resulting constraints interact with
+payout caps and observation dates.</p>
+<p>The acceptance rule is an input, not something inferred from the word
+“comparable”. The separate minimum-effort screen used for most proofs is
+a transparent mathematical rule; institutional comparability can allow
+substitutions and consider other contractual provisions. The public
+Paris Club illustration later in the paper demonstrates that distinction
+directly. Verification of a rule and justification of a rule are
+separate tasks.</p>
+<p>The paper first establishes its relation to prior work and defines
+the accounting model. It then develops the exact verification argument,
+the endpoint counterexample and the general duration-removal analysis.
+Payment design and sensitivity lead to a complete multi-regime example.
+The final sections explain extensions, public-source limits and
+computational assurance. All synthetic quantities are constructed common
+monetary units; none is an estimate of a named sovereign’s
+liabilities.</p>
+<h1 id="sec:literature">Literature, contribution and interpretation</h1>
+<h2 id="four-related-questions-which-should-remain-distinct">Four
+related questions which should remain distinct</h2>
+<p><strong>Institutional burden sharing.</strong> The Paris Club’s
+published methodology defines the accounting indicators and permits
+substitution between them. Its institutional judgement is broader than a
+coordinatewise numerical test. The GSDR compendium records discussion of
+ex ante assessment, transparent triggers, two-sided adjustments, caps
+and possible reopening. These are reasons to specify the acceptance rule
+explicitly; they do not determine a unique mathematical acceptance set
+(Paris Club, n.d.; GSDR, 2026). In particular, neither source supplies
+the weighted coefficient used in our example.</p>
+<p><strong>Contract design and risk sharing.</strong> The IMF’s 2017
+policy paper distinguishes instruments which link principal or coupons
+to economic variables from instruments which extend maturities after a
+trigger. It also describes data integrity, market liquidity, incentives
+and investor demand as design constraints. Cohen et al. (2020,
+especially p. 11) already discuss caps and floors, lagged indicators and
+excessive upside exposure. The present paper therefore does not claim
+that contingent payments, transparent triggers or payout caps are new.
+It asks how to compute an exact feasible payment once a rule and a
+timing pattern have been fixed.</p>
+<p><strong>Measurement and valuation.</strong> Kozack (2005, official
+abstract) stresses the sensitivity of restructuring assessments to
+discount-rate choice. Asonuma, Niepelt and Rancière (2017, section II;
+published 2023) distinguish a recovery measure based on old contractual
+cash flows discounted at the exit yield from a measure based on observed
+old and new prices. They also study maturity-related variation in
+creditor losses. Our contractual accounting exercise supplies neither a
+traded price nor an empirical estimate of investor losses. Its common
+discount factors are declared comparison conventions. Any claim about
+market equivalence would need additional inputs and an appropriate
+valuation model.</p>
+<p><strong>Robust decisions with partial information.</strong> Ben-Tal
+et al. (2004, pp. 352–354) distinguish decisions fixed in advance from
+decisions that may depend on subsequently revealed information, and
+explicitly allow decision-specific information sets. Their quantifier
+distinction between one common decision and a state-dependent decision
+contains the essential logic of our information restriction. Ben-Tal,
+Boyd and Nemirovski (2006, pp. 64–65) formulate decision rules using the
+data available to each decision. Our scalar interval intersection is an
+exact, elementary specialisation. It introduces neither nonanticipation
+nor a new general robust-optimisation method. Gorissen, Yanıkoğlu and
+den Hertog (2015, sections 2–4 and 6) emphasise uncertainty-set
+selection, the information basis and the danger of treating
+deterministic reformulations as interchangeable after
+robustification.</p>
+<p>This separation also clarifies the relationship to efficiency. Powell
+(2026, sections 2–3) argues that strict comparability can ignore
+creditor heterogeneity and alter incentives. His strict equal-PV setting
+is not identical to our three-veto screen. Our duration result adds an
+explicit property of the latter rule: an accepted stream can become
+unacceptable after every payment has been reduced. This is a statement
+about the rule’s ordering of cash flows. It does not establish a welfare
+loss, an optimal restructuring or the appropriate distribution of
+relief.</p>
+<h2 id="result-by-result-positioning">Result-by-result positioning</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Nearest established machinery</th>
+<th style="text-align: left;">Specific role and claim ceiling here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Metric definitions</td>
+<td style="text-align: left;">Paris Club formula box; standard
+discounted cash-flow duration</td>
+<td style="text-align: left;">Consistent normalisation by old PV and old
+programme service. No new financial metric.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Discount derivative identity</td>
+<td style="text-align: left;">Standard differentiation of discounted
+value; discount-rate sensitivity in Kozack</td>
+<td style="text-align: left;">Applies the derivative to normalised
+relative recoveries, including both old profiles. A transparent
+application-specific identity, not a discovery of duration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Affine/quadratic reduction</td>
+<td style="text-align: left;">Positive-denominator clearing and
+polynomial algebra</td>
+<td style="text-align: left;">Identifies the exact degree and hypotheses
+of the separate comparability screen. Does not cover arbitrary
+acceptance rules.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Face-stationary enumeration</td>
+<td style="text-align: left;">First-order stationarity on polytope
+faces; established quadratic programming</td>
+<td style="text-align: left;">A self-contained exact small-instance
+proof, including singular cases. No efficiency or algorithmic priority
+claim.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Endpoint failure</td>
+<td style="text-align: left;">Nonlinear functions can have interior
+extrema</td>
+<td style="text-align: left;">Explicit all-positive-discount debt
+construction, with componentwise lower payments. Exact construction
+priority remains unresolved.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Removal identity and dominance
+threshold</td>
+<td style="text-align: left;">Weighted means, covariance and
+ordering</td>
+<td style="text-align: left;">Exact criterion for when payment
+reductions help or hurt duration; identifies when the separate screen is
+downward closed. Elementary specialisation, developed here for
+interpretation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Payment interval and weighted cap</td>
+<td style="text-align: left;">One-variable linear/quadratic
+inequalities; existing SCDI cap design</td>
+<td style="text-align: left;">Complete floors, caps and consistency
+cases, with sharp values for declared contracts. No universal
+recommended cap.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Information-constrained bound</td>
+<td style="text-align: left;">Adjustable robust optimisation, Ben-Tal et
+al. (2004, 2006)</td>
+<td style="text-align: left;">Closed-form interval intersection over
+observation classes. The multi-regime example makes the information loss
+explicit.</td>
+</tr>
+<tr>
+<td style="text-align: left;">General algebraic extension</td>
+<td style="text-align: left;">Real quantifier elimination, Collins
+(1975)</td>
+<td style="text-align: left;">A decidability formulation only. No
+generic CAD implementation and no tractability claim.</td>
+</tr>
+</tbody>
+</table>
+<p>The defensible contribution is a coherent, auditable application of
+these ingredients, centred on the consequences of a duration veto and on
+implementable payment design. It is not a claimed advance in general
+optimisation theory. The strongest alternative assessment is that the
+ingredients and constructions are too elementary to constitute a
+substantial original research contribution. That objection remains
+relevant even after the calculations and exposition are improved. The
+new evidence establishes what the models imply, not how a journal or
+assessment panel should rate them.</p>
+<h2 id="research-coverage-and-residual-uncertainty">Research coverage
+and residual uncertainty</h2>
+<p>The research used a structured English-language primary-source search
+completed on 15 October 2026: institutional definitions;
+contingent-instrument design; restructuring valuation; robust
+optimisation; and the exact mathematical mechanisms above. Exact titles,
+payment-dominance formulations and trigger/cap combinations were
+searched, and references in the closest sources supplied additional
+leads. Relevant full-text passages were inspected where available. The
+source register records the version, locator, supported claim and access
+status of each source; inaccessible texts are listed separately.
+Semantic Scholar returned an unauthenticated rate limit on the final
+targeted queries, so no database coverage is claimed from that
+route.</p>
+<p>This is an extensive, documented review of the closest literature,
+not a PRISMA-style systematic review or proof that every relevant
+publication has been found. No exhaustive priority claim follows from
+it. Collins is cited for the established algorithm through the publisher
+record; its subscription chapter was not newly read in full. Kozack’s
+use is restricted to the official abstract. We make no theorem-level
+inference from an inaccessible source. The arguments on which our own
+universal claims depend are supplied below.</p>
+<h1 id="cash-flows-normalisation-and-declared-rules">Cash flows,
+normalisation and declared rules</h1>
+<h2 id="accounting-domain">Accounting domain</h2>
+<p>Fix a valuation date, a finite set of dates <span
+class="math inline">\(t\geq0\)</span>, a common accounting currency, an
+IMF-programme window <span class="math inline">\(\mathcal T_P\)</span>,
+and the claims included for each creditor agreement. A state <span
+class="math inline">\(x\in\mathcal X\)</span> describes the relevant
+economic path, trigger history and contractual observations. It need not
+carry a probability. Contractual cash flows are not market prices or
+forecasts of what will actually be collected following another
+default.</p>
+<p>Let <span class="math inline">\(a_{it}\geq0\)</span> be creditor
+<span class="math inline">\(i\)</span>’s old contractual service and
+<span class="math inline">\(c_{it}(x)\geq0\)</span> its new service.
+Include principal, interest and any payment to the creditor that the
+declared accounting perimeter includes, such as an exchange payment or
+consent fee. Where arrears are treated as due at the valuation date,
+represent them at <span class="math inline">\(t=0\)</span> under an
+explicit convention. The affine theorem below assumes old claims and
+currency conversion are fixed. Floating old claims or state-dependent
+conversion require the more general rational-function formulation.</p>
+<p>Let <span class="math inline">\(d_t&gt;0\)</span> be the agreed
+discount factors. Define <span class="math display">\[\begin{align}
+O_i&amp;=\sum_t d_t a_{it}, &amp;V_i(x)&amp;=\sum_t d_t c_{it}(x),\\
+M_i(x)&amp;=\sum_t t d_t c_{it}(x), &amp;D_i(x)&amp;=M_i(x)/V_i(x),\\
+D_i^0&amp;=\frac{\sum_t t d_t a_{it}}{O_i}, &amp;
+S_i(x)&amp;=\sum_{t\in\mathcal T_P}c_{it}(x),\qquad
+S_i^0=\sum_{t\in\mathcal T_P}a_{it}.
+\end{align}\]</span> The measure <span
+class="math inline">\(D_i\)</span> is discounted cash-flow (Macaulay)
+duration. It is measured in years, not a payment amount or market price.
+Assume <span class="math inline">\(O_i,V_i(x),S_i^0&gt;0\)</span>
+wherever these ratios are used. A wholly cancelled stream has undefined
+duration in this representation; a rule must specify how to treat it. A
+zero old programme-service denominator likewise requires an
+absolute-service or other separately declared rule. These cases must not
+receive invented ratios.</p>
+<p>Use positive numbers for greater financial relief: <span
+class="math display">\[\begin{equation}
+\label{eq:metrics}
+H_i=1-\frac{V_i}{O_i},\qquad L_i=1-\frac{S_i}{S_i^0},\qquad
+E_i=D_i-D_i^0.
+\end{equation}\]</span> The first two signs reverse the Paris Club
+formula box’s post/pre-minus-one convention. Crucially, present value is
+divided by <em>old present value</em>, and programme service by <em>old
+programme service</em>; neither denominator is automatically old
+principal (Paris Club, n.d., Box 1).</p>
+<h2 id="separate-minimum-effort-screen">Separate minimum-effort
+screen</h2>
+<p>Let <span class="math inline">\(R\)</span> denote the reference
+agreement. One explicitly declared financial screen is <span
+class="math display">\[\begin{equation}
+\label{eq:strict}
+H_i\geq H_R-\epsilon_V,\qquad L_i\geq L_R-\epsilon_S,\qquad
+E_i\geq E_R-\epsilon_D.
+\end{equation}\]</span> Require these inequalities for every admissible
+state and discount specification. Here <span
+class="math inline">\(\epsilon_V,\epsilon_S\geq0\)</span> are fractions
+and <span class="math inline">\(\epsilon_D\geq0\)</span> is measured in
+years. This is a directional minimum-effort screen, not equality between
+creditors. It is <strong>not an assertion that the Paris Club uses three
+independent vetoes</strong>. Unless specified, examples use zero
+tolerances.</p>
+<p>A more general declared rule specifies an acceptance set <span
+class="math inline">\(\mathcal A\)</span> for the vector of metric
+differences, possibly together with non-financial constraints. A
+weighted example is <span class="math display">\[\begin{equation}
+\label{eq:weighted}
+w_H(H_i-H_R)+w_L(L_i-L_R)+w_D(E_i-E_R)\geq-\epsilon,
+\qquad w_H,w_L,w_D\geq0.
+\end{equation}\]</span> The weights, units and scope must be agreed.
+They are not inferred from public examples. Sections <a
+href="#sec:finite" data-reference-type="ref"
+data-reference="sec:finite">5</a> and <a href="#sec:general"
+data-reference-type="ref" data-reference="sec:general">13</a>
+distinguish the separate-screen and general-rule algorithms; Section <a
+href="#sec:weightedcap" data-reference-type="ref"
+data-reference="sec:weightedcap">9.1</a> solves a weighted payment
+problem explicitly.</p>
+<h1 id="sec:rates">Duration as relative recovery sensitivity</h1>
+<p>For a common flat annual discount rate <span
+class="math inline">\(r&gt;-1\)</span>, take <span
+class="math inline">\(d_t(r)=(1+r)^{-t}\)</span>, with cash flows
+themselves fixed as <span class="math inline">\(r\)</span> varies. Write
+<span class="math display">\[\begin{equation}
+\rho_i(x,r)=\frac{V_i(x,r)/O_i(r)}{V_R(x,r)/O_R(r)}.
+\end{equation}\]</span> This compares the fractions of old present value
+retained by the two agreements.</p>
+<div id="thm:rate" class="theorem">
+<p><strong>Theorem 1</strong> (Discount sensitivity identity). <em>For
+finite nonnegative payment streams with positive present values, <span
+class="math display">\[\begin{equation}
+\label{eq:rateidentity}
+E_i(x,r)-E_R(x,r)=-(1+r)\frac{\partial}{\partial r}\log\rho_i(x,r).
+\end{equation}\]</span> Consequently, on <span
+class="math inline">\([r_-,r_+]\subset(-1,\infty)\)</span> the
+zero-tolerance screen holds for every rate and state if and only if, for
+every state, <span class="math display">\[\begin{equation}
+\label{eq:rateconditions}
+L_i\geq L_R,\qquad \rho_i(x,r_-)\leq1,\qquad
+\partial_r\rho_i(x,r)\leq0\quad\text{throughout }[r_-,r_+].
+\end{equation}\]</span></em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Differentiation gives <span
+class="math inline">\(\partial_r V_i=-M_i/(1+r)\)</span>, so <span
+class="math inline">\(D_i=-(1+r)\partial_r\log V_i\)</span>. Apply the
+same identity to the two old streams and the reference new stream, then
+subtract. This proves <a href="#eq:rateidentity"
+data-reference-type="eqref"
+data-reference="eq:rateidentity">[eq:rateidentity]</a>. The duration
+inequality is equivalent to non-increasing <span
+class="math inline">\(\rho_i\)</span>. Under that condition the largest
+relative recovery occurs at <span class="math inline">\(r_-\)</span>, so
+the one present-value check there is necessary and sufficient for the
+entire interval. Programme service is undiscounted and is checked
+separately. ◻</p>
+</div>
+<p>This theorem does not justify checking duration only at the two
+endpoint rates. It identifies the derivative condition that must hold
+between them. With duration tolerance <span
+class="math inline">\(\epsilon_D\)</span>, the equivalent derivative
+bound is <span
+class="math inline">\(\partial_r\log\rho_i\leq\epsilon_D/(1+r)\)</span>;
+equivalently, <span
+class="math inline">\(\rho_i/(1+r)^{\epsilon_D}\)</span> is
+non-increasing. A present-value tolerance changes the level test and
+must be retained separately.</p>
+<p>For integer dates set <span
+class="math inline">\(z=(1+r)^{-1}\)</span>. All present values become
+polynomials in <span class="math inline">\(z\)</span>. Define <span
+class="math display">\[\begin{equation}
+F(z)=V_i(z)O_R(z),\qquad G(z)=V_R(z)O_i(z)&gt;0.
+\end{equation}\]</span> The duration condition is precisely <span
+class="math display">\[\begin{equation}
+\label{eq:ratepoly}
+F&#39;(z)G(z)-F(z)G&#39;(z)\geq0.
+\end{equation}\]</span> For fixed <span
+class="math inline">\(x\)</span>, this is a univariate polynomial sign
+question on a specified interval. Endpoint and stationary-point
+evaluation with exact real-root isolation decides it. The identity is
+proved algebraically above; finite regression evidence is a separate
+assurance layer. Rational dates can be expressed on a common time grid.
+Continuous rates combined with several economic state variables require
+a multivariate polynomial method, not the fixed-discount quadratic
+routine below.</p>
+<h1 id="sec:finite">Exact finite verification over trigger regions</h1>
+<p>Suppose <span class="math inline">\(\mathcal X\)</span> is
+partitioned into finitely many reachable regimes. Each regime has a
+nonempty bounded rational polyhedral closure, and, on that regime, every
+new cash flow is affine: <span class="math display">\[\begin{equation}
+c_{it}(x)=a_{it}+b_{it}^{\mathsf T}x.
+\end{equation}\]</span> Discount factors are fixed positive rationals
+and old streams are fixed. For each regime require present values to
+remain positive on the closure. This last assumption ensures that the
+extended branch’s ratios remain defined at limit points.</p>
+<p>The regimes must combine <em>all creditors’ triggers</em>. They must
+also incorporate payment caps, observation lags and irreversible trigger
+history when those alter the formula. Products from variable coupons or
+capitalised interest may produce polynomial rather than affine payments;
+those contracts fall under Section <a href="#sec:general"
+data-reference-type="ref" data-reference="sec:general">13</a> unless
+their chosen regime really is affine.</p>
+<div id="thm:finite" class="theorem">
+<p><strong>Theorem 2</strong> (Affine/quadratic reduction). <em>On each
+such regime, the two first inequalities in <a href="#eq:strict"
+data-reference-type="eqref" data-reference="eq:strict">[eq:strict]</a>
+are affine. The duration inequality is equivalent to <span
+class="math display">\[\begin{equation}
+\label{eq:q}
+q(x):=M_i(x)V_R(x)-M_R(x)V_i(x)
+-(D_i^0-D_R^0-\epsilon_D)V_i(x)V_R(x)\geq0,
+\end{equation}\]</span> where <span class="math inline">\(q\)</span> is
+quadratic or lower degree. Thus exact verification reduces to affine
+minimisation and quadratic nonnegativity over finitely many bounded
+rational polytopes.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> The present-value condition becomes <span
+class="math inline">\(V_i\leq O_i(V_R/O_R+\epsilon_V)\)</span>; the
+programme condition becomes <span class="math inline">\(S_i\leq
+S_i^0(S_R/S_R^0+\epsilon_S)\)</span>. All denominators here are positive
+constants. For duration, multiply by <span
+class="math inline">\(V_iV_R&gt;0\)</span> and rearrange to obtain <a
+href="#eq:q" data-reference-type="eqref"
+data-reference="eq:q">[eq:q]</a>. Affine moments and present values give
+degree at most two. ◻</p>
+</div>
+<p>An affine extremum occurs at a vertex. A quadratic minimum need not.
+The following exact method covers positive-semidefinite, indefinite and
+singular quadratics.</p>
+<div id="lem:quadratic" class="lemma">
+<p><strong>Lemma 3</strong> (Finite face-stationary certificate).
+<em>Let <span class="math inline">\(P\subset\mathbb R^n\)</span> be a
+nonempty bounded rational polytope and let <span
+class="math inline">\(q(x)=x^{\mathsf T}Qx+\ell^{\mathsf T}x+c\)</span>,
+with rational symmetric <span class="math inline">\(Q\)</span>. For each
+face, impose its affine-hull equations <span
+class="math inline">\(Ex=f\)</span> and the tangential stationarity
+equations <span class="math display">\[\begin{equation}
+\label{eq:stationary}
+N^{\mathsf T}(2Qx+\ell)=0,
+\end{equation}\]</span> where the columns of <span
+class="math inline">\(N\)</span> span the nullspace of <span
+class="math inline">\(E\)</span>. When this linear system has a solution
+in <span class="math inline">\(P\)</span> lying on the specified face,
+choose any such rational solution. Include the vertices. The minimum of
+the resulting finite list of values is <span
+class="math inline">\(\min_Pq\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Compactness gives a minimiser <span
+class="math inline">\(x_*\)</span>. It lies in the relative interior of
+its minimal face. Hence the directional derivative vanishes in every
+tangent direction, giving <a href="#eq:stationary"
+data-reference-type="eqref"
+data-reference="eq:stationary">[eq:stationary]</a>. All equations are
+rational and linear. Any nonempty rational polyhedron of solutions has a
+rational point.</p>
+<p>It remains to show that an arbitrary point chosen from a face’s
+stationary solution set has the same value as every other point in that
+set. If <span class="math inline">\(x,y\)</span> are two such points and
+<span class="math inline">\(h=y-x\)</span>, then <span
+class="math inline">\(h\)</span> is tangent. Stationarity at both points
+gives <span class="math inline">\(h^{\mathsf T}(2Qx+\ell)=0\)</span> and
+<span class="math inline">\(h^{\mathsf T}(2Qy+\ell)=0\)</span>.
+Subtraction gives <span class="math inline">\(h^{\mathsf
+T}Qh=0\)</span>. Therefore <span
+class="math inline">\(q(y)-q(x)=h^{\mathsf T}(2Qx+\ell)+h^{\mathsf
+T}Qh=0\)</span>. The chosen point on the minimising face has value <span
+class="math inline">\(q(x_*)\)</span>. Every listed point is feasible,
+so none has a smaller value. The argument includes singular Hessians and
+zero-dimensional faces. ◻</p>
+</div>
+<p>The reference implementation enumerates independent active-constraint
+subsets of size at most <span class="math inline">\(n\)</span>; these
+cover all face affine hulls. It tests feasibility by exact rational
+vertex enumeration. It may enumerate duplicate faces, which affects
+speed but not correctness. Its cost is exponential; no polynomial-time
+claim is made.</p>
+<h4 id="strict-trigger-boundaries.">Strict trigger boundaries.</h4>
+<p>First establish that a branch defined with strict inequalities is
+reachable. For a nonempty polyhedral branch, check its continuous affine
+formula on its actual closure, retaining separate formulae for adjacent
+branches. If a continuous inequality is negative at a closure point, it
+is negative at reachable points approaching that point; if it is
+nonnegative throughout the branch, it is nonnegative on the closure. An
+impossible branch must not be made reachable merely by replacing a
+strict inequality with a weak one. Where a limiting present value is
+zero, use direct rational sign reasoning or the general formulation
+rather than dividing by zero.</p>
+<h1 id="sec:interior">Why endpoint tests fail: a complete
+counterexample</h1>
+<p>Take identical old claims of 100 at year 1. New payments occur only
+in years 1 and 3, and the programme contains year 1. For <span
+class="math inline">\(x\in[0,1]\)</span>, define <span
+class="math display">\[\begin{equation}
+\label{eq:interiorflows}
+(c_{R1},c_{R3})=(2+2x,2),\qquad
+(c_{i1},c_{i3})=(1+3x,1+x).
+\end{equation}\]</span> At <span class="math inline">\(x=0\)</span> the
+candidate is one half of the reference; at <span
+class="math inline">\(x=1\)</span> they coincide. All three separate
+tests pass at both endpoints for any common positive discount
+factors.</p>
+<p>Moreover, at every state the candidate’s payment is no larger at
+either date: the reference-minus-candidate difference is <span
+class="math inline">\((1-x,1-x)\)</span>. Therefore the present-value
+and programme-flow tests pass throughout the interval. Yet, for positive
+<span class="math inline">\(d_1,d_3\)</span>, <span
+class="math display">\[\begin{equation}
+M_iV_R-M_RV_i=4d_1d_3x(x-1)&lt;0\qquad(0&lt;x&lt;1).
+\end{equation}\]</span> The old durations are equal, so duration fails
+at <em>every</em> interior state. At zero discount and <span
+class="math inline">\(x=1/2\)</span>, the two new durations are <span
+class="math display">\[\begin{equation}
+D_R=\frac{3+3(2)}{3+2}=\frac95=1.8,\qquad
+D_i=\frac{5/2+3(3/2)}{5/2+3/2}=\frac74=1.75.
+\end{equation}\]</span> At 5%, the cleared quadratic has its exact
+minimum <span class="math inline">\(- (20/21)^4\)</span> at <span
+class="math inline">\(x=1/2\)</span>. This minimises the cleared
+numerator; it is not claimed to maximise the difference in duration
+ratios.</p>
+<p>This is also a warning about the separate duration screen. Reducing
+every payment can shorten the remaining stream’s weighted duration. A
+rule that always accepts pointwise reductions in sovereign payments
+cannot simultaneously impose duration extension as an uncompensated
+veto. The example establishes the incompatibility directly. It does not
+establish that lower payments harm the debtor; it explains why an
+assessment may allow substitution between criteria.</p>
+<p>The failure does not depend on equality at the two tested endpoints.
+Replace only the candidate’s year-1 payment by <span
+class="math inline">\(1+3x-\eta\)</span>, leaving its year-3 payment
+<span class="math inline">\(1+x\)</span>, where <span
+class="math inline">\(0&lt;\eta&lt;1/4\)</span>. The candidate remains
+nonnegative and no larger than the reference at either date. Direct
+expansion gives <span class="math display">\[\begin{equation}
+\label{eq:strictendpoint}
+M_iV_R-M_RV_i=4d_1d_3\{x(x-1)+\eta\}.
+\end{equation}\]</span> This expression is strictly positive at <span
+class="math inline">\(x=0\)</span> and <span
+class="math inline">\(x=1\)</span>, but equals <span
+class="math inline">\(4d_1d_3(\eta-1/4)&lt;0\)</span> at <span
+class="math inline">\(x=1/2\)</span>. Thus both endpoint duration tests
+pass strictly while an interior state fails, for every pair of positive
+discount factors. The retained exact regression uses <span
+class="math inline">\(\eta=1/8\)</span>; the displayed algebra, rather
+than that finite test, proves the whole parameter range.</p>
+<h1 id="sec:removal">When payment relief conflicts with a duration
+veto</h1>
+<p>The counterexample is part of a more general phenomenon. Duration is
+the mean date of the <em>remaining discounted payments</em>. Removing
+disproportionately late payments can move that mean earlier, even though
+every nominal payment falls. We now give an exact condition and identify
+the tolerance needed to avoid that conflict. These are weighted-average
+identities specialised to the declared financial screen.</p>
+<div id="prop:removal" class="proposition">
+<p><strong>Proposition 4</strong> (Exact effect of removing payments).
+<em>Let <span class="math inline">\(b_t\geq0\)</span> be a nonzero
+stream with positive discount factors <span
+class="math inline">\(d_t\)</span>, and remove <span
+class="math inline">\(0\leq\delta_t\leq b_t\)</span>, leaving positive
+present value. Set <span class="math display">\[V=\sum_t d_tb_t,\quad
+M=\sum_ttd_tb_t,\quad
+\Delta V=\sum_td_t\delta_t,\quad\Delta M=\sum_ttd_t\delta_t,\quad
+D=M/V.\]</span> Then <span class="math display">\[\begin{equation}
+\label{eq:removal}
+D(b-\delta)-D(b)=\frac{D\Delta V-\Delta M}{V-\Delta V}.
+\end{equation}\]</span> If <span class="math inline">\(\Delta
+V&gt;0\)</span>, duration increases, is unchanged, or decreases
+precisely when the duration of the removed stream <span
+class="math inline">\(\Delta M/\Delta V\)</span> is smaller than, equal
+to, or greater than <span class="math inline">\(D\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Subtract <span class="math inline">\(M/V\)</span>
+from <span class="math inline">\((M-\Delta M)/(V-\Delta V)\)</span> and
+simplify. Both denominators are positive. This proves the identity and
+the sign statement. If no value is removed, both changes are zero. ◻</p>
+</div>
+<p>Write <span class="math inline">\(w_t=d_tb_t/V\)</span> on the
+positive support of <span class="math inline">\(b\)</span>, and <span
+class="math inline">\(\lambda_t=\delta_t/b_t\)</span>. The weights <span
+class="math inline">\(w_t\)</span> sum to one but do not represent
+probabilities of economic states. Equation <a href="#eq:removal"
+data-reference-type="eqref" data-reference="eq:removal">[eq:removal]</a>
+becomes <span class="math display">\[\begin{equation}
+\label{eq:covariance}
+D(b-\delta)-D(b)=-\frac{\operatorname{Cov}_{w}(t,\lambda_t)}{1-\mathbb
+E_w\lambda_t}.
+\end{equation}\]</span> Thus uniform proportional reductions preserve
+duration. If relative reductions are non-increasing with payment date,
+duration cannot fall. If they are non-decreasing, duration cannot rise.
+The sign follows from <span
+class="math display">\[\operatorname{Cov}_w(t,\lambda_t)=\tfrac12\sum_{s,t}w_sw_t(s-t)(\lambda_s-\lambda_t).\]</span>
+Strict change requires a pair of positive-weight dates with strictly
+different dates and relative reductions. In the midpoint counterexample,
+removing <span class="math inline">\(0.5\)</span> at each of years 1 and
+3 removes a larger fraction of the late payment: <span
+class="math inline">\(1/4\)</span> rather than <span
+class="math inline">\(1/6\)</span>. The duration decrease is therefore
+expected from <a href="#eq:covariance" data-reference-type="eqref"
+data-reference="eq:covariance">[eq:covariance]</a>; it is not a
+numerical anomaly.</p>
+<div id="prop:downward" class="proposition">
+<p><strong>Proposition 5</strong> (Exact downward-closure criterion).
+<em>Fix the old candidate stream, the reference agreement and the
+discount factors. Let a candidate stream <span
+class="math inline">\(b\)</span> pass the separate screen, and let <span
+class="math inline">\(t_{\min}\)</span> be the earliest date with <span
+class="math inline">\(b_t&gt;0\)</span>. The screen accepts
+<em>every</em> nonzero componentwise reduction <span
+class="math inline">\(0\leq c\leq b\)</span> if and only if <span
+class="math display">\[\begin{equation}
+\label{eq:downward}
+d_*:=D_i^0+D_R-D_R^0-\epsilon_D\leq t_{\min}.
+\end{equation}\]</span> For identical old profiles and <span
+class="math inline">\(b\)</span> equal to the reference new stream, the
+least nonnegative duration tolerance with this property is <span
+class="math inline">\(D_R-t_{\min}\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Present value and programme service weakly decrease
+under a componentwise reduction, so their inequalities remain satisfied.
+Every residual duration is a positive weighted mean of dates in the
+support of <span class="math inline">\(b\)</span>, hence at least <span
+class="math inline">\(t_{\min}\)</span>. This proves sufficiency.
+Conversely, retain a positive payment only at <span
+class="math inline">\(t_{\min}\)</span> and set the other payments to
+zero. This stream is a componentwise reduction with duration exactly
+<span class="math inline">\(t_{\min}\)</span>; it violates the duration
+inequality if <span class="math inline">\(d_*&gt;t_{\min}\)</span>. The
+tolerance statement is the corresponding rearrangement. ◻</p>
+</div>
+<p>If every positive payment must remain strictly positive, the same
+threshold is necessary for accepting all reductions: the earliest-only
+stream can be approached with arbitrarily small positive later payments.
+If legal floors restrict reductions, the relevant minimum duration is
+instead the minimum over that restricted set. Complete cancellation
+still requires a separately defined rule because its duration is
+undefined.</p>
+<p>For the reference <span class="math inline">\((20,50)\)</span> at
+years 1 and 3, at 5%, the tolerance needed to accept <em>all</em>
+componentwise reductions is <span
+class="math inline">\(2000/1441\simeq1.387925\)</span> years. This is
+much larger than the tolerance needed to change the early-upside cap
+from 8 to 10. These answer different questions: universal acceptance of
+arbitrary reductions versus a change along one specified payment
+direction.</p>
+<h2 id="what-a-weighted-rule-changes">What a weighted rule changes</h2>
+<p>With the old candidate fixed, consider <span
+class="math inline">\(W=w_HH+w_LL+w_DE\)</span>, with nonnegative
+weights and <span class="math inline">\(w_D\)</span> measured per year.
+Removing <span class="math inline">\(\delta\)</span> changes the score
+by exactly <span class="math display">\[\begin{equation}
+\label{eq:weightedremoval}
+\Delta W=w_H\frac{\Delta V}{O_i}+w_L\frac{\Delta S}{S_i^0}
++w_D\frac{D\Delta V-\Delta M}{V-\Delta V}.
+\end{equation}\]</span> The first two terms reward lower obligations;
+the third can oppose them. Trade-offs therefore soften the duration veto
+but do not automatically make a rule respect componentwise payment
+dominance. A finite reduction improves the score precisely when the
+right-hand side is nonnegative.</p>
+<p>Locally, at a positive cash-flow coordinate, every sufficiently small
+removal in that coordinate is weakly favourable to first order if <span
+class="math display">\[\begin{equation}
+\label{eq:weightedlocal}
+-w_H\frac{d_t}{O_i}-w_L\frac{\mathbf1_{t\in\mathcal T_P}}{S_i^0}
++w_D\frac{d_t(t-D)}{V}\leq0.
+\end{equation}\]</span> This is the derivative of <span
+class="math inline">\(W\)</span> with respect to increasing <span
+class="math inline">\(c_t\)</span>; removing service reverses its sign.
+The condition is local and first order, not a guarantee for arbitrary
+finite changes. Equation <a href="#eq:weightedremoval"
+data-reference-type="eqref"
+data-reference="eq:weightedremoval">[eq:weightedremoval]</a> gives the
+finite test. Neither expression estimates a social welfare weight. Their
+purpose is to make an acceptance rule’s consequences visible before it
+is applied.</p>
+<figure data-latex-placement="htbp">
+<img src="figures/duration-conflict.png" alt="Exact duration-margin curve showing positive endpoint values and a negative interior minimum." />
+<figcaption>The constructed endpoint example at 5%. Both endpoints
+satisfy duration equality, but the candidate has shorter duration
+throughout the interior. The right panel shows the duration deficit
+itself, rather than the cleared numerator. The plotted curves illustrate
+the exact formula; they are not a grid-based proof.</figcaption>
+</figure>
+<h1 id="sec:cap">Sharp scalar payment bounds</h1>
+<p>Hold the reference agreement fixed. In a given state, allow an
+adjustable payment <span class="math inline">\(p\geq0\)</span> with a
+specified nonnegative timing shape <span
+class="math inline">\(h_t\)</span>: <span
+class="math display">\[\begin{equation}
+c_{it}=b_{it}+p h_t.
+\end{equation}\]</span> Let <span
+class="math inline">\((V_b,M_b,S_b)\)</span> be the base stream’s
+moments, and <span class="math display">\[\begin{equation}
+v=\sum_td_th_t,\quad m=\sum_ttd_th_t,\quad s=\sum_{t\in\mathcal T_P}h_t.
+\end{equation}\]</span> Set <span class="math display">\[\begin{align}
+B_V&amp;=O_i(V_R/O_R+\epsilon_V),\\
+B_S&amp;=S_i^0(S_R/S_R^0+\epsilon_S),\\
+d_*&amp;=D_i^0+D_R-D_R^0-\epsilon_D.
+\end{align}\]</span></p>
+<div id="thm:cap" class="theorem">
+<p><strong>Theorem 6</strong> (Complete payment interval). <em>The
+separate screen is equivalent to the three linear inequalities <span
+class="math display">\[\begin{align}
+\label{eq:caprows}
+vp&amp;\leq B_V-V_b,\\
+sp&amp;\leq B_S-S_b,\\
+(d_*v-m)p&amp;\leq M_b-d_*V_b.
+\end{align}\]</span> Include any other declared affine constraint as
+<span class="math inline">\(a_kp\leq b_k\)</span>, and a raw-entitlement
+upper bound <span class="math inline">\(p\leq P\)</span>. Define <span
+class="math display">\[\begin{equation}
+\label{eq:interval}
+L=\max\left(0,\sup_{a_k&lt;0}\frac{b_k}{a_k}\right),\qquad
+U=\min\left(P,\inf_{a_k&gt;0}\frac{b_k}{a_k}\right).
+\end{equation}\]</span> The feasible payments are exactly <span
+class="math inline">\([L,U]\)</span> if every zero-coefficient row has
+<span class="math inline">\(b_k\geq0\)</span> and <span
+class="math inline">\(L\leq U\)</span>; otherwise they form the empty
+set. When <span class="math inline">\(U\)</span> is finite, it is the
+largest admissible payment.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Substitute <span
+class="math inline">\(V_i=V_b+vp\)</span>, <span
+class="math inline">\(M_i=M_b+mp\)</span> and <span
+class="math inline">\(S_i=S_b+sp\)</span> into the inequalities.
+Positive present value allows the duration inequality to be multiplied
+through without reversing its sign, producing the third row. A positive
+coefficient gives an upper bound, a negative coefficient a lower bound,
+and a zero coefficient a consistency condition. Their intersection with
+<span class="math inline">\(0\leq p\leq P\)</span> is exactly <a
+href="#eq:interval" data-reference-type="eqref"
+data-reference="eq:interval">[eq:interval]</a>. ◻</p>
+</div>
+<p>If the base passes, all right-hand sides in <a href="#eq:caprows"
+data-reference-type="eqref" data-reference="eq:caprows">[eq:caprows]</a>
+are nonnegative, so negative-coefficient rows impose no positive lower
+bound. A cap then suffices. If the base fails, a cap need not repair it.
+In particular, late payments can increase duration and create a
+minimum-payment requirement. This is a property of the declared screen,
+not a recommendation to increase sovereign payments.</p>
+<h2 id="largest-uniform-cap">Largest uniform cap</h2>
+<p>Suppose the base passes and all information needed for the statewise
+allowable headroom <span class="math inline">\(U_0(x)\)</span> is
+available. For a raw entitlement <span
+class="math inline">\(P(x)\)</span>, the capped rule is <span
+class="math inline">\(p(x)=\min\{P(x),C\}\)</span>. The largest constant
+cap, allowing <span class="math inline">\(+\infty\)</span>, is <span
+class="math display">\[\begin{equation}
+\label{eq:uniformcap}
+C_* = \inf_{x:\,P(x)&gt;U_0(x)} U_0(x).
+\end{equation}\]</span> An empty infimum means that no additional cap is
+necessary. States in which the raw entitlement already fits need not
+constrain <span class="math inline">\(C\)</span>. For a violating state,
+<span class="math inline">\(P&gt;U_0\)</span> implies that admissibility
+is equivalent to <span class="math inline">\(C\leq U_0\)</span>;
+intersecting those requirements proves the formula. Unknown rates or
+terms may be added to the index <span
+class="math inline">\(x\)</span>.</p>
+<h2 id="sec:information">Information and nonanticipation</h2>
+<p>A contract cannot set today’s payment using information that will
+only be observed later. Let <span class="math inline">\(y\)</span> be
+all the information allowed when <span class="math inline">\(p\)</span>
+is fixed, and let <span class="math inline">\(\mathcal X(y)\)</span>
+contain the compatible future states, contractual uncertainties and
+agreed discount specifications. Assume <span
+class="math inline">\(\mathcal X(y)\)</span> is nonempty. For each state
+suppose the preceding theorem gives the closed feasible interval <span
+class="math inline">\([L(x),U(x)]\)</span>.</p>
+<div id="thm:information" class="theorem">
+<p><strong>Theorem 7</strong> (Implementable robust payment).
+<em>Provided the zero-row conditions hold throughout <span
+class="math inline">\(\mathcal X(y)\)</span>, a single payment depending
+only on <span class="math inline">\(y\)</span> can satisfy every
+compatible state’s conditions if and only if <span
+class="math inline">\(L_*(y)&lt;+\infty\)</span> and <span
+class="math display">\[\begin{equation}
+L_*(y):=\sup_{x\in\mathcal X(y)}L(x)
+\ \leq\
+U_*(y):=\inf_{x\in\mathcal X(y)}U(x).
+\end{equation}\]</span> The feasible finite payments form <span
+class="math inline">\([L_*,U_*]\cap\mathbb R\)</span>; if the upper
+endpoint is finite it is the largest such payment. The
+finite-lower-bound condition excludes a sequence of required floors
+diverging to infinity. Additional measurability or contractual
+expressibility requirements must be imposed separately on the policy as
+a function of <span class="math inline">\(y\)</span>.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> A payment chosen from <span
+class="math inline">\(y\)</span> must belong to every compatible state’s
+interval. The intersection of those closed intervals is exactly the
+stated interval, with emptiness determined by the endpoint ordering.
+This is the scalar specialisation of adjustable robust decision rules
+discussed in Section <a href="#sec:literature" data-reference-type="ref"
+data-reference="sec:literature">2</a>. It is an algebraic
+implementability result; any additional legal restrictions on admissible
+payment formulae remain separate constraints. ◻</p>
+</div>
+<p>For a concrete failure, take reference payments <span
+class="math inline">\((1,K)\)</span> in years 1 and 3, candidate
+payments <span class="math inline">\((1,p)\)</span> and identical old
+claims. Present value requires <span class="math inline">\(p\leq
+K\)</span>; duration requires <span class="math inline">\(p\geq
+K\)</span>. Thus the statewise interval is the singleton <span
+class="math inline">\(\{K\}\)</span>. If <span
+class="math inline">\(K\in\{1,2\}\)</span> is unknown when <span
+class="math inline">\(p\)</span> must be irrevocably fixed, both states
+individually admit a payment but their feasible intervals have empty
+intersection. A payment determined after <span
+class="math inline">\(K\)</span> is observed would solve a different
+information problem.</p>
+<h1 id="sec:examplecap">Fully solved early-upside agreement</h1>
+<p>All quantities are common monetary units per 100 of old service at
+year 1. The programme contains year 1. An observable trigger score <span
+class="math inline">\(x\in[0,1]\)</span> sets raw upside <span
+class="math inline">\(p=20x\)</span> before that date. The new streams
+are</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Agreement</th>
+<th style="text-align: right;">Year 1</th>
+<th style="text-align: right;">Year 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Reference</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr>
+<td style="text-align: left;">Candidate</td>
+<td style="text-align: right;">10+p</td>
+<td style="text-align: right;">45</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>At 5%, the three separate inequalities give <span
+class="math display">\[\begin{align}
+\text{Present value:}\quad
+&amp;p\leq10+\frac5{1.05^2}=\frac{6410}{441}\approx14.535147,\\
+\text{Programme service:}\quad &amp;p\leq10,\\
+\text{Duration:}\quad &amp;p\leq8.
+\end{align}\]</span> For the duration calculation, the same old duration
+cancels. With common positive discount factors at the two dates, <span
+class="math display">\[\begin{equation}
+M_iV_R-M_RV_i
+=2d_1d_3\{45(20)-50(10+p)\}=100d_1d_3(8-p).
+\end{equation}\]</span> Thus the maximal safe payment rule in the class
+of scalar upside caps is <span class="math display">\[\begin{equation}
+\boxed{\ p(x)=\min\{20x,8\}.\ }
+\end{equation}\]</span> This result is stronger than a 5% calculation.
+At <span class="math inline">\(p=8\)</span> the candidate stream is
+<span class="math inline">\((18,45)=0.9(20,50)\)</span>. Its present
+value and programme service are smaller and its duration equal for
+<em>any common positive discount factors</em>. Smaller <span
+class="math inline">\(p\)</span> improves both present-value and
+programme relief and increases duration. Any cap above 8 fails duration
+at <span class="math inline">\(x=1\)</span>. The cap is therefore
+sufficient and sharp without choosing a particular discount rate.</p>
+<p>For the <em>uncapped</em> arrangement, the complete state
+classification at 5% is</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">State range</th>
+<th style="text-align: left;">Failed separate criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(0\leq
+x\leq2/5\)</span></td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(2/5&lt;x\leq1/2\)</span></td>
+<td style="text-align: left;">Duration</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(1/2&lt;x\leq641/882\)</span></td>
+<td style="text-align: left;">Programme service and duration</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(641/882&lt;x\leq1\)</span></td>
+<td style="text-align: left;">All three</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Each threshold is included on the passing side for the corresponding
+weak inequality.</p>
+<div class="center">
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;">At 5%</td>
+<td style="text-align: right;">NPV relief</td>
+<td style="text-align: right;">Programme relief</td>
+<td style="text-align: right;">Duration extension</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">(%)</td>
+<td style="text-align: right;">(%)</td>
+<td style="text-align: right;">(years)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Reference</td>
+<td style="text-align: right;">34.648526</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">1.387925</td>
+</tr>
+<tr>
+<td style="text-align: left;">Candidate, <span
+class="math inline">\(p=0\)</span></td>
+<td style="text-align: right;">49.183673</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">1.606426</td>
+</tr>
+<tr>
+<td style="text-align: left;">Candidate, <span
+class="math inline">\(p=8\)</span></td>
+<td style="text-align: right;">41.183673</td>
+<td style="text-align: right;">82</td>
+<td style="text-align: right;">1.387925</td>
+</tr>
+<tr>
+<td style="text-align: left;">Candidate, <span
+class="math inline">\(p=20\)</span></td>
+<td style="text-align: right;">29.183673</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">1.152738</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="sec:weightedcap">An explicitly different rule gives a different
+cap</h2>
+<p>To avoid presenting the separate screen as the only definition of
+comparability, declare instead <span
+class="math display">\[\begin{equation}
+\label{eq:chosenweight}
+H_i+L_i+0.1E_i\ \geq\ H_R+L_R+0.1E_R,
+\end{equation}\]</span> with <span class="math inline">\(E\)</span>
+measured in years. The coefficient has units of inverse years. This is a
+constructed policy rule, not an estimate of institutional weights.</p>
+<p>For a general nonnegative weighted rule and an adjustable payment as
+above, let the required score be <span class="math inline">\(T\)</span>,
+and put <span class="math display">\[\begin{align}
+A&amp;=w_Hv/O_i+w_Ls/S_i^0\geq0,\\
+B&amp;=w_H(1-V_b/O_i)+w_L(1-S_b/S_i^0)-w_DD_i^0-T.
+\end{align}\]</span> The score surplus is <span
+class="math inline">\(B-Ap+w_D(M_b+mp)/(V_b+vp)\)</span>. Multiplication
+by its positive denominator gives the exact concave quadratic condition
+<span class="math display">\[\begin{equation}
+\label{eq:weightedpoly}
+-Avp^2+(Bv-AV_b+w_Dm)p+BV_b+w_DM_b\geq0.
+\end{equation}\]</span> Its nonnegative superlevel set, intersected with
+the payment domain, is an interval or is empty. Linear and constant
+cases are handled without division by a zero quadratic coefficient.
+Intersections of several such weighted constraints are handled by
+intersecting their intervals; information constraints use Theorem <a
+href="#thm:information" data-reference-type="ref"
+data-reference="thm:information">7</a>.</p>
+<p>For <a href="#eq:chosenweight" data-reference-type="eqref"
+data-reference="eq:chosenweight">[eq:chosenweight]</a> in the worked
+example at 5%, <a href="#eq:weightedpoly" data-reference-type="eqref"
+data-reference="eq:weightedpoly">[eq:weightedpoly]</a> is equivalent to
+<span class="math display">\[\begin{equation}
+31138569p^2+1416443000p-21140286900\leq0.
+\end{equation}\]</span> The positive root is <span
+class="math display">\[\begin{equation}
+p_* = \frac{-14453500+10\sqrt{4830720430561}}{635481}
+       \approx11.842053422527.
+\end{equation}\]</span> The other root is negative. Hence the sharp
+capped rule under this <em>different</em>, fixed-rate acceptance
+criterion is <span class="math inline">\(p(x)=\min(20x,p_*)\)</span>.
+Its larger allowed payment is not a computational disagreement: the
+declared trade-off changed. The data-driven coefficient calculation and
+an 80-step rational isolating interval are recorded in the
+reproducibility output. No all-rate claim is made for this weighted
+cap.</p>
+<h1 id="sec:sensitivity">Sensitivity to tolerances, weights and the
+scenario set</h1>
+<p>An exact verdict is conditional on the selected rule. Sensitivity
+should therefore vary the rule as well as the cash flows. All entries
+below use the declared examples and a 5% rate; the ranges are
+illustrative choices, not estimated practitioner preferences.</p>
+<h2 id="duration-tolerance-in-the-early-upside-example">Duration
+tolerance in the early-upside example</h2>
+<p>Let <span class="math inline">\(d_*=D_R-\epsilon_D\)</span>. For
+payment shape concentrated at year 1, the duration upper bound, when its
+coefficient is positive, is <span
+class="math display">\[p_D(\epsilon_D)=\frac{M_b-d_*V_b}{d_1(d_*-1)}.\]</span>
+If the denominator is nonpositive, use the full interval theorem instead
+of this quotient. The feasible cap is the intersection with the value
+and programme rows. Relaxing any tolerance expands the feasible set, so
+it cannot reduce the maximum permitted payment.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><span
+class="math inline">\(\epsilon_D\)</span> (years)</th>
+<th style="text-align: right;">0</th>
+<th style="text-align: right;">0.01</th>
+<th style="text-align: right;">0.05</th>
+<th style="text-align: right;">0.10</th>
+<th style="text-align: right;">0.20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">Maximum payment</td>
+<td style="text-align: right;">8.000000</td>
+<td style="text-align: right;">8.426847</td>
+<td style="text-align: right;">10.000000</td>
+<td style="text-align: right;">10.000000</td>
+<td style="text-align: right;">10.000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Programme service binds at 10 once <span
+class="math inline">\(\epsilon_D\geq9800/214709\simeq0.045643\)</span>
+years. The present-value-only ceiling remains <span
+class="math inline">\(6410/441\)</span>. This table is not a
+continuous-rate robustness claim; it varies a tolerance at one
+accounting rate.</p>
+<h2 id="duration-weight-in-a-trade-off-rule">Duration weight in a
+trade-off rule</h2>
+<p>Set <span class="math inline">\(w_H=w_L=1\)</span> and let <span
+class="math inline">\(w_D=\lambda\geq0\)</span>. The weighted rule
+replaces all three separate vetoes; it does not retain a separate
+programme-service cap. Solving its exact concave quadratic gives:</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><span
+class="math inline">\(\lambda\)</span> (per year)</th>
+<th style="text-align: right;">0</th>
+<th style="text-align: right;">0.01</th>
+<th style="text-align: right;">0.05</th>
+<th style="text-align: right;">0.1</th>
+<th style="text-align: right;">0.5</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">Cap</td>
+<td style="text-align: right;">12.267574</td>
+<td style="text-align: right;">12.221105</td>
+<td style="text-align: right;">12.044333</td>
+<td style="text-align: right;">11.842053</td>
+<td style="text-align: right;">10.729009</td>
+<td style="text-align: right;">9.993067</td>
+<td style="text-align: right;">9.289636</td>
+<td style="text-align: right;">8.335186</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>At <span class="math inline">\(\lambda=0\)</span> the cap still
+differs from the present-value-only ceiling because the programme-relief
+score has weight one. In this particular example all caps exceed 8 and
+decrease towards 8 as <span class="math inline">\(\lambda\)</span>
+grows: for <span class="math inline">\(p&gt;8\)</span>, duration has a
+negative surplus which a larger weight penalises. This monotonic
+statement is specific to this example; a different contract with
+duration-improving upside can behave differently. Each displayed
+irrational boundary has an 80-step rational isolating bracket in the
+certificate file.</p>
+<h2 id="restricting-the-state-domain">Restricting the state domain</h2>
+<p>For the endpoint counterexample, let <span
+class="math inline">\(\epsilon_D^{\min}(I)=\max_{x\in
+I}(D_R-D_i)\)</span>, with zero lower bound if needed. Testing <span
+class="math display">\[q(x)+\epsilon_D V_i(x)V_R(x)\geq0\]</span> by
+exact quadratic minimisation and rational bisection encloses this
+threshold. The brackets below have width at most <span
+class="math inline">\(2^{-65}\)</span> years.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">State interval <span
+class="math inline">\(I\)</span></th>
+<th style="text-align: right;">Required tolerance (years)</th>
+<th style="text-align: right;">Duration fails at zero tolerance?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\([0,1]\)</span></td>
+<td style="text-align: right;">0.056142686</td>
+<td style="text-align: right;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\([0,1/4]\)</span></td>
+<td style="text-align: right;">0.054680620</td>
+<td style="text-align: right;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\([1/4,3/4]\)</span></td>
+<td style="text-align: right;">0.056142686</td>
+<td style="text-align: right;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\([3/4,1]\)</span></td>
+<td style="text-align: right;">0.026463856</td>
+<td style="text-align: right;">Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The interval <span class="math inline">\([1/4,3/4]\)</span> retains
+the worst duration deficit. Restricting to the final quarter reduces the
+needed tolerance, but does not eliminate failure. Any interval
+containing an interior point fails the original zero-tolerance screen.
+The minimum of the cleared numerator, attained at <span
+class="math inline">\(x=1/2\)</span>, need not locate the largest ratio
+deficit; the denominator varies with <span
+class="math inline">\(x\)</span>.</p>
+<p>For comparison, at zero discount the deficit is <span
+class="math display">\[\frac{x(1-x)}{2+5x+2x^2}.\]</span> Its maximum on
+<span class="math inline">\([0,1]\)</span> is <span
+class="math inline">\(1-2\sqrt2/3\simeq0.057190958\)</span>, attained at
+<span class="math inline">\((3\sqrt2-2)/7\)</span>. Differentiation
+gives a numerator proportional to <span
+class="math inline">\(2-4x-7x^2\)</span>, establishing the unique
+interior maximum. This is an explicit check of the distinction between
+minimising a numerator and maximising a duration shortfall.</p>
+<figure data-latex-placement="htbp">
+<img src="figures/rule-sensitivity.png" alt="Exact sensitivity plot comparing separate-veto and substitution-permitting payment bounds." />
+<figcaption>Two distinct rule changes for the early-upside contract.
+Left: replace the separate screen by a weighted score. Right: retain the
+separate screen and relax only its duration tolerance. Points show
+certified calculations; connecting lines are visual guides.</figcaption>
+</figure>
+<h1 id="different-triggers-require-joint-scenario-testing">Different
+triggers require joint scenario testing</h1>
+<p>Let both agreements’ low and high branches look acceptable when
+compared in pairs:</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Branch</th>
+<th style="text-align: right;">Year 1</th>
+<th style="text-align: right;">Year 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Reference base</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr>
+<td style="text-align: left;">Reference enhanced</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr>
+<td style="text-align: left;">Candidate base</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">45</td>
+</tr>
+<tr>
+<td style="text-align: left;">Candidate enhanced</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">54</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Each matching candidate branch is 90% of its matching reference
+branch. Suppose, however, that the candidate enhances at <span
+class="math inline">\(x\geq2/5\)</span> and the reference at <span
+class="math inline">\(x\geq3/5\)</span>. The reachable joint regimes are
+base/base, enhanced/base, and enhanced/enhanced. The middle regime <span
+class="math inline">\(2/5\leq x&lt;3/5\)</span> compares <span
+class="math inline">\((27,54)\)</span> against <span
+class="math inline">\((20,50)\)</span> and fails all three separate
+tests. The base/base and enhanced/enhanced regimes pass.</p>
+<p>This example completely identifies the failure interval and its
+cause: the trigger thresholds differ. It is synthetic, not a
+reconstruction of Zambia or another sovereign. The repair may align
+triggers, modify enhanced payments, or apply the payment bounds to the
+mixed regime. Which repair is admissible is a contract-design
+constraint; the largest payment theorem fixes the timing shape and
+comparator rather than optimising every term simultaneously.</p>
+<h1 id="sec:multi">A complete two-state-variable, four-date audit</h1>
+<p>This synthetic example exercises the link from cash-flow
+specification to joint regimes, closure checks, exact certificates and
+an implementable early payment. It is deliberately designed to have an
+analytical answer against which the implementation can be checked. It
+does not measure the complexity or distribution of real
+restructurings.</p>
+<h2 id="terms-dates-and-observations">Terms, dates and observations</h2>
+<p>Let <span class="math inline">\((u,v)\in[0,1]^2\)</span> and <span
+class="math inline">\(z=20/21\)</span>, corresponding to 5%. The
+variable <span class="math inline">\(u\)</span> is observed before year
+1; <span class="math inline">\(v\)</span> is observed after year 1 and
+before year 2. The early payment <span class="math inline">\(p\)</span>
+must therefore depend only on <span class="math inline">\(u\)</span>.
+Later contractual payments may depend on both. The programme comprises
+years 1 and 2. Define three triggers, with equality on the true branch:
+<span class="math display">\[a=\mathbf1_{u\geq1/2},\qquad
+b=\mathbf1_{v\geq1/2},\qquad
+g=\mathbf1_{u+v\geq1},\qquad\alpha=\tfrac12+\tfrac1{10}a+\tfrac1{10}b.\]</span>
+The old reference pays 70 in year 1 and 30 in year 6. The old candidate
+pays <span class="math inline">\(70-20z^5\)</span> in year 1 and <span
+class="math inline">\(50z^2\)</span> in year 4. Both old present values
+equal <span class="math inline">\(70z+30z^6\)</span>, and both old
+moments equal <span class="math inline">\(70z+180z^6\)</span>. Their old
+discounted durations thus match, despite different payment profiles.
+Their old programme-service ratio is <span
+class="math display">\[\frac{S_i^0}{S_R^0}=\frac{70-20z^5}{70}
+=\frac{22188707}{28588707}\simeq0.77613&gt;0.7.\]</span> This matching
+of old PV and duration is an explicit calibration to isolate the
+new-contract and information effects. It is not an assumption imposed by
+the general algorithm.</p>
+<p>New contractual service is:</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Agreement</th>
+<th style="text-align: right;">Year 1</th>
+<th style="text-align: right;">Year 2</th>
+<th style="text-align: right;">Year 4</th>
+<th style="text-align: right;">Year 6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Reference</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;"><span
+class="math inline">\(10+4u\)</span></td>
+<td style="text-align: right;"><span
+class="math inline">\(20+4v+10g\)</span></td>
+<td style="text-align: right;"><span
+class="math inline">\(40+4u\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Candidate</td>
+<td style="text-align: right;"><span
+class="math inline">\(2+p\)</span></td>
+<td style="text-align: right;"><span
+class="math inline">\(\alpha(10+4u)\)</span></td>
+<td style="text-align: right;"><span
+class="math inline">\(\alpha(20+4v+10g)\)</span></td>
+<td style="text-align: right;"><span
+class="math inline">\(\alpha(40+4u)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The raw early entitlement is <span
+class="math inline">\(12+4u\)</span>. Within each branch the cash flows
+are affine; products involving <span
+class="math inline">\(\alpha\)</span> are affine because the trigger
+indicators are fixed there. No payment depends on an observation
+unavailable at its payment date. The information counterfactual below
+concerns changing when the early payment is selected, not inserting an
+unobservable variable into an implementable contract.</p>
+<h2 id="reachability-and-boundaries">Reachability and boundaries</h2>
+<p>Of the eight nominal trigger combinations, six are reachable:</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span
+class="math inline">\((a,b,g)\)</span></th>
+<th style="text-align: left;">Domain within the unit square</th>
+<th style="text-align: center;">Interior witness</th>
+<th style="text-align: center;">Statewise cap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">000</td>
+<td style="text-align: left;"><span class="math inline">\(u&lt;1/2,\
+v&lt;1/2\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\((1/4,1/4)\)</span></td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: center;">010</td>
+<td style="text-align: left;"><span class="math inline">\(u&lt;1/2,\
+v\geq1/2,\ u+v&lt;1\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\((1/6,2/3)\)</span></td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: center;">011</td>
+<td style="text-align: left;"><span class="math inline">\(u&lt;1/2,\
+v\geq1/2,\ u+v\geq1\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\((1/3,5/6)\)</span></td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: center;">100</td>
+<td style="text-align: left;"><span class="math inline">\(u\geq1/2,\
+v&lt;1/2,\ u+v&lt;1\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\((2/3,1/6)\)</span></td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: center;">101</td>
+<td style="text-align: left;"><span class="math inline">\(u\geq1/2,\
+v&lt;1/2,\ u+v\geq1\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\((5/6,1/3)\)</span></td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: center;">111</td>
+<td style="text-align: left;"><span class="math inline">\(u\geq1/2,\
+v\geq1/2\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\((3/4,3/4)\)</span></td>
+<td style="text-align: center;">12</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Combination 001 would require two coordinates strictly below <span
+class="math inline">\(1/2\)</span> to sum to at least one. Combination
+110 would require two coordinates at least <span
+class="math inline">\(1/2\)</span> to sum to less than one. Both are
+impossible. Merely closing their inequalities would create a spurious
+point <span class="math inline">\((1/2,1/2)\)</span>. The implementation
+tests strict reachability first. The actual point <span
+class="math inline">\((1/2,1/2)\)</span> belongs only to 111; points
+<span class="math inline">\((1/4,3/4)\)</span> and <span
+class="math inline">\((3/4,1/4)\)</span> belong to 011 and 101.</p>
+<p>For a reachable cell the average of all closure vertices provides a
+relative-interior reachability witness. A strict linear constraint is
+satisfied by that average exactly when it is not forced to equality
+throughout the polytope. Every branch is then audited on its own
+closure; the artificial limit of a neighbouring branch is not a second
+contractual interpretation of an equality state.</p>
+<h2 id="sharp-statewise-and-observable-bounds">Sharp statewise and
+observable bounds</h2>
+<p>Set <span class="math inline">\(h=20\alpha-2\)</span>. The candidate
+is <span class="math inline">\(\alpha\)</span> times the reference plus
+an extra year-1 payment <span class="math inline">\(p-h\)</span>.
+Consequently <span
+class="math display">\[M_iV_R-M_RV_i=(p-h)d_1(V_R-M_R).\]</span> The
+reference has positive service after year 1, so <span
+class="math inline">\(M_R&gt;V_R\)</span> and duration requires exactly
+<span class="math inline">\(p\leq h\)</span>. At <span
+class="math inline">\(p=h\)</span>, the candidate is proportional to the
+reference. The matching old PVs ensure a present-value pass, and <span
+class="math inline">\(\alpha\leq0.7&lt;S_i^0/S_R^0\)</span> ensures a
+programme pass. Reducing only the year-1 payment improves all three
+comparisons. Thus the complete statewise feasible interval is <span
+class="math inline">\([0,20\alpha-2]\)</span>.</p>
+<p>With both state variables known the maximum would be <span
+class="math inline">\(8+2a+2b\)</span>. Since <span
+class="math inline">\(b\)</span> is unavailable when <span
+class="math inline">\(p\)</span> is fixed, the largest implementable
+payment is <span class="math display">\[\begin{equation}
+\label{eq:multicap}
+\boxed{p(u)=8+2\mathbf1_{u\geq1/2}.}
+\end{equation}\]</span> This is below the raw entitlement everywhere. It
+is feasible in every cell. It is sharp for every observed <span
+class="math inline">\(u\)</span>, because the compatible future <span
+class="math inline">\(v=0\)</span> has <span
+class="math inline">\(b=0\)</span> and makes duration bind. Any larger
+payment at that same observed <span class="math inline">\(u\)</span>
+fails in that compatible state. When <span
+class="math inline">\(v\geq1/2\)</span>, having the later information
+would permit two additional units. No state probability is supplied, so
+this difference is not an expected economic value of information.</p>
+<p>The oblique trigger <span class="math inline">\(g\)</span> changes
+payment amounts and the exact certificates but not the closed-form cap
+in this deliberately proportional construction. This is useful for
+checking the branch compiler, and also a limitation on generality. With
+nonproportional late payments or unmatched old durations, <span
+class="math inline">\(U(u,v)\)</span> can be a nonconstant rational
+function requiring additional optimisation over each observation class.
+The finite-regime checker still verifies a proposed affine policy; it
+does not automatically synthesise every optimal policy.</p>
+<h2 id="sec:obliquefamily">A nonproportional oblique-trigger family</h2>
+<p>The preceding limitation is not inherent to the method. The following
+exact family removes both matched-old-claim and
+proportional-late-payment simplifications, and makes the oblique trigger
+change the admissible decision itself. Use zero discount so that the
+mechanism is visible without numerical approximation; all discount
+factors are still strictly positive. The programme comprises years 1 and
+2. The old candidate pays 100 in year 1, while the old reference pays 80
+in year 2. Their old present values and durations are therefore unequal:
+<span class="math inline">\((O_i,D_i^0)=(100,1)\)</span> and <span
+class="math inline">\((O_R,D_R^0)=(80,2)\)</span>.</p>
+<p>Let <span class="math inline">\((u,v)\in[0,1]^2\)</span>, let <span
+class="math inline">\(g=\mathbf1_{u+v\geq1}\)</span>, and assign
+equality to the triggered branch. The new reference pays 20 in year 1,
+40 in year 4 and an additional <span class="math inline">\(\lambda
+g\)</span> in year 6. The candidate pays an early amount <span
+class="math inline">\(p\)</span> in year 1, 20 in year 3 and 10 in year
+5. These later streams are not proportional. The early amount is
+selected after observing <span class="math inline">\(u\)</span> but
+before observing <span class="math inline">\(v\)</span>.</p>
+<p>For the untriggered branch, the present-value, programme-service and
+duration constraints respectively give <span
+class="math display">\[p\leq45,\qquad p\leq25,\qquad p\leq50,\]</span>
+so programme service binds and the sharp cap is 25. On the triggered
+branch the present-value cap is <span
+class="math inline">\(45+5\lambda/4\)</span>, the programme cap remains
+25, and direct substitution into the duration inequality gives <span
+class="math display">\[\begin{equation}
+\label{eq:obliquecap}
+p\leq U_D(\lambda):=\frac{750-10\lambda}{15+\lambda},
+\qquad 0\leq\lambda&lt;75.
+\end{equation}\]</span> Indeed, the reference duration is <span
+class="math inline">\((180+6\lambda)/(60+\lambda)\)</span>, while the
+candidate has value <span class="math inline">\(30+p\)</span> and first
+moment <span class="math inline">\(110+p\)</span>. The required
+candidate duration is the reference duration minus one year, because
+<span class="math inline">\(D_i^0-D_R^0=-1\)</span>.
+Cross-multiplication yields <a href="#eq:obliquecap"
+data-reference-type="eqref"
+data-reference="eq:obliquecap">[eq:obliquecap]</a>; its denominator is
+positive on the stated range.</p>
+<p>The duration cap equals 25 exactly when <span
+class="math inline">\(\lambda=75/7\)</span>. Hence programme service
+binds for <span class="math inline">\(0\leq\lambda\leq75/7\)</span>,
+while duration binds for <span
+class="math inline">\(75/7&lt;\lambda&lt;75\)</span>. At the retained
+worked value <span class="math inline">\(\lambda=20\)</span>, the
+triggered cap is <span class="math inline">\(110/7\)</span>, compared
+with 25 off-trigger. Because a triggered completion <span
+class="math inline">\(v\geq1-u\)</span> is compatible with every
+observed <span class="math inline">\(u\in[0,1]\)</span>, the largest
+payment that can be fixed before <span class="math inline">\(v\)</span>
+is observed is the constant <span
+class="math display">\[\begin{equation}
+\boxed{p(u)=110/7.}
+\end{equation}\]</span> Waiting until the trigger is known would instead
+permit 25 off-trigger and <span class="math inline">\(110/7\)</span>
+on-trigger. Thus the oblique trigger lowers the implementable ceiling by
+<span class="math inline">\(65/7\)</span> and switches the binding
+metric; it does not merely exercise a branch in the code. The conclusion
+remains conditional on the declared screen. No probability, welfare
+value or country calibration is attached to either branch.</p>
+<h2 id="certificate-results">Certificate results</h2>
+<p>Every reachable repaired branch in the four-date engineering example
+passes all three inequalities, while the raw payment fails duration in
+each branch. The least candidate PV lower bound over repaired branch
+closures is <span
+class="math inline">\(3191382200/85766121&gt;0\)</span>; the least
+reference bound is <span
+class="math inline">\(6382764400/85766121&gt;0\)</span>. Each individual
+payment is nonnegative on every audited closure. In the nonproportional
+family, independent scalar-row reconstruction confirms the two sharp
+intervals and their binding labels. Exact branch-specific bounds,
+polynomials, active constraints, stationary witnesses and verdicts are
+recorded in the input-bound certificate file. Old denominators are
+checked separately.</p>
+<figure data-latex-placement="htbp">
+<img src="figures/information-cap.png" alt="Statewise and implementable payment ceilings across the two-variable trigger geometry." />
+<figcaption>The synthetic four-date example. The statewise ceiling uses
+both variables; the implementable ceiling must be constant across later
+states sharing the observed <span class="math inline">\(u\)</span>. The
+orange line is the joint trigger <span
+class="math inline">\(u+v=1\)</span>. Equality ownership follows the
+formulas, not the rasterised illustration.</figcaption>
+</figure>
+<h1 id="sec:general">General acceptance rules and multiple payments</h1>
+<h2 id="a-complete-decision-formulation-for-a-finite-algebraic-model">A
+complete decision formulation for a finite algebraic model</h2>
+<p>Let <span class="math inline">\(\theta\)</span> denote contractual
+design parameters. Assume the scenario domain, trigger predicates and
+admissible parameter domain are described by finite Boolean combinations
+of polynomial equalities and inequalities with rational coefficients.
+Assume all cash-flow and acceptance functions are rational functions
+with explicitly nonzero, sign-known denominators on their domains. Then
+the set of failures has the formula <span
+class="math display">\[\begin{equation}
+\exists x\,[\,x\in\mathcal X(\theta)\ \wedge\
+                 \Delta(x,\theta)\notin\mathcal A\,],
+\end{equation}\]</span> where <span
+class="math inline">\(\Delta\)</span> contains the declared metrics and
+additional constraints. Clearing denominators with their correct signs
+reduces this to a first-order formula over the reals. Real quantifier
+elimination decides the formula and describes the admissible parameter
+set. Cylindrical algebraic decomposition is an established exact method
+for that step (Collins, 1975).</p>
+<p>This is a complete mathematical decision procedure for the stated
+finite algebraic class. It is not a claim of computational tractability
+for large instances. It does not cover arbitrary black-box acceptance
+judgements, arbitrary transcendental cash-flow functions or
+unbounded-history contracts. A general quantifier-elimination engine is
+not included in the bundle. The implemented exact specialisation is the
+much smaller fixed-discount affine/quadratic problem and the scalar
+examples.</p>
+<p>For a weighted rule applied when <em>both</em> agreements’ cash flows
+vary affinely with <span class="math inline">\(x\)</span>, clearing
+duration denominators may yield cubic rather than quadratic polynomials
+because affine haircut and service differences multiply <span
+class="math inline">\(V_iV_R\)</span>. Accordingly, the quadratic face
+routine must not be reused for that generalisation without an additional
+reduction.</p>
+<h2 id="a-finite-scenario-tree-with-a-fixed-comparator">A finite
+scenario tree with a fixed comparator</h2>
+<p>For multiple adjustable payments, use one decision variable at each
+observed-history node, not a different variable for every future leaf.
+Let the candidate’s leaf cash-flow vector be affine in these shared
+variables. At each leaf, the comparator is fixed, so the candidate’s
+present value, programme service and moment-based duration constraint
+are affine in the decision variables. Together with nonnegative payment
+bounds, cumulative caps and affine affordability constraints, they form
+a linear programme. Any declared linear objective selects an optimum
+when the feasible set is nonempty and compact. The shared variables
+enforce nonanticipation.</p>
+<p>A feasible vector is a primal certificate. Dual multipliers certify
+an optimal linear objective, and an appropriate infeasibility
+certificate can certify that no design in the chosen class works. A
+componentwise largest multi-payment vector need not exist: timing
+trade-offs require a stated objective. If the reference agreement is
+also a decision variable, duration comparisons are generally bilinear or
+rational and this linear-programme claim no longer follows.</p>
+<h2
+id="comparability-is-not-affordability-or-market-value-equality">Comparability
+is not affordability or market-value equality</h2>
+<p>A contract can satisfy a relative-effort screen while total
+obligations exceed the sovereign’s available resources. Add the relevant
+all-creditor stock, annual-flow or fiscal-resource constraints
+explicitly; they are not consequences of relative comparability. GSDR
+(2026, pp. 11–12) separately stresses consistency with
+debt-sustainability and programme parameters. Equally, deterministic
+statewise discounted cash flows are not an arbitrage price for a
+contingent instrument. Pricing requires a probability and
+risk-adjustment model. This note makes neither an equilibrium welfare
+nor a market-valuation claim.</p>
+<p>A later refund does not reduce an already completed programme
+window’s recorded service under the fixed-window definition. A clause
+that changes official claims is a different operation again. Therefore
+“add a clawback” is not a substitute for modelling its exact cash-flow
+and timing consequences.</p>
+<h1 id="sec:benchmark">Public-source baseline and missingness audit</h1>
+<h2 id="paris-club-example-i">Paris Club Example I</h2>
+<p>For a publicly inspectable baseline, use the Paris Club’s labelled
+illustration rather than invent missing terms for a named country. At 5%
+with programme years 1–3, both old streams pay 24 annually in years
+1–10. The first new stream pays 3 annually in years 1–15 plus twelve
+equal principal instalments totalling 200 in years 4–15. The second pays
+3 in years 1–2 and 17 in years 3–12.</p>
+<p><strong>Rounding decision.</strong> The source prints each of the
+first creditor’s principal instalments as 17 while reporting total
+principal 200. We explicitly reconstruct the equal instalments as <span
+class="math inline">\(200/12\)</span>, retaining the published total.
+Copying 17 literally produces 204 principal and 249 total service
+instead of the displayed 200 and 245. This declared reconstruction, not
+an unreported correction, underlies the calculations.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">New stream</th>
+<th style="text-align: right;">NPV relief (%)</th>
+<th style="text-align: right;">Programme relief (%)</th>
+<th style="text-align: right;">Duration extension (years)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Creditor 1</td>
+<td style="text-align: right;">14.340382</td>
+<td style="text-align: right;">87.500000</td>
+<td style="text-align: right;">3.464912</td>
+</tr>
+<tr>
+<td style="text-align: left;">Creditor 2</td>
+<td style="text-align: right;">32.742052</td>
+<td style="text-align: right;">68.055556</td>
+<td style="text-align: right;">1.748876</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These reproduce the source’s displayed rounded metrics. Its stated
+verdict accepts comparability despite creditor 2’s smaller programme and
+duration efforts. Our separate screen correctly rejects creditor 2 on
+those two coordinates. That difference validates the distinction between
+an implemented metric screen and the institution’s combined judgement;
+it is not evidence that the institution miscalculated (Paris Club, n.d.,
+Example I).</p>
+<h2 id="what-the-historical-zambia-material-establishes">What the
+historical Zambia material establishes</h2>
+<p>The World Bank’s 26 March 2024 statement records the Official
+Creditor Committee’s confirmation that the then-announced Zambia
+Eurobond agreement met comparability requirements (World Bank, 2024).
+That is an official historical assessment. It does not disclose every
+input needed to reproduce a state-by-state mathematical comparison.</p>
+<p>The inspected source set does not establish a complete, authenticated
+old/new cash-flow reconstruction for every relevant bilateral claim,
+every final contingent clause, and the quantitative acceptance boundary
+actually applied. This note therefore issues no contrary country
+verdict. It also makes no claim about which 2024 instruments remain
+outstanding in October 2026. Public-document incompleteness must not be
+treated as evidence of a breach.</p>
+<h2 id="identified-refuted-and-unresolved-cases">Identified, refuted and
+unresolved cases</h2>
+<p>Let <span class="math inline">\(\Theta\)</span> be the set of
+contract reconstructions consistent with the disclosed terms and
+explicit interpretation constraints. For <span
+class="math inline">\(\theta\in\Theta\)</span>, define <span
+class="math inline">\(\operatorname{Pass}(\theta)\)</span> to mean
+acceptance in every agreed state. Then: <span
+class="math display">\[\begin{align*}
+\text{Robustly established:}&amp;\quad
+\forall\theta\in\Theta\;\operatorname{Pass}(\theta),\\
+\text{Robustly refuted:}&amp;\quad
+\forall\theta\in\Theta\;\neg\operatorname{Pass}(\theta),\\
+\text{Not identified:}&amp;\quad \exists\theta_1,\theta_2\in\Theta:
+   \operatorname{Pass}(\theta_1)\wedge\neg\operatorname{Pass}(\theta_2).
+\end{align*}\]</span> These categories assume <span
+class="math inline">\(\Theta\)</span> is nonempty; contradictory
+disclosures are a separate data error. A failure witness under one
+conjectured interest rate proves only that that reconstruction fails.
+Similarly, robust refutation may use different adverse states for
+different reconstructions; it need not imply one common state defeats
+every reconstruction. If the rule itself is undisclosed, it must be
+included in the uncertainty rather than silently fixed to the strict
+screen.</p>
+<h2 id="what-recent-instruments-require-from-an-audit">What recent
+instruments require from an audit</h2>
+<p>The IMF’s 2025 stocktaking (Annex III, pp. 56–60) describes
+oil-linked payments in Suriname, debt-carrying-capacity or alternative
+exports/revenue triggers in Zambia, and dual nominal/real GDP conditions
+in Ukraine and Sri Lanka. It discusses two-sided adjustment in Sri Lanka
+and distinguishes these designs from plain-vanilla instruments. These
+are historical source descriptions, not an October 2026 inventory of
+outstanding securities.</p>
+<p>The resulting audit implications are our inferences: an oil-linked
+instrument needs a precise revenue perimeter; a dual trigger needs a
+joint domain rather than separately chosen favourable cases; a
+dollar-GDP trigger needs an exchange-rate convention; and two-sided
+changes need both payment branches. The source does not authenticate the
+synthetic contracts here or establish a numerical country verdict.</p>
+<h2 id="from-a-legal-instrument-to-a-mathematical-model">From a legal
+instrument to a mathematical model</h2>
+<p>The following is a proposed preparation workflow, not a description
+of an adopted institutional process. Each stage produces an inspectable
+input to the next.</p>
+<ol>
+<li><p><strong>Define the comparison.</strong> Identify the creditor
+groups, claim perimeter, valuation date, currency and old schedules.
+Record treatment of arrears, fees, exchange payments and capitalised
+interest. A change of perimeter is a change of the model.</p></li>
+<li><p><strong>Declare the rule.</strong> State normalisations,
+programme dates, discount factors, tolerances, trade-off weights and any
+non-financial conditions. Record whether the rule is an institutional
+decision rule or an analyst’s illustrative screen.</p></li>
+<li><p><strong>Translate the terms.</strong> Trace every payment formula
+to the relevant document version and clause. Specify data sources,
+measurement dates, publication lags, revisions, rounding and dispute
+resolution. Have a qualified reader validate the translation where a
+real contract verdict is intended.</p></li>
+<li><p><strong>Construct feasible histories.</strong> Combine every
+instrument’s triggers, equality conventions and irreversible events. A
+state’s economic plausibility and its contractual reachability are
+different requirements. Record why excluded states are
+excluded.</p></li>
+<li><p><strong>Check the function class.</strong> Affine factors
+multiplied together can create nonlinear service. Fixed old claims,
+fixed currency conversion and positive denominator bounds are
+assumptions to verify, not conveniences to infer.</p></li>
+<li><p><strong>Audit and design.</strong> Compute exact minima or
+counterexamples; then impose the information available when each payment
+is selected. State the permissible adjustment family and objective. A
+cap calculation cannot authorise a different maturity pattern or an
+unknown future observation.</p></li>
+<li><p><strong>Review scope and delivery.</strong> Independently inspect
+material translations and assumptions, resolve objections, freeze the
+tested inputs and code, and publish the relevant assurance limits with
+the result. A machine pass alone does not establish legal compliance,
+affordability or institutional acceptance.</p></li>
+</ol>
+<p>Three distinctions prevent overinterpretation. A robust scenario
+result has no implied probability of failure outside the domain. A
+missing term need not be adverse: it creates an identification problem.
+Finally, a bilateral comparison does not determine whether the aggregate
+debt portfolio is sustainable. Aggregate fiscal constraints belong in
+the model explicitly when that is the intended question.</p>
+<h1 id="sec:assurance">Reproducibility, computational reach and
+assurance</h1>
+<h2 id="input-domain-and-certificate-binding">Input, domain and
+certificate binding</h2>
+<p>The numerical source for every financial example is
+<code>data/contracts.json</code>. It contains the cash-flow maps, affine
+coefficients, trigger predicates, domains, boundary conventions and
+observation restrictions used by the calculations. The verifier
+generates the reported results from those fields. Certificates identify
+the consumed input hash, calculation version and code-binding digest.
+The default verifier is read-only; regeneration requires the explicit
+<code>--write</code> option. A changed input cannot silently inherit an
+earlier receipt.</p>
+<p>The separate certificate checker imports neither the producer nor its
+optimisation kernel. For one-dimensional cases it uses interval
+calculus; for two-dimensional cases it enumerates polygon vertices,
+minimises scalar restrictions along edges, and checks an interior
+stationary point by a direct two-by-two solve. Singular interior
+stationary flats meet a boundary with the same objective value. It also
+compares each financial polynomial with directly summed cash-flow
+expressions at a unisolvent set: three points in one dimension and six
+in two. Because the expressions are known to have degree at most two,
+these exact coefficient-determining evaluations check a polynomial
+identity, rather than merely sampling its sign on the scenario
+domain.</p>
+<p>The checker does not accept the domain printed in a certificate as
+authoritative. It independently reconstructs 16 audited domains and all
+10 trigger regions from the numerical source, including strict-branch
+reachability and equality ownership, then minimises over those
+reconstructed domains. A retained negative control shortens the
+interior-example certificate domain to a singleton and recomputes
+internally consistent minima and verdicts. The checker rejects that
+altered certificate because its domain no longer matches the declared
+model; the full replay and manifest checks reject it independently.</p>
+<p>This separation reduces shared implementation risk in the covered
+cases. It is still part of the same development effort, shares the
+declared data and modelling assumptions, and does not constitute
+external independent reproduction. General dimensions remain covered by
+the proof and reference kernel, not by the separate low-dimensional
+checker.</p>
+<h2 id="coverage-matrix">Coverage matrix</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Obligation</th>
+<th style="text-align: left;">Evidence in version 3</th>
+<th style="text-align: left;">What it does not establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Continuum validity</td>
+<td style="text-align: left;">Written proofs; exact polynomial/face
+reductions</td>
+<td style="text-align: left;">Proof-assistant verification or legal
+semantics</td>
+</tr>
+<tr>
+<td style="text-align: left;">Financial input binding</td>
+<td style="text-align: left;">Numeric data dependency for all six
+example families; per-certificate hashes; read-only replay</td>
+<td style="text-align: left;">That a declared cash flow matches an
+external contract</td>
+</tr>
+<tr>
+<td style="text-align: left;">Low-dimensional minima</td>
+<td style="text-align: left;">48 exact minima checked by a separate
+implementation; 252 coefficient-determining evaluations</td>
+<td style="text-align: left;">Generic independent checking in higher
+dimensions</td>
+</tr>
+<tr>
+<td style="text-align: left;">Domains and trigger semantics</td>
+<td style="text-align: left;">16 model domains and 10 trigger regions
+reconstructed from source data; a self-consistent truncated-domain
+mutation is rejected</td>
+<td style="text-align: left;">Legal authenticity of the declared domain
+or economic plausibility outside it</td>
+</tr>
+<tr>
+<td style="text-align: left;">Duration-removal identity</td>
+<td style="text-align: left;">Algebraic proof and 200 exact generated
+regressions</td>
+<td style="text-align: left;">A new general theory of welfare or bond
+duration</td>
+</tr>
+<tr>
+<td style="text-align: left;">Payment interval compiler</td>
+<td style="text-align: left;">100 generated models and 4,100 direct
+comparisons, including positive floors</td>
+<td style="text-align: left;">Exhaustive verification of all possible
+programs or data schemas</td>
+</tr>
+<tr>
+<td style="text-align: left;">Joint-trigger example</td>
+<td style="text-align: left;">Eight combinations classified; six
+reachable; cash-flow and PV-closure checks; equality tests</td>
+<td style="text-align: left;">Empirical realism or a generic
+legal-document compiler</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nonproportional trigger family</td>
+<td style="text-align: left;">Exact cap function, binding switch at
+<span class="math inline">\(75/7\)</span>, two independently
+reconstructed scalar intervals</td>
+<td style="text-align: left;">Empirical frequency or welfare importance
+of the switch</td>
+</tr>
+<tr>
+<td style="text-align: left;">Semantic negative controls</td>
+<td style="text-align: left;">Seven substantive data edits change
+calculations or trigger explicit rejection; the million-unit mutation, a
+false minimum and a self-consistent shortened domain are rejected under
+optimised Python</td>
+<td style="text-align: left;">Tamper resistance against someone
+replacing both files and integrity records</td>
+</tr>
+<tr>
+<td style="text-align: left;">Literature and positioning</td>
+<td style="text-align: left;">Dated query/source register; result-level
+comparison; explicit access limits</td>
+<td style="text-align: left;">Exhaustive novelty or journal
+acceptance</td>
+</tr>
+<tr>
+<td style="text-align: left;">Public applicability</td>
+<td style="text-align: left;">Paris Club illustration reconstructed
+transparently; historical source context</td>
+<td style="text-align: left;">Authenticated country-level comparability
+or debt sustainability</td>
+</tr>
+</tbody>
+</table>
+<p>Counts describe coverage, not probabilities of correctness. The suite
+uses explicit exception checks, so its substantive tests remain active
+under <code>python -O</code>. A deliberately false minimum and a
+self-consistent false domain are rejected by the separate checker; seven
+substantive input mutations either change the calculated output or
+trigger an explicit consistency rejection. A million-unit input mutation
+is rejected by the frozen-input check.</p>
+<h2 id="computational-growth">Computational growth</h2>
+<p>With <span class="math inline">\(m\)</span> linear inequalities in
+dimension <span class="math inline">\(n\)</span>, the reference
+implementation enumerates at most <span
+class="math display">\[\sum_{k=0}^{n}\binom{m}{k}\]</span> candidate
+independent active subsets before rank and feasibility filtering.
+Rational linear-system solves and additional feasibility enumeration add
+work; integer bit lengths also matter. With <span
+class="math inline">\(R\)</span> reachable regimes, auditing each
+independently multiplies this work by <span
+class="math inline">\(R\)</span>. The number of trigger combinations can
+itself grow exponentially with the number of Boolean predicates. These
+observations explain the intended small-instance scope without asserting
+an optimal complexity bound.</p>
+<p>The controlled benchmark uses <span
+class="math inline">\(\sum_j(x_j-1/3)^2-1/7\)</span> on the unit box. It
+has exact minimum <span class="math inline">\(-1/7\)</span>, so
+correctness is separately checkable. One-dimensional through
+five-dimensional instances produce 3, 9, 27, 81 and 243 stationary
+candidates. Repeating the two-dimensional instance across 4, 8 and 16
+independent copies isolates the regime-count effect. This is a
+microbenchmark of enumeration, not a realistic sovereign portfolio.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Dimension</th>
+<th style="text-align: right;">Regime copies</th>
+<th style="text-align: right;">Active subsets</th>
+<th style="text-align: right;">Candidates</th>
+<th style="text-align: right;">Seconds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.000132</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0.000407</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">0.003341</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">163</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">0.028026</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">638</td>
+<td style="text-align: right;">243</td>
+<td style="text-align: right;">0.118889</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">0.002447</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: right;">0.009341</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">176</td>
+<td style="text-align: right;">144</td>
+<td style="text-align: right;">0.019963</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These are one-run observations on macOS arm64 with Python 3.14.7, one
+computation thread, and no warm-up or averaging. Sub-millisecond timings
+and between-run comparisons are noisy. The retained benchmark records
+the exact environment and method; no hardware-independent speed or
+general scalability claim follows. Verification itself requires only
+Python’s standard library. Optional figure regeneration requires NumPy
+and Matplotlib; building the manuscript requires a LaTeX installation
+and the included figures.</p>
+<h2 id="conclusion-and-remaining-research-questions">Conclusion and
+remaining research questions</h2>
+<p>Exact verification is useful precisely because it separates
+arithmetic from choices that arithmetic cannot settle. For fixed old
+claims and piecewise-affine service, the separate screen has an exact
+finite audit. Duration can fail in the interior even when all selected
+endpoints pass strictly. Its response to payment reductions is governed
+by the timing of the value removed, and universal acceptance of all
+reductions requires an explicit duration threshold. Scalar design
+produces intervals, which can include floors; partial observation
+intersects those intervals across indistinguishable states. The
+nonproportional family shows that an oblique trigger can change both the
+sharp implementable cap and the metric that binds, even when old claims
+are unmatched.</p>
+<p>The examples establish these consequences for declared models. They
+do not establish that duration should be abandoned or that a particular
+trade-off is socially desirable. Useful next empirical work would obtain
+a complete authorised contract corpus and its actual decision rule, then
+compare the audit’s results with the documented assessment. Useful
+computational work would extend independent certificate checking beyond
+two dimensions and handle non-affine instruments without silently
+applying the quadratic method. Useful design work would examine how
+acceptance regions that respect payment dominance interact with creditor
+preferences and fiscal constraints. Those are substantive further
+projects; they are not claimed as completed here.</p>
+<h1 class="unnumbered" id="references">References</h1>
+<h4 id="asonuma-t.-niepelt-d.-and-rancière-r.-2017.">Asonuma, T.,
+Niepelt, D., and Rancière, R. (2017).</h4>
+<p><em>Sovereign bond prices, haircuts and maturity</em>. IMF Working
+Paper 17/119. Section II provides the inspected measurement comparison.
+<a
+href="https://www.imf.org/-/media/files/publications/wp/2017/wp17119.pdf"
+class="uri">https://www.imf.org/-/media/files/publications/wp/2017/wp17119.pdf</a></p>
+<h4 id="asonuma-t.-niepelt-d.-and-rancière-r.-2023.">Asonuma, T.,
+Niepelt, D., and Rancière, R. (2023).</h4>
+<p>Sovereign bond prices, haircuts and maturity. <em>Journal of
+International Economics</em>, 140, 103689. Published-version record
+checked; the 2017 primary working-paper text was inspected for the cited
+methodological detail. <a
+href="https://doi.org/10.1016/j.jinteco.2022.103689"
+class="uri">https://doi.org/10.1016/j.jinteco.2022.103689</a></p>
+<h4
+id="ben-tal-a.-goryashko-a.-guslitzer-e.-and-nemirovski-a.-2004.">Ben-Tal,
+A., Goryashko, A., Guslitzer, E., and Nemirovski, A. (2004).</h4>
+<p>Adjustable robust solutions of uncertain linear programs.
+<em>Mathematical Programming</em>, 99, 351–376. <a
+href="https://doi.org/10.1007/s10107-003-0454-y"
+class="uri">https://doi.org/10.1007/s10107-003-0454-y</a>. Author-hosted
+text: <a href="https://www2.isye.gatech.edu/~nemirovs/MP_Elana_2004.pdf"
+class="uri">https://www2.isye.gatech.edu/~nemirovs/MP_Elana_2004.pdf</a></p>
+<h4 id="ben-tal-a.-boyd-s.-and-nemirovski-a.-2006.">Ben-Tal, A., Boyd,
+S., and Nemirovski, A. (2006).</h4>
+<p>Extending scope of robust optimization: Comprehensive robust
+counterparts of uncertain problems. <em>Mathematical Programming</em>,
+107, 63–89. <a href="https://doi.org/10.1007/s10107-005-0679-z"
+class="uri">https://doi.org/10.1007/s10107-005-0679-z</a>. Author-hosted
+text: <a href="https://web.stanford.edu/~boyd/papers/pdf/rob_opt.pdf"
+class="uri">https://web.stanford.edu/~boyd/papers/pdf/rob_opt.pdf</a></p>
+<h4
+id="cohen-c.-abbas-s.-a.-anthony-m.-best-t.-breuer-p.-miao-h.-myrvoda-a.-and-togo-e.-2020.">Cohen,
+C., Abbas, S. A., Anthony, M., Best, T., Breuer, P., Miao, H., Myrvoda,
+A., and Togo, E. (2020).</h4>
+<p><em>The role of state-contingent debt instruments in sovereign debt
+restructurings</em>. IMF Staff Discussion Note 20/06, November. Author
+list follows the PDF title page, which includes Abbas; the web landing
+page omits him. <a
+href="https://www.imf.org/-/media/files/publications/sdn/2020/english/sdnea2020006.pdf"
+class="uri">https://www.imf.org/-/media/files/publications/sdn/2020/english/sdnea2020006.pdf</a></p>
+<h4 id="collins-g.-e.-1975.">Collins, G. E. (1975).</h4>
+<p>Quantifier elimination for real closed fields by cylindrical
+algebraic decomposition. In H. Brakhage (ed.), <em>Automata Theory and
+Formal Languages</em>, LNCS 33, 134–183. Springer. Publisher metadata
+inspected; full subscription chapter not newly inspected. <a
+href="https://doi.org/10.1007/3-540-07407-4_17"
+class="uri">https://doi.org/10.1007/3-540-07407-4_17</a></p>
+<h4 id="global-sovereign-debt-roundtable-2026.">Global Sovereign Debt
+Roundtable (2026).</h4>
+<p><em>Compendium of GSDR common understanding on technical issues</em>.
+Version of 15 April 2026. State-contingent discussion, pp. 11–12. <a
+href="https://www.imf.org/-/media/files/about/faq/gsdr/041526-gsdr-compendium-of-common-understanding-on-technical-issues.pdf"
+class="uri">https://www.imf.org/-/media/files/about/faq/gsdr/041526-gsdr-compendium-of-common-understanding-on-technical-issues.pdf</a></p>
+<h4 id="gorissen-b.-l.-yanıkoğlu-i.-and-den-hertog-d.-2015.">Gorissen,
+B. L., Yanıkoğlu, I., and den Hertog, D. (2015).</h4>
+<p>A practical guide to robust optimization. <em>Omega</em>, 53,
+124–137. <a href="https://doi.org/10.1016/j.omega.2014.12.006"
+class="uri">https://doi.org/10.1016/j.omega.2014.12.006</a>. Inspected
+author preprint, arXiv:1501.02634v1: <a
+href="https://arxiv.org/html/1501.02634"
+class="uri">https://arxiv.org/html/1501.02634</a></p>
+<h4 id="international-monetary-fund-2017.">International Monetary Fund
+(2017).</h4>
+<p><em>State-contingent debt instruments for sovereigns</em>. Staff
+paper completed 23 March 2017, released with Board discussion material
+in May 2017. <a
+href="https://www.imf.org/-/media/files/publications/pp/pp032317state-contingent-debt-instruments-for-sovereigns.pdf"
+class="uri">https://www.imf.org/-/media/files/publications/pp/pp032317state-contingent-debt-instruments-for-sovereigns.pdf</a></p>
+<h4 id="international-monetary-fund-2025.">International Monetary Fund
+(2025).</h4>
+<p><em>A stocktaking of the current international architecture for
+resolving sovereign debt involving private sector creditors</em>. Staff
+paper completed 19 September 2025; released October 2025. Annex III, pp.
+56–60. The informal Board session took no decisions; this is staff
+analysis. <a
+href="https://www.imf.org/-/media/files/publications/pp/2025/english/ppea2025034.pdf"
+class="uri">https://www.imf.org/-/media/files/publications/pp/2025/english/ppea2025034.pdf</a></p>
+<h4 id="kozack-j.-2005.">Kozack, J. (2005).</h4>
+<p><em>Considerations in the choice of the appropriate discount rate for
+evaluating sovereign debt restructurings</em>. IMF Policy Discussion
+Paper 05/9. Official abstract inspected; PDF retrieval blocked in this
+revision. <a href="https://doi.org/10.5089/9781451975840.003"
+class="uri">https://doi.org/10.5089/9781451975840.003</a></p>
+<h4 id="paris-club-n.d..">Paris Club (n.d.).</h4>
+<p><em>Methodology: Comparability of treatment</em>. Sections 2–3, Box 1
+and Example I. Accessed 13 October 2026. <a
+href="https://clubdeparis.org/en/sites/clubdeparis/accueil/club-de-paris/methodologie.html"
+class="uri">https://clubdeparis.org/en/sites/clubdeparis/accueil/club-de-paris/methodologie.html</a></p>
+<h4 id="powell-a.-2026.">Powell, A. (2026).</h4>
+<p><em>Comparability of treatment: Where do we stand?</em> Center for
+Global Development Working Paper 750, June. <a
+href="https://www.cgdev.org/sites/default/files/comparability-treatment-where-do-we-stand.pdf"
+class="uri">https://www.cgdev.org/sites/default/files/comparability-treatment-where-do-we-stand.pdf</a></p>
+<h4 id="world-bank-2024.">World Bank (2024).</h4>
+<p><em>World Bank Group statement on debt restructuring agreement for
+Zambia</em>. 26 March 2024. <a
+href="https://www.worldbank.org/en/news/statement/2024/03/26/world-bank-group-statement-on-debt-restructuring-agreement-for-afe-zambia"
+class="uri">https://www.worldbank.org/en/news/statement/2024/03/26/world-bank-group-statement-on-debt-restructuring-agreement-for-afe-zambia</a></p>
+<h4 id="version-and-assurance-note.">Version and assurance note.</h4>
+<p>Research creator: Anonymous. Prepared for Evidence Press on 15
+October 2026 as version 3.0, DOI <a
+href="https://doi.org/10.5281/zenodo.23392424">10.5281/zenodo.23392424</a>,
+with source repository <a
+href="https://github.com/ipitchford/state-contingent-comparability"
+class="uri">https://github.com/ipitchford/state-contingent-comparability</a>.
+Revision drafting, literature synthesis and code development were
+AI-assisted. The supplied automated reviewer audit applied to version
+2.0; the present version addresses its required corrections and
+strengthening recommendations. No external acceptance, official REF
+rating, legal authentication or independent human peer review is
+asserted. See <code>ASSURANCE.md</code>, <code>PROVENANCE.md</code> and
+<code>SOURCES.md</code> for precise coverage.</p>
+</body>
+</html>

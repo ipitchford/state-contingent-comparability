@@ -1,0 +1,73 @@
+{
+  "python": "3.14.7",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "processor": "arm64",
+  "threads": 1,
+  "method": "one run per setting; no warmup; identical boxed separable quadratics repeated to isolate regime-count growth; not a country workload",
+  "measurements": [
+    {
+      "dimension": 1,
+      "independent_regime_copies": 1,
+      "active_subsets_enumerated": 3,
+      "stationary_candidates": 3,
+      "elapsed_seconds": 0.00021,
+      "minimum_each": "-1/7"
+    },
+    {
+      "dimension": 2,
+      "independent_regime_copies": 1,
+      "active_subsets_enumerated": 11,
+      "stationary_candidates": 9,
+      "elapsed_seconds": 0.000619,
+      "minimum_each": "-1/7"
+    },
+    {
+      "dimension": 3,
+      "independent_regime_copies": 1,
+      "active_subsets_enumerated": 42,
+      "stationary_candidates": 27,
+      "elapsed_seconds": 0.003801,
+      "minimum_each": "-1/7"
+    },
+    {
+      "dimension": 4,
+      "independent_regime_copies": 1,
+      "active_subsets_enumerated": 163,
+      "stationary_candidates": 81,
+      "elapsed_seconds": 0.012751,
+      "minimum_each": "-1/7"
+    },
+    {
+      "dimension": 5,
+      "independent_regime_copies": 1,
+      "active_subsets_enumerated": 638,
+      "stationary_candidates": 243,
+      "elapsed_seconds": 0.059874,
+      "minimum_each": "-1/7"
+    },
+    {
+      "dimension": 2,
+      "independent_regime_copies": 4,
+      "active_subsets_enumerated": 44,
+      "stationary_candidates": 36,
+      "elapsed_seconds": 0.002038,
+      "minimum_each": "-1/7"
+    },
+    {
+      "dimension": 2,
+      "independent_regime_copies": 8,
+      "active_subsets_enumerated": 88,
+      "stationary_candidates": 72,
+      "elapsed_seconds": 0.00351,
+      "minimum_each": "-1/7"
+    },
+    {
+      "dimension": 2,
+      "independent_regime_copies": 16,
+      "active_subsets_enumerated": 176,
+      "stationary_candidates": 144,
+      "elapsed_seconds": 0.006218,
+      "minimum_each": "-1/7"
+    }
+  ]
+}

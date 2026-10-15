@@ -1,0 +1,30 @@
+{
+  "title": "State-contingent sovereign debt: payment dominance, exact comparability and implementable bounds",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "Unrefereed Evidence Press research release. For fixed old claims, positive discount factors and piecewise-affine new service, a declared three-coordinate comparability screen reduces on each reachable trigger region to affine present-value and programme-service tests plus a quadratic duration test. Exact examples show that componentwise smaller payments can fail the duration veto; scalar design gives complete payment intervals under partial information; and a nonproportional oblique-trigger family has sharp implementable caps of 25 and 110/7 with binding switch 75/7. The public package includes the complete manuscript, accessible versions, exact rational certificates, an independent low-dimensional checker, negative controls and a whole-package manifest. Exact replay is not formal verification, legal authentication, empirical validation, external peer review or a country-level assessment.",
+  "creators": [
+    {
+      "name": "Anonymous"
+    }
+  ],
+  "version": "3.0.0",
+  "publication_date": "2026-10-15",
+  "access_right": "open",
+  "license": "cc-zero",
+  "keywords": [
+    "state-contingent sovereign debt",
+    "debt comparability",
+    "cash-flow duration",
+    "robust optimisation",
+    "exact certificates",
+    "partial information"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/ipitchford/state-contingent-comparability",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

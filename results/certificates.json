@@ -1,0 +1,6766 @@
+{
+  "bindings": {
+    "code/benchmark.py": "cdc958d54e21b461ec36a8e7a6770f93991f0798f2fc69800faae22775e0050c",
+    "code/check_certificates.py": "46967f69d88ad7eb73df360055093a45a6562b92ad111af00cf855314b854c5f",
+    "code/check_manifest.py": "c166d6d9727b75fdaa13dcc6801f9a0331d2c91234a8046b28cd9e03e00f8f8a",
+    "code/exact_audit.py": "bc26925d2b19739a4fa58d63ae67609e0f5804fd92518bbb82636a3236484d1f",
+    "code/model.py": "5d6895bc7d263430516a5c39dcbcdb85eccdf8faf2a3c861b5100256915c9f4f",
+    "code/render_figures.py": "fe24085aa19a898b70a6ed3b4efc97d10fcaf19c74a157c01db37d09461085b8",
+    "code/test_revision.py": "33b3bfc5887b7f8cadac2b667a2395cbb82a4b37190a9de2eae4094877ff413b",
+    "code/verify.py": "4f8d90f8fc1a143e9165b72ff4f891a39eb3f49194e231a53727957a29a1c4e4",
+    "data/contracts.json": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a"
+  },
+  "format": "exact-comparability-v2",
+  "results": {
+    "calculation_version": "3.0.0",
+    "cap_example": {
+      "individual_bounds": {
+        "NPV": "6410/441",
+        "duration": "8",
+        "programme": "10"
+      },
+      "interval": [
+        "0",
+        "8",
+        [
+          {
+            "kind": "upper",
+            "row": "NPV",
+            "value": "6410/441"
+          },
+          {
+            "kind": "upper",
+            "row": "programme",
+            "value": "10"
+          },
+          {
+            "kind": "upper",
+            "row": "duration",
+            "value": "8"
+          }
+        ]
+      ],
+      "raw_maximum": "20",
+      "rows": [
+        [
+          "NPV",
+          "20/21",
+          "128200/9261"
+        ],
+        [
+          "programme",
+          "1",
+          "10"
+        ],
+        [
+          "duration",
+          "40000/30261",
+          "320000/30261"
+        ]
+      ],
+      "weighted": {
+        "maximum_payment_bracket": [
+          "3579041034937099113670465/302231454903657293676544",
+          "1789520517468549556835235/151115727451828646838272"
+        ],
+        "nonnegative_polynomial_ascending": [
+          "2818704920/217969983",
+          "-11562800/13345101",
+          "-2/105"
+        ],
+        "weights": [
+          "1",
+          "1",
+          "1/10"
+        ]
+      }
+    },
+    "duration_tolerance_sensitivity": [
+      {
+        "duration_tolerance": "0",
+        "interval": [
+          "0",
+          "8",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "6410/441"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "8"
+            }
+          ]
+        ]
+      },
+      {
+        "duration_tolerance": "1/100",
+        "interval": [
+          "0",
+          "81988090/9729391",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "6410/441"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "81988090/9729391"
+            }
+          ]
+        ]
+      },
+      {
+        "duration_tolerance": "1/20",
+        "interval": [
+          "0",
+          "10",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "6410/441"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "19268090/1889391"
+            }
+          ]
+        ]
+      },
+      {
+        "duration_tolerance": "1/10",
+        "interval": [
+          "0",
+          "10",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "6410/441"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "11428090/909391"
+            }
+          ]
+        ]
+      },
+      {
+        "duration_tolerance": "1/5",
+        "interval": [
+          "0",
+          "10",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "6410/441"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "7508090/419391"
+            }
+          ]
+        ]
+      },
+      {
+        "duration_tolerance": "1/2",
+        "interval": [
+          "0",
+          "10",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "6410/441"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "5156090/125391"
+            }
+          ]
+        ]
+      }
+    ],
+    "floor_and_information": {
+      "common_interval": null,
+      "intervals": [
+        [
+          "1",
+          "1",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "1"
+            },
+            {
+              "kind": "constant",
+              "row": "programme",
+              "slack": "0"
+            },
+            {
+              "kind": "lower",
+              "row": "duration",
+              "value": "1"
+            }
+          ]
+        ],
+        [
+          "2",
+          "2",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "2"
+            },
+            {
+              "kind": "constant",
+              "row": "programme",
+              "slack": "0"
+            },
+            {
+              "kind": "lower",
+              "row": "duration",
+              "value": "2"
+            }
+          ]
+        ]
+      ]
+    },
+    "interior_failure": {
+      "constraints": {
+        "duration": {
+          "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+          "calculation_version": "3.0.0",
+          "certificate": {
+            "candidates": [
+              {
+                "face_basis": [],
+                "point": [
+                  "1/2"
+                ],
+                "value": "-160000/194481"
+              },
+              {
+                "face_basis": [
+                  0
+                ],
+                "point": [
+                  "0"
+                ],
+                "value": "0"
+              },
+              {
+                "face_basis": [
+                  1
+                ],
+                "point": [
+                  "1"
+                ],
+                "value": "0"
+              }
+            ],
+            "minimum": "-160000/194481",
+            "point": [
+              "1/2"
+            ]
+          },
+          "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+          "passes": false,
+          "polynomial": {
+            "Q": [
+              [
+                "640000/194481"
+              ]
+            ],
+            "constant": "0",
+            "linear": [
+              "-640000/194481"
+            ]
+          }
+        },
+        "present_value": {
+          "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+          "calculation_version": "3.0.0",
+          "certificate": {
+            "candidates": [
+              {
+                "face_basis": [
+                  0
+                ],
+                "point": [
+                  "0"
+                ],
+                "value": "16820/9261"
+              },
+              {
+                "face_basis": [
+                  1
+                ],
+                "point": [
+                  "1"
+                ],
+                "value": "0"
+              }
+            ],
+            "minimum": "0",
+            "point": [
+              "1"
+            ]
+          },
+          "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+          "passes": true,
+          "polynomial": {
+            "Q": [
+              [
+                "0"
+              ]
+            ],
+            "constant": "16820/9261",
+            "linear": [
+              "-16820/9261"
+            ]
+          }
+        },
+        "programme_service": {
+          "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+          "calculation_version": "3.0.0",
+          "certificate": {
+            "candidates": [
+              {
+                "face_basis": [
+                  0
+                ],
+                "point": [
+                  "0"
+                ],
+                "value": "1"
+              },
+              {
+                "face_basis": [
+                  1
+                ],
+                "point": [
+                  "1"
+                ],
+                "value": "0"
+              }
+            ],
+            "minimum": "0",
+            "point": [
+              "1"
+            ]
+          },
+          "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+          "passes": true,
+          "polynomial": {
+            "Q": [
+              [
+                "0"
+              ]
+            ],
+            "constant": "1",
+            "linear": [
+              "-1"
+            ]
+          }
+        }
+      },
+      "denominator_lower_bounds": {
+        "candidate": "16820/9261",
+        "reference": "33640/9261"
+      },
+      "domain": {
+        "A": [],
+        "b": [],
+        "lower": [
+          "0"
+        ],
+        "upper": [
+          "1"
+        ]
+      },
+      "old_candidate": {
+        "duration": "1",
+        "moment": "2000/21",
+        "programme_service": "100",
+        "pv": "2000/21"
+      },
+      "old_reference": {
+        "duration": "1",
+        "moment": "2000/21",
+        "programme_service": "100",
+        "pv": "2000/21"
+      },
+      "passes": false
+    },
+    "mixed_triggers": [
+      {
+        "audit": {
+          "constraints": {
+            "duration": {
+              "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+              "calculation_version": "3.0.0",
+              "certificate": {
+                "candidates": [
+                  {
+                    "face_basis": [],
+                    "point": [
+                      "0"
+                    ],
+                    "value": "0"
+                  },
+                  {
+                    "face_basis": [
+                      0
+                    ],
+                    "point": [
+                      "0"
+                    ],
+                    "value": "0"
+                  },
+                  {
+                    "face_basis": [
+                      1
+                    ],
+                    "point": [
+                      "2/5"
+                    ],
+                    "value": "0"
+                  }
+                ],
+                "minimum": "0",
+                "point": [
+                  "0"
+                ]
+              },
+              "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+              "passes": true,
+              "polynomial": {
+                "Q": [
+                  [
+                    "0"
+                  ]
+                ],
+                "constant": "0",
+                "linear": [
+                  "0"
+                ]
+              }
+            },
+            "present_value": {
+              "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+              "calculation_version": "3.0.0",
+              "certificate": {
+                "candidates": [
+                  {
+                    "face_basis": [],
+                    "point": [
+                      "0"
+                    ],
+                    "value": "57640/9261"
+                  },
+                  {
+                    "face_basis": [
+                      0
+                    ],
+                    "point": [
+                      "0"
+                    ],
+                    "value": "57640/9261"
+                  },
+                  {
+                    "face_basis": [
+                      1
+                    ],
+                    "point": [
+                      "2/5"
+                    ],
+                    "value": "57640/9261"
+                  }
+                ],
+                "minimum": "57640/9261",
+                "point": [
+                  "0"
+                ]
+              },
+              "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+              "passes": true,
+              "polynomial": {
+                "Q": [
+                  [
+                    "0"
+                  ]
+                ],
+                "constant": "57640/9261",
+                "linear": [
+                  "0"
+                ]
+              }
+            },
+            "programme_service": {
+              "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+              "calculation_version": "3.0.0",
+              "certificate": {
+                "candidates": [
+                  {
+                    "face_basis": [],
+                    "point": [
+                      "0"
+                    ],
+                    "value": "2"
+                  },
+                  {
+                    "face_basis": [
+                      0
+                    ],
+                    "point": [
+                      "0"
+                    ],
+                    "value": "2"
+                  },
+                  {
+                    "face_basis": [
+                      1
+                    ],
+                    "point": [
+                      "2/5"
+                    ],
+                    "value": "2"
+                  }
+                ],
+                "minimum": "2",
+                "point": [
+                  "0"
+                ]
+              },
+              "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+              "passes": true,
+              "polynomial": {
+                "Q": [
+                  [
+                    "0"
+                  ]
+                ],
+                "constant": "2",
+                "linear": [
+                  "0"
+                ]
+              }
+            }
+          },
+          "denominator_lower_bounds": {
+            "candidate": "57640/1029",
+            "reference": "576400/9261"
+          },
+          "domain": {
+            "A": [],
+            "b": [],
+            "lower": [
+              "0"
+            ],
+            "upper": [
+              "2/5"
+            ]
+          },
+          "old_candidate": {
+            "duration": "1",
+            "moment": "2000/21",
+            "programme_service": "100",
+            "pv": "2000/21"
+          },
+          "old_reference": {
+            "duration": "1",
+            "moment": "2000/21",
+            "programme_service": "100",
+            "pv": "2000/21"
+          },
+          "passes": true
+        },
+        "bounds": [
+          "0",
+          "2/5"
+        ],
+        "interval": "[lo,a)"
+      },
+      {
+        "audit": {
+          "constraints": {
+            "duration": {
+              "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+              "calculation_version": "3.0.0",
+              "certificate": {
+                "candidates": [
+                  {
+                    "face_basis": [],
+                    "point": [
+                      "2/5"
+                    ],
+                    "value": "-3200000/7203"
+                  },
+                  {
+                    "face_basis": [
+                      0
+                    ],
+                    "point": [
+                      "2/5"
+                    ],
+                    "value": "-3200000/7203"
+                  },
+                  {
+                    "face_basis": [
+                      1
+                    ],
+                    "point": [
+                      "3/5"
+                    ],
+                    "value": "-3200000/7203"
+                  }
+                ],
+                "minimum": "-3200000/7203",
+                "point": [
+                  "2/5"
+                ]
+              },
+              "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+              "passes": false,
+              "polynomial": {
+                "Q": [
+                  [
+                    "0"
+                  ]
+                ],
+                "constant": "-3200000/7203",
+                "linear": [
+                  "0"
+                ]
+              }
+            },
+            "present_value": {
+              "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+              "calculation_version": "3.0.0",
+              "certificate": {
+                "candidates": [
+                  {
+                    "face_basis": [],
+                    "point": [
+                      "2/5"
+                    ],
+                    "value": "-93740/9261"
+                  },
+                  {
+                    "face_basis": [
+                      0
+                    ],
+                    "point": [
+                      "2/5"
+                    ],
+                    "value": "-93740/9261"
+                  },
+                  {
+                    "face_basis": [
+                      1
+                    ],
+                    "point": [
+                      "3/5"
+                    ],
+                    "value": "-93740/9261"
+                  }
+                ],
+                "minimum": "-93740/9261",
+                "point": [
+                  "2/5"
+                ]
+              },
+              "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+              "passes": false,
+              "polynomial": {
+                "Q": [
+                  [
+                    "0"
+                  ]
+                ],
+                "constant": "-93740/9261",
+                "linear": [
+                  "0"
+                ]
+              }
+            },
+            "programme_service": {
+              "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+              "calculation_version": "3.0.0",
+              "certificate": {
+                "candidates": [
+                  {
+                    "face_basis": [],
+                    "point": [
+                      "2/5"
+                    ],
+                    "value": "-7"
+                  },
+                  {
+                    "face_basis": [
+                      0
+                    ],
+                    "point": [
+                      "2/5"
+                    ],
+                    "value": "-7"
+                  },
+                  {
+                    "face_basis": [
+                      1
+                    ],
+                    "point": [
+                      "3/5"
+                    ],
+                    "value": "-7"
+                  }
+                ],
+                "minimum": "-7",
+                "point": [
+                  "2/5"
+                ]
+              },
+              "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+              "passes": false,
+              "polynomial": {
+                "Q": [
+                  [
+                    "0"
+                  ]
+                ],
+                "constant": "-7",
+                "linear": [
+                  "0"
+                ]
+              }
+            }
+          },
+          "denominator_lower_bounds": {
+            "candidate": "24820/343",
+            "reference": "576400/9261"
+          },
+          "domain": {
+            "A": [],
+            "b": [],
+            "lower": [
+              "2/5"
+            ],
+            "upper": [
+              "3/5"
+            ]
+          },
+          "old_candidate": {
+            "duration": "1",
+            "moment": "2000/21",
+            "programme_service": "100",
+            "pv": "2000/21"
+          },
+          "old_reference": {
+            "duration": "1",
+            "moment": "2000/21",
+            "programme_service": "100",
+            "pv": "2000/21"
+          },
+          "passes": false
+        },
+        "bounds": [
+          "2/5",
+          "3/5"
+        ],
+        "interval": "[a,b)"
+      },
+      {
+        "audit": {
+          "constraints": {
+            "duration": {
+              "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+              "calculation_version": "3.0.0",
+              "certificate": {
+                "candidates": [
+                  {
+                    "face_basis": [],
+                    "point": [
+                      "3/5"
+                    ],
+                    "value": "0"
+                  },
+                  {
+                    "face_basis": [
+                      0
+                    ],
+                    "point": [
+                      "3/5"
+                    ],
+                    "value": "0"
+                  },
+                  {
+                    "face_basis": [
+                      1
+                    ],
+                    "point": [
+                      "1"
+                    ],
+                    "value": "0"
+                  }
+                ],
+                "minimum": "0",
+                "point": [
+                  "3/5"
+                ]
+              },
+              "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+              "passes": true,
+              "polynomial": {
+                "Q": [
+                  [
+                    "0"
+                  ]
+                ],
+                "constant": "0",
+                "linear": [
+                  "0"
+                ]
+              }
+            },
+            "present_value": {
+              "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+              "calculation_version": "3.0.0",
+              "certificate": {
+                "candidates": [
+                  {
+                    "face_basis": [],
+                    "point": [
+                      "3/5"
+                    ],
+                    "value": "24820/3087"
+                  },
+                  {
+                    "face_basis": [
+                      0
+                    ],
+                    "point": [
+                      "3/5"
+                    ],
+                    "value": "24820/3087"
+                  },
+                  {
+                    "face_basis": [
+                      1
+                    ],
+                    "point": [
+                      "1"
+                    ],
+                    "value": "24820/3087"
+                  }
+                ],
+                "minimum": "24820/3087",
+                "point": [
+                  "3/5"
+                ]
+              },
+              "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+              "passes": true,
+              "polynomial": {
+                "Q": [
+                  [
+                    "0"
+                  ]
+                ],
+                "constant": "24820/3087",
+                "linear": [
+                  "0"
+                ]
+              }
+            },
+            "programme_service": {
+              "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+              "calculation_version": "3.0.0",
+              "certificate": {
+                "candidates": [
+                  {
+                    "face_basis": [],
+                    "point": [
+                      "3/5"
+                    ],
+                    "value": "3"
+                  },
+                  {
+                    "face_basis": [
+                      0
+                    ],
+                    "point": [
+                      "3/5"
+                    ],
+                    "value": "3"
+                  },
+                  {
+                    "face_basis": [
+                      1
+                    ],
+                    "point": [
+                      "1"
+                    ],
+                    "value": "3"
+                  }
+                ],
+                "minimum": "3",
+                "point": [
+                  "3/5"
+                ]
+              },
+              "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+              "passes": true,
+              "polynomial": {
+                "Q": [
+                  [
+                    "0"
+                  ]
+                ],
+                "constant": "3",
+                "linear": [
+                  "0"
+                ]
+              }
+            }
+          },
+          "denominator_lower_bounds": {
+            "candidate": "24820/343",
+            "reference": "248200/3087"
+          },
+          "domain": {
+            "A": [],
+            "b": [],
+            "lower": [
+              "3/5"
+            ],
+            "upper": [
+              "1"
+            ]
+          },
+          "old_candidate": {
+            "duration": "1",
+            "moment": "2000/21",
+            "programme_service": "100",
+            "pv": "2000/21"
+          },
+          "old_reference": {
+            "duration": "1",
+            "moment": "2000/21",
+            "programme_service": "100",
+            "pv": "2000/21"
+          },
+          "passes": true
+        },
+        "bounds": [
+          "3/5",
+          "1"
+        ],
+        "interval": "[b,hi]"
+      }
+    ],
+    "multi_regime": {
+      "branches": [
+        {
+          "A": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ],
+            [
+              "1",
+              "1"
+            ]
+          ],
+          "active": {
+            "a": false,
+            "b": false,
+            "g": false
+          },
+          "alpha": "1/2",
+          "b": [
+            "1/2",
+            "1/2",
+            "1"
+          ],
+          "id": "000",
+          "implemented_audit": {
+            "constraints": {
+              "duration": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [],
+                      "point": [
+                        "0",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        0
+                      ],
+                      "point": [
+                        "0",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        2
+                      ],
+                      "point": [
+                        "0",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        2
+                      ],
+                      "point": [
+                        "0",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    }
+                  ],
+                  "minimum": "0",
+                  "point": [
+                    "0",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "0",
+                  "linear": [
+                    "0",
+                    "0"
+                  ]
+                }
+              },
+              "present_value": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0,
+                        2
+                      ],
+                      "point": [
+                        "0",
+                        "0"
+                      ],
+                      "value": "3191382200/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "3261942200/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "158722600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "162082600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "162082600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "162082600/4084101"
+                    }
+                  ],
+                  "minimum": "3191382200/85766121",
+                  "point": [
+                    "0",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "3191382200/85766121",
+                  "linear": [
+                    "283584800/85766121",
+                    "320000/194481"
+                  ]
+                }
+              },
+              "programme_service": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0
+                      ],
+                      "point": [
+                        "0",
+                        "0"
+                      ],
+                      "value": "78943535/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "252619312/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        2
+                      ],
+                      "point": [
+                        "0",
+                        "0"
+                      ],
+                      "value": "78943535/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "78943535/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "252619312/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "252619312/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "252619312/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "252619312/28588707"
+                    }
+                  ],
+                  "minimum": "78943535/9529569",
+                  "point": [
+                    "0",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "78943535/9529569",
+                  "linear": [
+                    "31577414/28588707",
+                    "0"
+                  ]
+                }
+              }
+            },
+            "denominator_lower_bounds": {
+              "candidate": "3191382200/85766121",
+              "reference": "6382764400/85766121"
+            },
+            "domain": {
+              "A": [
+                [
+                  "1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1"
+                ],
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "b": [
+                "1/2",
+                "1/2",
+                "1"
+              ],
+              "lower": [
+                "0",
+                "0"
+              ],
+              "upper": [
+                "1",
+                "1"
+              ]
+            },
+            "old_candidate": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "221887070/4084101",
+              "pv": "2545913800/28588707"
+            },
+            "old_reference": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "70",
+              "pv": "2545913800/28588707"
+            },
+            "passes": true
+          },
+          "raw_audit": {
+            "constraints": {
+              "duration": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0,
+                        2
+                      ],
+                      "point": [
+                        "0",
+                        "0"
+                      ],
+                      "value": "-1424921920000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "-1458790720000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "-35442112000/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-36248512000/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-36248512000/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-36248512000/28588707"
+                    }
+                  ],
+                  "minimum": "-36248512000/28588707",
+                  "point": [
+                    "1/2",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": false,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "-127293568000/1801088541",
+                      "-25600000/1361367"
+                    ],
+                    [
+                      "-25600000/1361367",
+                      "0"
+                    ]
+                  ],
+                  "constant": "-1424921920000/1801088541",
+                  "linear": [
+                    "-1552215488000/1801088541",
+                    "-51200000/1361367"
+                  ]
+                }
+              },
+              "present_value": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0,
+                        2
+                      ],
+                      "point": [
+                        "0",
+                        "0"
+                      ],
+                      "value": "2864654120/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "2935214120/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "135384880/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "138744880/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "138744880/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "138744880/4084101"
+                    }
+                  ],
+                  "minimum": "135384880/4084101",
+                  "point": [
+                    "1/2",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "2864654120/85766121",
+                  "linear": [
+                    "-43143280/85766121",
+                    "320000/194481"
+                  ]
+                }
+              },
+              "programme_service": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0
+                      ],
+                      "point": [
+                        "0",
+                        "0"
+                      ],
+                      "value": "40825259/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "81087070/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        2
+                      ],
+                      "point": [
+                        "0",
+                        "0"
+                      ],
+                      "value": "40825259/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "40825259/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "81087070/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "81087070/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "81087070/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "81087070/28588707"
+                    }
+                  ],
+                  "minimum": "81087070/28588707",
+                  "point": [
+                    "1/2",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "40825259/9529569",
+                  "linear": [
+                    "-82777414/28588707",
+                    "0"
+                  ]
+                }
+              }
+            },
+            "denominator_lower_bounds": {
+              "candidate": "3518110280/85766121",
+              "reference": "6382764400/85766121"
+            },
+            "domain": {
+              "A": [
+                [
+                  "1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1"
+                ],
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "b": [
+                "1/2",
+                "1/2",
+                "1"
+              ],
+              "lower": [
+                "0",
+                "0"
+              ],
+              "upper": [
+                "1",
+                "1"
+              ]
+            },
+            "old_candidate": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "221887070/4084101",
+              "pv": "2545913800/28588707"
+            },
+            "old_reference": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "70",
+              "pv": "2545913800/28588707"
+            },
+            "passes": false
+          },
+          "reachability_witness": [
+            "1/4",
+            "1/4"
+          ],
+          "reachable": true,
+          "statewise_duration_cap": "8",
+          "vertices": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "1/2"
+            ],
+            [
+              "1/2",
+              "0"
+            ],
+            [
+              "1/2",
+              "1/2"
+            ]
+          ]
+        },
+        {
+          "A": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ],
+            [
+              "-1",
+              "-1"
+            ]
+          ],
+          "active": {
+            "a": false,
+            "b": false,
+            "g": true
+          },
+          "b": [
+            "1/2",
+            "1/2",
+            "-1"
+          ],
+          "id": "001",
+          "reachability_witness": null,
+          "reachable": false,
+          "vertices": [
+            [
+              "1/2",
+              "1/2"
+            ]
+          ]
+        },
+        {
+          "A": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "-1"
+            ],
+            [
+              "1",
+              "1"
+            ]
+          ],
+          "active": {
+            "a": false,
+            "b": true,
+            "g": false
+          },
+          "alpha": "3/5",
+          "b": [
+            "1/2",
+            "-1/2",
+            "1"
+          ],
+          "id": "010",
+          "implemented_audit": {
+            "constraints": {
+              "duration": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0,
+                        3
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "746329760000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "729395360000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "746329760000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "746329760000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "36248512000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "36248512000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "36248512000/85766121"
+                    }
+                  ],
+                  "minimum": "729395360000/1801088541",
+                  "point": [
+                    "0",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "712460960000/1801088541",
+                  "linear": [
+                    "63646784000/1801088541",
+                    "25600000/1361367"
+                  ]
+                }
+              },
+              "present_value": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0,
+                        3
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "2829365800/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "2772917800/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "2829365800/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "2829365800/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "137445320/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "137445320/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "137445320/4084101"
+                    }
+                  ],
+                  "minimum": "2772917800/85766121",
+                  "point": [
+                    "0",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "2716469800/85766121",
+                  "linear": [
+                    "226867840/85766121",
+                    "256000/194481"
+                  ]
+                }
+              },
+              "programme_service": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "69413966/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "1091564318/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        3
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "69413966/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "69413966/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "69413966/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "69413966/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "1091564318/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "1091564318/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "1091564318/142943535"
+                    }
+                  ],
+                  "minimum": "69413966/9529569",
+                  "point": [
+                    "0",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "69413966/9529569",
+                  "linear": [
+                    "100709656/142943535",
+                    "0"
+                  ]
+                }
+              }
+            },
+            "denominator_lower_bounds": {
+              "candidate": "1250322200/28588707",
+              "reference": "6523884400/85766121"
+            },
+            "domain": {
+              "A": [
+                [
+                  "1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "-1"
+                ],
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "b": [
+                "1/2",
+                "-1/2",
+                "1"
+              ],
+              "lower": [
+                "0",
+                "0"
+              ],
+              "upper": [
+                "1",
+                "1"
+              ]
+            },
+            "old_candidate": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "221887070/4084101",
+              "pv": "2545913800/28588707"
+            },
+            "old_reference": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "70",
+              "pv": "2545913800/28588707"
+            },
+            "passes": true
+          },
+          "raw_audit": {
+            "constraints": {
+              "duration": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0,
+                        3
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "-746329760000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "-729395360000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "-746329760000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "-746329760000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-72497024000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-72497024000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-72497024000/85766121"
+                    }
+                  ],
+                  "minimum": "-72497024000/85766121",
+                  "point": [
+                    "1/2",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": false,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "-127293568000/1801088541",
+                      "-25600000/1361367"
+                    ],
+                    [
+                      "-25600000/1361367",
+                      "0"
+                    ]
+                  ],
+                  "constant": "-712460960000/1801088541",
+                  "linear": [
+                    "-70884224000/85766121",
+                    "-25600000/1361367"
+                  ]
+                }
+              },
+              "present_value": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0,
+                        3
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "2502637720/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "2446189720/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "2502637720/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "2502637720/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "114107600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "114107600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "114107600/4084101"
+                    }
+                  ],
+                  "minimum": "114107600/4084101",
+                  "point": [
+                    "1/2",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "2389741720/85766121",
+                  "linear": [
+                    "-99860240/85766121",
+                    "256000/194481"
+                  ]
+                }
+              },
+              "programme_service": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "31295690/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        3
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "31295690/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        5
+                      ],
+                      "point": [
+                        "0",
+                        "1/2"
+                      ],
+                      "value": "31295690/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "31295690/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "31295690/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    }
+                  ],
+                  "minimum": "233903108/142943535",
+                  "point": [
+                    "1/2",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "31295690/9529569",
+                  "linear": [
+                    "-471064484/142943535",
+                    "0"
+                  ]
+                }
+              }
+            },
+            "denominator_lower_bounds": {
+              "candidate": "1359231560/28588707",
+              "reference": "6523884400/85766121"
+            },
+            "domain": {
+              "A": [
+                [
+                  "1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "-1"
+                ],
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "b": [
+                "1/2",
+                "-1/2",
+                "1"
+              ],
+              "lower": [
+                "0",
+                "0"
+              ],
+              "upper": [
+                "1",
+                "1"
+              ]
+            },
+            "old_candidate": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "221887070/4084101",
+              "pv": "2545913800/28588707"
+            },
+            "old_reference": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "70",
+              "pv": "2545913800/28588707"
+            },
+            "passes": false
+          },
+          "reachability_witness": [
+            "1/6",
+            "2/3"
+          ],
+          "reachable": true,
+          "statewise_duration_cap": "10",
+          "vertices": [
+            [
+              "0",
+              "1/2"
+            ],
+            [
+              "0",
+              "1"
+            ],
+            [
+              "1/2",
+              "1/2"
+            ]
+          ]
+        },
+        {
+          "A": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "-1"
+            ],
+            [
+              "-1",
+              "-1"
+            ]
+          ],
+          "active": {
+            "a": false,
+            "b": true,
+            "g": true
+          },
+          "alpha": "3/5",
+          "b": [
+            "1/2",
+            "-1/2",
+            "-1"
+          ],
+          "id": "011",
+          "implemented_audit": {
+            "constraints": {
+              "duration": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0,
+                        3
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "831001760000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "831001760000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "41086912000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "831001760000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "40280512000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "40280512000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "40280512000/85766121"
+                    }
+                  ],
+                  "minimum": "831001760000/1801088541",
+                  "point": [
+                    "0",
+                    "1"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "797132960000/1801088541",
+                  "linear": [
+                    "63646784000/1801088541",
+                    "25600000/1361367"
+                  ]
+                }
+              },
+              "present_value": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0,
+                        3
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "3111605800/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "3111605800/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "153573320/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "3111605800/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "150885320/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "150885320/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "150885320/4084101"
+                    }
+                  ],
+                  "minimum": "3111605800/85766121",
+                  "point": [
+                    "0",
+                    "1"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "2998709800/85766121",
+                  "linear": [
+                    "226867840/85766121",
+                    "256000/194481"
+                  ]
+                }
+              },
+              "programme_service": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "69413966/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "1091564318/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        3
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "69413966/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "69413966/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "1091564318/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "69413966/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "1091564318/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "1091564318/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "1091564318/142943535"
+                    }
+                  ],
+                  "minimum": "69413966/9529569",
+                  "point": [
+                    "0",
+                    "1"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "69413966/9529569",
+                  "linear": [
+                    "100709656/142943535",
+                    "0"
+                  ]
+                }
+              }
+            },
+            "denominator_lower_bounds": {
+              "candidate": "1419666200/28588707",
+              "reference": "7370604400/85766121"
+            },
+            "domain": {
+              "A": [
+                [
+                  "1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "-1"
+                ],
+                [
+                  "-1",
+                  "-1"
+                ]
+              ],
+              "b": [
+                "1/2",
+                "-1/2",
+                "-1"
+              ],
+              "lower": [
+                "0",
+                "0"
+              ],
+              "upper": [
+                "1",
+                "1"
+              ]
+            },
+            "old_candidate": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "221887070/4084101",
+              "pv": "2545913800/28588707"
+            },
+            "old_reference": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "70",
+              "pv": "2545913800/28588707"
+            },
+            "passes": true
+          },
+          "raw_audit": {
+            "constraints": {
+              "duration": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0,
+                        3
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "-831001760000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "-831001760000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "-82173824000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "-831001760000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-80561024000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-80561024000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-80561024000/85766121"
+                    }
+                  ],
+                  "minimum": "-82173824000/85766121",
+                  "point": [
+                    "1/2",
+                    "1"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": false,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "-127293568000/1801088541",
+                      "-25600000/1361367"
+                    ],
+                    [
+                      "-25600000/1361367",
+                      "0"
+                    ]
+                  ],
+                  "constant": "-797132960000/1801088541",
+                  "linear": [
+                    "-78948224000/85766121",
+                    "-25600000/1361367"
+                  ]
+                }
+              },
+              "present_value": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0,
+                        3
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "2784877720/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "2784877720/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "130235600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "2784877720/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "127547600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "127547600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "127547600/4084101"
+                    }
+                  ],
+                  "minimum": "127547600/4084101",
+                  "point": [
+                    "1/2",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "2671981720/85766121",
+                  "linear": [
+                    "-99860240/85766121",
+                    "256000/194481"
+                  ]
+                }
+              },
+              "programme_service": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        0
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "31295690/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        3
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "31295690/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        0,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "31295690/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        6
+                      ],
+                      "point": [
+                        "0",
+                        "1"
+                      ],
+                      "value": "31295690/9529569"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    }
+                  ],
+                  "minimum": "233903108/142943535",
+                  "point": [
+                    "1/2",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "31295690/9529569",
+                  "linear": [
+                    "-471064484/142943535",
+                    "0"
+                  ]
+                }
+              }
+            },
+            "denominator_lower_bounds": {
+              "candidate": "1528575560/28588707",
+              "reference": "7370604400/85766121"
+            },
+            "domain": {
+              "A": [
+                [
+                  "1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "-1"
+                ],
+                [
+                  "-1",
+                  "-1"
+                ]
+              ],
+              "b": [
+                "1/2",
+                "-1/2",
+                "-1"
+              ],
+              "lower": [
+                "0",
+                "0"
+              ],
+              "upper": [
+                "1",
+                "1"
+              ]
+            },
+            "old_candidate": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "221887070/4084101",
+              "pv": "2545913800/28588707"
+            },
+            "old_reference": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "70",
+              "pv": "2545913800/28588707"
+            },
+            "passes": false
+          },
+          "reachability_witness": [
+            "1/3",
+            "5/6"
+          ],
+          "reachable": true,
+          "statewise_duration_cap": "10",
+          "vertices": [
+            [
+              "0",
+              "1"
+            ],
+            [
+              "1/2",
+              "1/2"
+            ],
+            [
+              "1/2",
+              "1"
+            ]
+          ]
+        },
+        {
+          "A": [
+            [
+              "-1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ],
+            [
+              "1",
+              "1"
+            ]
+          ],
+          "active": {
+            "a": true,
+            "b": false,
+            "g": false
+          },
+          "alpha": "3/5",
+          "b": [
+            "-1/2",
+            "1/2",
+            "1"
+          ],
+          "id": "100",
+          "implemented_audit": {
+            "constraints": {
+              "duration": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        1
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    }
+                  ],
+                  "minimum": "0",
+                  "point": [
+                    "1/2",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "0",
+                  "linear": [
+                    "0",
+                    "0"
+                  ]
+                }
+              },
+              "present_value": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1,
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "2779973600/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "2779973600/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "126978080/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "2779973600/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "129666080/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "129666080/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "129666080/4084101"
+                    }
+                  ],
+                  "minimum": "126978080/4084101",
+                  "point": [
+                    "1/2",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "2553105760/85766121",
+                  "linear": [
+                    "226867840/85766121",
+                    "256000/194481"
+                  ]
+                }
+              },
+              "programme_service": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "856032076/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "805677248/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "856032076/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "856032076/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "805677248/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "856032076/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "805677248/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "805677248/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "805677248/142943535"
+                    }
+                  ],
+                  "minimum": "805677248/142943535",
+                  "point": [
+                    "1/2",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "50354828/9529569",
+                  "linear": [
+                    "100709656/142943535",
+                    "0"
+                  ]
+                }
+              }
+            },
+            "denominator_lower_bounds": {
+              "candidate": "63489040/1361367",
+              "reference": "317445200/4084101"
+            },
+            "domain": {
+              "A": [
+                [
+                  "-1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1"
+                ],
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "b": [
+                "-1/2",
+                "1/2",
+                "1"
+              ],
+              "lower": [
+                "0",
+                "0"
+              ],
+              "upper": [
+                "1",
+                "1"
+              ]
+            },
+            "old_candidate": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "221887070/4084101",
+              "pv": "2545913800/28588707"
+            },
+            "old_reference": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "70",
+              "pv": "2545913800/28588707"
+            },
+            "passes": true
+          },
+          "raw_audit": {
+            "constraints": {
+              "duration": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1,
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-776107744000/600362847"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-776107744000/600362847"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "-70884224000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-776107744000/600362847"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-72497024000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-72497024000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-72497024000/85766121"
+                    }
+                  ],
+                  "minimum": "-776107744000/600362847",
+                  "point": [
+                    "1",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": false,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "-127293568000/1801088541",
+                      "-25600000/1361367"
+                    ],
+                    [
+                      "-25600000/1361367",
+                      "0"
+                    ]
+                  ],
+                  "constant": "-712460960000/1801088541",
+                  "linear": [
+                    "-70884224000/85766121",
+                    "-25600000/1361367"
+                  ]
+                }
+              },
+              "present_value": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1,
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "2289881480/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "2289881480/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "111419600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "2289881480/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "114107600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "114107600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "114107600/4084101"
+                    }
+                  ],
+                  "minimum": "2289881480/85766121",
+                  "point": [
+                    "1",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "2389741720/85766121",
+                  "linear": [
+                    "-99860240/85766121",
+                    "256000/194481"
+                  ]
+                }
+              },
+              "programme_service": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-1629134/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-1629134/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-1629134/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "0"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-1629134/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    }
+                  ],
+                  "minimum": "-1629134/142943535",
+                  "point": [
+                    "1",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": false,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "31295690/9529569",
+                  "linear": [
+                    "-471064484/142943535",
+                    "0"
+                  ]
+                }
+              }
+            },
+            "denominator_lower_bounds": {
+              "candidate": "68675200/1361367",
+              "reference": "317445200/4084101"
+            },
+            "domain": {
+              "A": [
+                [
+                  "-1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1"
+                ],
+                [
+                  "1",
+                  "1"
+                ]
+              ],
+              "b": [
+                "-1/2",
+                "1/2",
+                "1"
+              ],
+              "lower": [
+                "0",
+                "0"
+              ],
+              "upper": [
+                "1",
+                "1"
+              ]
+            },
+            "old_candidate": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "221887070/4084101",
+              "pv": "2545913800/28588707"
+            },
+            "old_reference": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "70",
+              "pv": "2545913800/28588707"
+            },
+            "passes": false
+          },
+          "reachability_witness": [
+            "2/3",
+            "1/6"
+          ],
+          "reachable": true,
+          "statewise_duration_cap": "10",
+          "vertices": [
+            [
+              "1/2",
+              "0"
+            ],
+            [
+              "1/2",
+              "1/2"
+            ],
+            [
+              "1",
+              "0"
+            ]
+          ]
+        },
+        {
+          "A": [
+            [
+              "-1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ],
+            [
+              "-1",
+              "-1"
+            ]
+          ],
+          "active": {
+            "a": true,
+            "b": false,
+            "g": true
+          },
+          "alpha": "3/5",
+          "b": [
+            "-1/2",
+            "1/2",
+            "-1"
+          ],
+          "id": "101",
+          "implemented_audit": {
+            "constraints": {
+              "duration": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        1
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "0"
+                    }
+                  ],
+                  "minimum": "0",
+                  "point": [
+                    "1/2",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "0",
+                  "linear": [
+                    "0",
+                    "0"
+                  ]
+                }
+              },
+              "present_value": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1,
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "3062213600/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "3118661600/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "3062213600/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "3062213600/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "143106080/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "143106080/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "143106080/4084101"
+                    }
+                  ],
+                  "minimum": "143106080/4084101",
+                  "point": [
+                    "1/2",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "2835345760/85766121",
+                  "linear": [
+                    "226867840/85766121",
+                    "256000/194481"
+                  ]
+                }
+              },
+              "programme_service": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "856032076/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "805677248/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "856032076/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "856032076/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "856032076/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "856032076/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "805677248/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "805677248/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "805677248/142943535"
+                    }
+                  ],
+                  "minimum": "805677248/142943535",
+                  "point": [
+                    "1/2",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "50354828/9529569",
+                  "linear": [
+                    "100709656/142943535",
+                    "0"
+                  ]
+                }
+              }
+            },
+            "denominator_lower_bounds": {
+              "candidate": "71553040/1361367",
+              "reference": "357765200/4084101"
+            },
+            "domain": {
+              "A": [
+                [
+                  "-1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1"
+                ],
+                [
+                  "-1",
+                  "-1"
+                ]
+              ],
+              "b": [
+                "-1/2",
+                "1/2",
+                "-1"
+              ],
+              "lower": [
+                "0",
+                "0"
+              ],
+              "upper": [
+                "1",
+                "1"
+              ]
+            },
+            "old_candidate": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "221887070/4084101",
+              "pv": "2545913800/28588707"
+            },
+            "old_reference": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "70",
+              "pv": "2545913800/28588707"
+            },
+            "passes": true
+          },
+          "raw_audit": {
+            "constraints": {
+              "duration": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1,
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-860779744000/600362847"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "-877714144000/600362847"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-860779744000/600362847"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-860779744000/600362847"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-80561024000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-80561024000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-80561024000/85766121"
+                    }
+                  ],
+                  "minimum": "-877714144000/600362847",
+                  "point": [
+                    "1",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": false,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "-127293568000/1801088541",
+                      "-25600000/1361367"
+                    ],
+                    [
+                      "-25600000/1361367",
+                      "0"
+                    ]
+                  ],
+                  "constant": "-797132960000/1801088541",
+                  "linear": [
+                    "-78948224000/85766121",
+                    "-25600000/1361367"
+                  ]
+                }
+              },
+              "present_value": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1,
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "2572121480/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "2628569480/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "2572121480/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "2572121480/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "127547600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "127547600/4084101"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "127547600/4084101"
+                    }
+                  ],
+                  "minimum": "2572121480/85766121",
+                  "point": [
+                    "1",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "2671981720/85766121",
+                  "linear": [
+                    "-99860240/85766121",
+                    "256000/194481"
+                  ]
+                }
+              },
+              "programme_service": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-1629134/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        2
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-1629134/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "-1629134/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-1629134/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        2,
+                        6
+                      ],
+                      "point": [
+                        "1",
+                        "0"
+                      ],
+                      "value": "-1629134/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "233903108/142943535"
+                    }
+                  ],
+                  "minimum": "-1629134/142943535",
+                  "point": [
+                    "1",
+                    "0"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": false,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "31295690/9529569",
+                  "linear": [
+                    "-471064484/142943535",
+                    "0"
+                  ]
+                }
+              }
+            },
+            "denominator_lower_bounds": {
+              "candidate": "76739200/1361367",
+              "reference": "357765200/4084101"
+            },
+            "domain": {
+              "A": [
+                [
+                  "-1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1"
+                ],
+                [
+                  "-1",
+                  "-1"
+                ]
+              ],
+              "b": [
+                "-1/2",
+                "1/2",
+                "-1"
+              ],
+              "lower": [
+                "0",
+                "0"
+              ],
+              "upper": [
+                "1",
+                "1"
+              ]
+            },
+            "old_candidate": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "221887070/4084101",
+              "pv": "2545913800/28588707"
+            },
+            "old_reference": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "70",
+              "pv": "2545913800/28588707"
+            },
+            "passes": false
+          },
+          "reachability_witness": [
+            "5/6",
+            "1/3"
+          ],
+          "reachable": true,
+          "statewise_duration_cap": "10",
+          "vertices": [
+            [
+              "1/2",
+              "1/2"
+            ],
+            [
+              "1",
+              "0"
+            ],
+            [
+              "1",
+              "1/2"
+            ]
+          ]
+        },
+        {
+          "A": [
+            [
+              "-1",
+              "0"
+            ],
+            [
+              "0",
+              "-1"
+            ],
+            [
+              "1",
+              "1"
+            ]
+          ],
+          "active": {
+            "a": true,
+            "b": true,
+            "g": false
+          },
+          "b": [
+            "-1/2",
+            "-1/2",
+            "1"
+          ],
+          "id": "110",
+          "reachability_witness": null,
+          "reachable": false,
+          "vertices": [
+            [
+              "1/2",
+              "1/2"
+            ]
+          ]
+        },
+        {
+          "A": [
+            [
+              "-1",
+              "0"
+            ],
+            [
+              "0",
+              "-1"
+            ],
+            [
+              "-1",
+              "-1"
+            ]
+          ],
+          "active": {
+            "a": true,
+            "b": true,
+            "g": true
+          },
+          "alpha": "7/10",
+          "b": [
+            "-1/2",
+            "-1/2",
+            "-1"
+          ],
+          "id": "111",
+          "implemented_audit": {
+            "constraints": {
+              "duration": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1,
+                        3
+                      ],
+                      "point": [
+                        "1",
+                        "1"
+                      ],
+                      "value": "894648544000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "877714144000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "41086912000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "40280512000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "40280512000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "40280512000/85766121"
+                    }
+                  ],
+                  "minimum": "40280512000/85766121",
+                  "point": [
+                    "1/2",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "797132960000/1801088541",
+                  "linear": [
+                    "63646784000/1801088541",
+                    "25600000/1361367"
+                  ]
+                }
+              },
+              "present_value": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1,
+                        3
+                      ],
+                      "point": [
+                        "1",
+                        "1"
+                      ],
+                      "value": "848232080/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "834120080/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "39041600/1361367"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "38369600/1361367"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "38369600/1361367"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "38369600/1361367"
+                    }
+                  ],
+                  "minimum": "38369600/1361367",
+                  "point": [
+                    "1/2",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "763291120/28588707",
+                  "linear": [
+                    "56716960/28588707",
+                    "64000/64827"
+                  ]
+                }
+              },
+              "programme_service": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1
+                      ],
+                      "point": [
+                        "1",
+                        "1"
+                      ],
+                      "value": "655911127/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "634145006/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        3
+                      ],
+                      "point": [
+                        "1",
+                        "1"
+                      ],
+                      "value": "655911127/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "655911127/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "634145006/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "634145006/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "634145006/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "634145006/142943535"
+                    }
+                  ],
+                  "minimum": "634145006/142943535",
+                  "point": [
+                    "1/2",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "40825259/9529569",
+                  "linear": [
+                    "43532242/142943535",
+                    "0"
+                  ]
+                }
+              }
+            },
+            "denominator_lower_bounds": {
+              "candidate": "34665200/583443",
+              "reference": "357765200/4084101"
+            },
+            "domain": {
+              "A": [
+                [
+                  "-1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "-1"
+                ],
+                [
+                  "-1",
+                  "-1"
+                ]
+              ],
+              "b": [
+                "-1/2",
+                "-1/2",
+                "-1"
+              ],
+              "lower": [
+                "0",
+                "0"
+              ],
+              "upper": [
+                "1",
+                "1"
+              ]
+            },
+            "old_candidate": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "221887070/4084101",
+              "pv": "2545913800/28588707"
+            },
+            "old_reference": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "70",
+              "pv": "2545913800/28588707"
+            },
+            "passes": true
+          },
+          "raw_audit": {
+            "constraints": {
+              "duration": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1,
+                        3
+                      ],
+                      "point": [
+                        "1",
+                        "1"
+                      ],
+                      "value": "-1789297088000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "-1755428288000/1801088541"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "-41086912000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-40280512000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-40280512000/85766121"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "-40280512000/85766121"
+                    }
+                  ],
+                  "minimum": "-1789297088000/1801088541",
+                  "point": [
+                    "1",
+                    "1"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": false,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "-127293568000/1801088541",
+                      "-25600000/1361367"
+                    ],
+                    [
+                      "-25600000/1361367",
+                      "0"
+                    ]
+                  ],
+                  "constant": "0",
+                  "linear": [
+                    "-1594265920000/1801088541",
+                    "0"
+                  ]
+                }
+              },
+              "present_value": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1,
+                        3
+                      ],
+                      "point": [
+                        "1",
+                        "1"
+                      ],
+                      "value": "684868040/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "670756040/28588707"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "33855440/1361367"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "33183440/1361367"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "33183440/1361367"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "33183440/1361367"
+                    }
+                  ],
+                  "minimum": "670756040/28588707",
+                  "point": [
+                    "1",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": true,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "708836440/28588707",
+                  "linear": [
+                    "-52192400/28588707",
+                    "64000/64827"
+                  ]
+                }
+              },
+              "programme_service": {
+                "calculation_sha256": "8af7841608dda18f2bf6ca3c8537c1dd885d6d4f32d134df5244903c006c7f95",
+                "calculation_version": "3.0.0",
+                "certificate": {
+                  "candidates": [
+                    {
+                      "face_basis": [
+                        1
+                      ],
+                      "point": [
+                        "1",
+                        "1"
+                      ],
+                      "value": "-201750083/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "62370866/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        3
+                      ],
+                      "point": [
+                        "1",
+                        "1"
+                      ],
+                      "value": "-201750083/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        1,
+                        5
+                      ],
+                      "point": [
+                        "1",
+                        "1/2"
+                      ],
+                      "value": "-201750083/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        3,
+                        4
+                      ],
+                      "point": [
+                        "1/2",
+                        "1"
+                      ],
+                      "value": "62370866/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        5
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "62370866/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        4,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "62370866/142943535"
+                    },
+                    {
+                      "face_basis": [
+                        5,
+                        6
+                      ],
+                      "point": [
+                        "1/2",
+                        "1/2"
+                      ],
+                      "value": "62370866/142943535"
+                    }
+                  ],
+                  "minimum": "-201750083/142943535",
+                  "point": [
+                    "1",
+                    "1/2"
+                  ]
+                },
+                "input_sha256": "8803e9231f057b2f8a57921ba2c4856db1dd4d04cc49d20e7a01ad3de5c8d30a",
+                "passes": false,
+                "polynomial": {
+                  "Q": [
+                    [
+                      "0",
+                      "0"
+                    ],
+                    [
+                      "0",
+                      "0"
+                    ]
+                  ],
+                  "constant": "21766121/9529569",
+                  "linear": [
+                    "-528241898/142943535",
+                    "0"
+                  ]
+                }
+              }
+            },
+            "denominator_lower_bounds": {
+              "candidate": "36887840/583443",
+              "reference": "357765200/4084101"
+            },
+            "domain": {
+              "A": [
+                [
+                  "-1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "-1"
+                ],
+                [
+                  "-1",
+                  "-1"
+                ]
+              ],
+              "b": [
+                "-1/2",
+                "-1/2",
+                "-1"
+              ],
+              "lower": [
+                "0",
+                "0"
+              ],
+              "upper": [
+                "1",
+                "1"
+              ]
+            },
+            "old_candidate": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "221887070/4084101",
+              "pv": "2545913800/28588707"
+            },
+            "old_reference": {
+              "duration": "28729569/12729569",
+              "moment": "1915304600/9529569",
+              "programme_service": "70",
+              "pv": "2545913800/28588707"
+            },
+            "passes": false
+          },
+          "reachability_witness": [
+            "3/4",
+            "3/4"
+          ],
+          "reachable": true,
+          "statewise_duration_cap": "12",
+          "vertices": [
+            [
+              "1/2",
+              "1/2"
+            ],
+            [
+              "1/2",
+              "1"
+            ],
+            [
+              "1",
+              "1/2"
+            ],
+            [
+              "1",
+              "1"
+            ]
+          ]
+        }
+      ],
+      "observed_policy": {
+        "a": "2",
+        "base": "8"
+      },
+      "old_candidate": {
+        "duration": "28729569/12729569",
+        "moment": "1915304600/9529569",
+        "programme_service": "221887070/4084101",
+        "pv": "2545913800/28588707"
+      },
+      "old_reference": {
+        "duration": "28729569/12729569",
+        "moment": "1915304600/9529569",
+        "programme_service": "70",
+        "pv": "2545913800/28588707"
+      }
+    },
+    "nonproportional_oblique_family": {
+      "binding_switch_parameter": "75/7",
+      "branches": [
+        {
+          "A": [
+            [
+              "1",
+              "1"
+            ]
+          ],
+          "active": {
+            "g": false
+          },
+          "b": [
+            "1"
+          ],
+          "binding_constraint": "programme",
+          "id": "0",
+          "interval": [
+            "0",
+            "25",
+            [
+              {
+                "kind": "upper",
+                "row": "NPV",
+                "value": "45"
+              },
+              {
+                "kind": "upper",
+                "row": "programme",
+                "value": "25"
+              },
+              {
+                "kind": "upper",
+                "row": "duration",
+                "value": "50"
+              }
+            ]
+          ],
+          "reachability_witness": [
+            "1/3",
+            "1/3"
+          ],
+          "reachable": true,
+          "reference": {
+            "duration": "3",
+            "moment": "180",
+            "programme_service": "20",
+            "pv": "60"
+          },
+          "rows": [
+            [
+              "NPV",
+              "1",
+              "45"
+            ],
+            [
+              "programme",
+              "1",
+              "25"
+            ],
+            [
+              "duration",
+              "1",
+              "50"
+            ]
+          ],
+          "vertices": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ],
+            [
+              "1",
+              "0"
+            ]
+          ]
+        },
+        {
+          "A": [
+            [
+              "-1",
+              "-1"
+            ]
+          ],
+          "active": {
+            "g": true
+          },
+          "b": [
+            "-1"
+          ],
+          "binding_constraint": "duration",
+          "id": "1",
+          "interval": [
+            "0",
+            "110/7",
+            [
+              {
+                "kind": "upper",
+                "row": "NPV",
+                "value": "70"
+              },
+              {
+                "kind": "upper",
+                "row": "programme",
+                "value": "25"
+              },
+              {
+                "kind": "upper",
+                "row": "duration",
+                "value": "110/7"
+              }
+            ]
+          ],
+          "reachability_witness": [
+            "2/3",
+            "2/3"
+          ],
+          "reachable": true,
+          "reference": {
+            "duration": "15/4",
+            "moment": "300",
+            "programme_service": "20",
+            "pv": "80"
+          },
+          "rows": [
+            [
+              "NPV",
+              "1",
+              "70"
+            ],
+            [
+              "programme",
+              "1",
+              "25"
+            ],
+            [
+              "duration",
+              "7/4",
+              "55/2"
+            ]
+          ],
+          "vertices": [
+            [
+              "0",
+              "1"
+            ],
+            [
+              "1",
+              "0"
+            ],
+            [
+              "1",
+              "1"
+            ]
+          ]
+        }
+      ],
+      "duration_cap_family": {
+        "denominator_affine_ascending": [
+          "60",
+          "4"
+        ],
+        "numerator_affine_ascending": [
+          "3000",
+          "-40"
+        ],
+        "valid_parameter_range": {
+          "lower_inclusive": "0",
+          "upper_exclusive": "75"
+        },
+        "variable": "lambda"
+      },
+      "implemented_robust_cap": "110/7",
+      "old_candidate": {
+        "duration": "1",
+        "moment": "100",
+        "programme_service": "100",
+        "pv": "100"
+      },
+      "old_reference": {
+        "duration": "2",
+        "moment": "160",
+        "programme_service": "80",
+        "pv": "80"
+      }
+    },
+    "public_benchmark": {
+      "creditor_1": {
+        "duration": "13891830321489621554889/1622119871801221540709",
+        "moment": "30870734047754714566420/22707439527650560767",
+        "programme_service": "9",
+        "pv": "32442397436024430814180/204366955748855046903"
+      },
+      "creditor_2": {
+        "duration": "313929803209647183/45842816012085523",
+        "moment": "2092865354730981220/2451942503795547",
+        "programme_service": "23",
+        "pv": "916856320241710460/7355827511386641"
+      },
+      "efforts_1": [
+        "271561080891299584963/1893680952692521125672",
+        "7/8",
+        "36195371669936825019405935409200000/10446258906774531291407787263084509"
+      ],
+      "efforts_2": [
+        "544314250273021/1662431713982424",
+        "49/72",
+        "307142815304220242674955200/175623009413086129503456683"
+      ],
+      "old": {
+        "duration": "32837500542221/6439880978201",
+        "moment": "5254000086755360/5559960326067",
+        "programme_service": "72",
+        "pv": "1030380956512160/5559960326067"
+      },
+      "rounding_assumption": "The source prints creditor-1 principal instalments rounded to 17 and total principal 200. We explicitly interpret the twelve equal principal instalments as 200/12. Copying the displayed 17 literally gives 204 of principal and 249 total debt service, inconsistent with printed totals 200 and 245."
+    },
+    "rate_regressions": [
+      {
+        "interval": [
+          "0",
+          "8",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "30"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "8"
+            }
+          ]
+        ],
+        "rate": "-1/2"
+      },
+      {
+        "interval": [
+          "0",
+          "8",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "15"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "8"
+            }
+          ]
+        ],
+        "rate": "0"
+      },
+      {
+        "interval": [
+          "0",
+          "8",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "38510/2601"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "8"
+            }
+          ]
+        ],
+        "rate": "1/50"
+      },
+      {
+        "interval": [
+          "0",
+          "8",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "6410/441"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "8"
+            }
+          ]
+        ],
+        "rate": "1/20"
+      },
+      {
+        "interval": [
+          "0",
+          "8",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "1710/121"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "8"
+            }
+          ]
+        ],
+        "rate": "1/10"
+      },
+      {
+        "interval": [
+          "0",
+          "8",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "485/36"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "8"
+            }
+          ]
+        ],
+        "rate": "1/5"
+      },
+      {
+        "interval": [
+          "0",
+          "8",
+          [
+            {
+              "kind": "upper",
+              "row": "NPV",
+              "value": "45/4"
+            },
+            {
+              "kind": "upper",
+              "row": "programme",
+              "value": "10"
+            },
+            {
+              "kind": "upper",
+              "row": "duration",
+              "value": "8"
+            }
+          ]
+        ],
+        "rate": "1"
+      }
+    ],
+    "scenario_domain_sensitivity": [
+      {
+        "domain": [
+          "0",
+          "1"
+        ],
+        "numerator_minimum": "-160000/194481",
+        "required_tolerance_bracket": [
+          "1035649756256079487/18446744073709551616",
+          "2071299512512158975/36893488147419103232"
+        ]
+      },
+      {
+        "domain": [
+          "0",
+          "1/4"
+        ],
+        "numerator_minimum": "-40000/64827",
+        "required_tolerance_bracket": [
+          "2017358816267297453/36893488147419103232",
+          "1008679408133648727/18446744073709551616"
+        ]
+      },
+      {
+        "domain": [
+          "1/4",
+          "3/4"
+        ],
+        "numerator_minimum": "-160000/194481",
+        "required_tolerance_bracket": [
+          "1035649756256079487/18446744073709551616",
+          "2071299512512158975/36893488147419103232"
+        ]
+      },
+      {
+        "domain": [
+          "3/4",
+          "1"
+        ],
+        "numerator_minimum": "-40000/64827",
+        "required_tolerance_bracket": [
+          "976343974106336117/36893488147419103232",
+          "488171987053168059/18446744073709551616"
+        ]
+      }
+    ],
+    "scope": "Declared synthetic financial screens; no country verdict",
+    "weight_sensitivity": [
+      {
+        "maximum_payment_bracket": [
+          "3707646646323777684331295/302231454903657293676544",
+          "926911661580944421082825/75557863725914323419136"
+        ],
+        "nonnegative_polynomial_ascending": [
+          "1796120/151263",
+          "-6800/9261",
+          "-2/105"
+        ],
+        "weights": [
+          "1",
+          "1",
+          "0"
+        ]
+      },
+      {
+        "maximum_payment_bracket": [
+          "3693602242946880377352815/302231454903657293676544",
+          "923400560736720094338205/75557863725914323419136"
+        ],
+        "nonnegative_polynomial_ascending": [
+          "2611258520/217969983",
+          "-9975200/13345101",
+          "-2/105"
+        ],
+        "weights": [
+          "1",
+          "1",
+          "1/100"
+        ]
+      },
+      {
+        "maximum_payment_bracket": [
+          "1820088096494238981072295/151115727451828646838272",
+          "3640176192988477962144595/302231454903657293676544"
+        ],
+        "nonnegative_polynomial_ascending": [
+          "2703456920/217969983",
+          "-10680800/13345101",
+          "-2/105"
+        ],
+        "weights": [
+          "1",
+          "1",
+          "1/20"
+        ]
+      },
+      {
+        "maximum_payment_bracket": [
+          "3579041034937099113670465/302231454903657293676544",
+          "1789520517468549556835235/151115727451828646838272"
+        ],
+        "nonnegative_polynomial_ascending": [
+          "2818704920/217969983",
+          "-11562800/13345101",
+          "-2/105"
+        ],
+        "weights": [
+          "1",
+          "1",
+          "1/10"
+        ]
+      },
+      {
+        "maximum_payment_bracket": [
+          "405330492588478978002745/37778931862957161709568",
+          "3242643940707831824021965/302231454903657293676544"
+        ],
+        "nonnegative_polynomial_ascending": [
+          "3740688920/217969983",
+          "-18618800/13345101",
+          "-2/105"
+        ],
+        "weights": [
+          "1",
+          "1",
+          "1/2"
+        ]
+      },
+      {
+        "maximum_payment_bracket": [
+          "1510109579480186915246565/151115727451828646838272",
+          "3020219158960373830493135/302231454903657293676544"
+        ],
+        "nonnegative_polynomial_ascending": [
+          "4893168920/217969983",
+          "-27438800/13345101",
+          "-2/105"
+        ],
+        "weights": [
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "maximum_payment_bracket": [
+          "2807620204331122842886055/302231454903657293676544",
+          "701905051082780710721515/75557863725914323419136"
+        ],
+        "nonnegative_polynomial_ascending": [
+          "7198128920/217969983",
+          "-45078800/13345101",
+          "-2/105"
+        ],
+        "weights": [
+          "1",
+          "1",
+          "2"
+        ]
+      },
+      {
+        "maximum_payment_bracket": [
+          "2519155454942665246479505/302231454903657293676544",
+          "1259577727471332623239755/151115727451828646838272"
+        ],
+        "nonnegative_polynomial_ascending": [
+          "25637808920/217969983",
+          "-186198800/13345101",
+          "-2/105"
+        ],
+        "weights": [
+          "1",
+          "1",
+          "10"
+        ]
+      }
+    ]
+  }
+}

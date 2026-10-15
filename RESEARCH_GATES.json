@@ -1,0 +1,434 @@
+{
+  "schemaVersion": "1.0",
+  "contributionMap": [
+    {
+      "claim": "The duration-effort difference is the negative log derivative of relative normalised recovery, multiplied by 1+r.",
+      "unit": "statement",
+      "paperLocation": "Theorem 4.1; sec:rates",
+      "searches": [
+        {
+          "date": "2026-10-13",
+          "query": "sovereign debt comparability treatment duration state contingent payout caps exact robust optimization",
+          "corpus": "Live web, official institutional sources, author full text, arXiv and publisher records"
+        }
+      ],
+      "closestPriorWork": "Discounted weighted-average calculus; Kozack (2005) motivates discount sensitivity, not the proof. Source IDs: S01, S13",
+      "verdict": "known-cited",
+      "qualification": "Positioning category is not a proof of originality; exact-example priority remains unresolved."
+    },
+    {
+      "claim": "Fixed old claims and affine new flows give two affine tests and one quadratic duration test on each regime.",
+      "unit": "method",
+      "paperLocation": "thm:finite; sec:finite",
+      "searches": [
+        {
+          "date": "2026-10-13",
+          "query": "quadratic programming polytope stationary points faces exact global minimum enumeration",
+          "corpus": "Live web, official institutional sources, author full text, arXiv and publisher records"
+        }
+      ],
+      "closestPriorWork": "Standard positive-denominator clearing; specialised to the declared three comparisons. Source IDs: S01, S10",
+      "verdict": "partially-known-cited",
+      "qualification": "Positioning category is not a proof of originality; exact-example priority remains unresolved."
+    },
+    {
+      "claim": "Face-stationary enumeration suffices to minimise a quadratic on a bounded rational polytope, including singular stationary systems.",
+      "unit": "method",
+      "paperLocation": "lem:quadratic",
+      "searches": [
+        {
+          "date": "2026-10-13",
+          "query": "quadratic programming polytope stationary points faces exact global minimum enumeration",
+          "corpus": "Live web, official institutional sources, author full text, arXiv and publisher records"
+        }
+      ],
+      "closestPriorWork": "Classical facewise stationarity; a direct self-contained proof is supplied, no new general optimiser claimed. Source IDs: S10, S14",
+      "verdict": "known-cited",
+      "qualification": "Positioning category is not a proof of originality; exact-example priority remains unresolved."
+    },
+    {
+      "claim": "A constructed stream can pass duration strictly at both endpoints and fail on an interior interval despite lower payments at every date.",
+      "unit": "statement",
+      "paperLocation": "sec:interior",
+      "searches": [
+        {
+          "date": "2026-10-15",
+          "query": "componentwise smaller cash flows duration comparison counterexample strict endpoints",
+          "corpus": "Live web, official institutional sources, author full text, arXiv and publisher records"
+        }
+      ],
+      "closestPriorWork": "The mechanism is weighted-average timing; priority of this exact example is unresolved in the bounded search. Source IDs: S01, S13",
+      "verdict": "partially-known-cited",
+      "qualification": "Positioning category is not a proof of originality; exact-example priority remains unresolved."
+    },
+    {
+      "claim": "Duration falls exactly when the removed stream has a later discounted mean date than the original; the covariance and downward-closure formulas follow.",
+      "unit": "statement",
+      "paperLocation": "prop:removal; prop:downward",
+      "searches": [
+        {
+          "date": "2026-10-13",
+          "query": "sovereign debt comparability treatment duration state contingent payout caps exact robust optimization",
+          "corpus": "Live web, official institutional sources, author full text, arXiv and publisher records"
+        }
+      ],
+      "closestPriorWork": "Elementary weighted-average algebra; application-specific consequence for a duration veto. Source IDs: S01, S07",
+      "verdict": "partially-known-cited",
+      "qualification": "Positioning category is not a proof of originality; exact-example priority remains unresolved."
+    },
+    {
+      "claim": "A nonnegative scalar payment has a feasible interval that can include a strictly positive floor.",
+      "unit": "statement",
+      "paperLocation": "thm:cap",
+      "searches": [
+        {
+          "date": "2026-10-13",
+          "query": "adjustable robust optimization information nonanticipativity Ben-Tal 2004",
+          "corpus": "Live web, official institutional sources, author full text, arXiv and publisher records"
+        }
+      ],
+      "closestPriorWork": "Intersection of affine half-lines, with timing-specific financial coefficients. Source IDs: S03, S08",
+      "verdict": "known-cited",
+      "qualification": "Positioning category is not a proof of originality; exact-example priority remains unresolved."
+    },
+    {
+      "claim": "A finite payment selected from observed information is feasible exactly when every nonempty observation class has finite supremum floor no greater than its infimum cap.",
+      "unit": "statement",
+      "paperLocation": "thm:information",
+      "searches": [
+        {
+          "date": "2026-10-13",
+          "query": "adjustable robust optimization information nonanticipativity Ben-Tal 2004",
+          "corpus": "Live web, official institutional sources, author full text, arXiv and publisher records"
+        }
+      ],
+      "closestPriorWork": "Scalar specialisation of adjustable robust optimisation and nonanticipation. Source IDs: S08, S09, S10",
+      "verdict": "known-cited",
+      "qualification": "Positioning category is not a proof of originality; exact-example priority remains unresolved."
+    },
+    {
+      "claim": "In the specified early-upside example, separate zero-tolerance screens cap p at 8; value alone permits 6410/441; the stated weighted rule permits about 11.842053.",
+      "unit": "statement",
+      "paperLocation": "sec:examplecap; sec:sensitivity",
+      "searches": [
+        {
+          "date": "2026-10-13",
+          "query": "sovereign debt comparability treatment duration state contingent payout caps exact robust optimization",
+          "corpus": "Live web, official institutional sources, author full text, arXiv and publisher records"
+        }
+      ],
+      "closestPriorWork": "Contract-specific calculations using established metrics; caps/floors are not new instruments. Source IDs: S01, S03",
+      "verdict": "partially-known-cited",
+      "qualification": "Positioning category is not a proof of originality; exact-example priority remains unresolved."
+    },
+    {
+      "claim": "The constructed two-variable four-date contract has six reachable regimes and sharp observable policy p(u)=8+2 1[u>=1/2].",
+      "unit": "statement",
+      "paperLocation": "sec:multi",
+      "searches": [
+        {
+          "date": "2026-10-13",
+          "query": "adjustable robust optimization information nonanticipativity Ben-Tal 2004",
+          "corpus": "Live web, official institutional sources, author full text, arXiv and publisher records"
+        }
+      ],
+      "closestPriorWork": "Application of branch decomposition and nonanticipative bounds; engineered proportionality limits generality. Source IDs: S08, S09, S10",
+      "verdict": "partially-known-cited",
+      "qualification": "Positioning category is not a proof of originality; exact-example priority remains unresolved."
+    },
+    {
+      "claim": "Finite algebraic contracts and acceptance rules admit real quantifier formulations, with a more limited scenario-tree reduction under a fixed comparator.",
+      "unit": "method",
+      "paperLocation": "sec:general",
+      "searches": [
+        {
+          "date": "2026-10-13",
+          "query": "quadratic programming polytope stationary points faces exact global minimum enumeration",
+          "corpus": "Live web, official institutional sources, author full text, arXiv and publisher records"
+        }
+      ],
+      "closestPriorWork": "Established real quantifier elimination and robust optimisation, not implemented as a generic compiler. Source IDs: S08, S14",
+      "verdict": "known-cited",
+      "qualification": "Positioning category is not a proof of originality; exact-example priority remains unresolved."
+    },
+    {
+      "claim": "The separate-veto rule is distinct from Paris Club flexibility; exact verification does not establish efficiency, affordability, welfare or market-value equality.",
+      "unit": "statement",
+      "paperLocation": "sec:literature; sec:general; sec:benchmark",
+      "searches": [
+        {
+          "date": "2026-10-13",
+          "query": "sovereign debt comparability treatment duration state contingent payout caps exact robust optimization",
+          "corpus": "Live web, official institutional sources, author full text, arXiv and publisher records"
+        }
+      ],
+      "closestPriorWork": "Paris Club methodology, IMF design discussions and Powell's efficiency critique. Source IDs: S01, S02, S03, S04, S05, S06, S07, S11, S12",
+      "verdict": "known-cited",
+      "qualification": "Positioning category is not a proof of originality; exact-example priority remains unresolved."
+    },
+    {
+      "claim": "In the declared unmatched-old-profile family, an oblique trigger lowers the implementable early-payment cap from 25 to 110/7 at uplift 20, with duration replacing programme service as the binding constraint exactly at uplift 75/7.",
+      "unit": "statement",
+      "paperLocation": "sec:obliquefamily",
+      "searches": [
+        {
+          "date": "2026-10-15",
+          "query": "state contingent sovereign debt oblique trigger implementable cap nonanticipativity",
+          "corpus": "Live web, official institutional sources, author full text, arXiv and publisher records; Semantic Scholar attempted but rate-limited"
+        }
+      ],
+      "closestPriorWork": "Scalar nonanticipative robust optimisation and established SCDI cap design; priority of this exact financial family is unresolved. Source IDs: S03, S08, S09, S10",
+      "verdict": "partially-known-cited",
+      "qualification": "The family is a constructed exact benchmark, not an authenticated contract, generic synthesis algorithm or policy recommendation."
+    }
+  ],
+  "sourcesReadInFull": [
+    {
+      "citation": "S01 [Paris Club, Methodology](https://clubdeparis.org/en/sites/clubdeparis/accueil/club-de-paris/methodologie.html), live 13 October 2026",
+      "readWhat": "Sections 2–3; Box 1 formulas; Example I, schedules and conclusion. Selected relevant sections only, not necessarily the entire work.",
+      "usedFor": "Three indicators, old-PV normalisation, flexibility; reconstruction benchmark",
+      "date": "2026-10-13",
+      "evidenceLocator": "[Paris Club, Methodology](https://clubdeparis.org/en/sites/clubdeparis/accueil/club-de-paris/methodologie.html), live 13 October 2026; Sections 2–3; Box 1 formulas; Example I, schedules and conclusion"
+    },
+    {
+      "citation": "S02 [GSDR compendium, 15 April 2026](https://www.imf.org/-/media/files/about/faq/gsdr/041526-gsdr-compendium-of-common-understanding-on-technical-issues.pdf)",
+      "readWhat": "Printed pp. 11–12, SCDI discussion and April 2025 understanding. Selected relevant sections only, not necessarily the entire work.",
+      "usedFor": "Triggers, caps, two-sided adjustment and ex ante/ex post distinction",
+      "date": "2026-10-13",
+      "evidenceLocator": "[GSDR compendium, 15 April 2026](https://www.imf.org/-/media/files/about/faq/gsdr/041526-gsdr-compendium-of-common-understanding-on-technical-issues.pdf); Printed pp. 11–12, SCDI discussion and April 2025 understanding"
+    },
+    {
+      "citation": "S03 [Cohen et al., SDN 20/06, November 2020](https://www.imf.org/-/media/files/publications/sdn/2020/english/sdnea2020006.pdf)",
+      "readWhat": "PDF title/author pages; pp. 5–7; p. 11 design bullets and pp. 13–14 discussion. Selected relevant sections only, not necessarily the entire work.",
+      "usedFor": "Caps/floors and trigger concerns precede this manuscript",
+      "date": "2026-10-13",
+      "evidenceLocator": "[Cohen et al., SDN 20/06, November 2020](https://www.imf.org/-/media/files/publications/sdn/2020/english/sdnea2020006.pdf); PDF title/author pages; pp. 5–7; p. 11 design bullets and pp. 13–14 discussion"
+    },
+    {
+      "citation": "S04 [IMF, State-contingent debt instruments for sovereigns, 2017](https://www.imf.org/-/media/files/publications/pp/pp032317state-contingent-debt-instruments-for-sovereigns.pdf)",
+      "readWhat": "PDF executive summary, printed pp. 1–2; accompanying Board summary. Selected relevant sections only, not necessarily the entire work.",
+      "usedFor": "Linkers, floaters, extendibles; liquidity, data, incentive and design context",
+      "date": "2026-10-13",
+      "evidenceLocator": "[IMF, State-contingent debt instruments for sovereigns, 2017](https://www.imf.org/-/media/files/publications/pp/pp032317state-contingent-debt-instruments-for-sovereigns.pdf); PDF executive summary, printed pp. 1–2; accompanying Board summary"
+    },
+    {
+      "citation": "S05 [IMF, sovereign-debt architecture stocktaking, 2025](https://www.imf.org/-/media/files/publications/pp/2025/english/ppea2025034.pdf)",
+      "readWhat": "Front matter; Annex III pp. 56–60. Selected relevant sections only, not necessarily the entire work.",
+      "usedFor": "Historical examples motivate joint triggers and information requirements",
+      "date": "2026-10-13",
+      "evidenceLocator": "[IMF, sovereign-debt architecture stocktaking, 2025](https://www.imf.org/-/media/files/publications/pp/2025/english/ppea2025034.pdf); Front matter; Annex III pp. 56–60"
+    },
+    {
+      "citation": "S06 [World Bank statement, Zambia, 26 March 2024](https://www.worldbank.org/en/news/statement/2024/03/26/world-bank-group-statement-on-debt-restructuring-agreement-for-afe-zambia)",
+      "readWhat": "Opening statement. Selected relevant sections only, not necessarily the entire work.",
+      "usedFor": "Historical OCC confirmation of comparability",
+      "date": "2026-10-13",
+      "evidenceLocator": "[World Bank statement, Zambia, 26 March 2024](https://www.worldbank.org/en/news/statement/2024/03/26/world-bank-group-statement-on-debt-restructuring-agreement-for-afe-zambia); Opening statement"
+    },
+    {
+      "citation": "S07 [Powell, Working Paper 750, June 2026](https://www.cgdev.org/sites/default/files/comparability-treatment-where-do-we-stand.pdf)",
+      "readWhat": "Abstract; sections 1–3, particularly heterogeneous preferences and equal-PV discussion. Selected relevant sections only, not necessarily the entire work.",
+      "usedFor": "Verification is distinct from efficiency; strict rules can constrain preference-sensitive design",
+      "date": "2026-10-13",
+      "evidenceLocator": "[Powell, Working Paper 750, June 2026](https://www.cgdev.org/sites/default/files/comparability-treatment-where-do-we-stand.pdf); Abstract; sections 1–3, particularly heterogeneous preferences and equal-PV discussion"
+    },
+    {
+      "citation": "S08 [Ben-Tal et al. 2004](https://www2.isye.gatech.edu/~nemirovs/MP_Elana_2004.pdf)",
+      "readWhat": "Printed pp. 352–354; definitions (5)/(6), Example 1.2; information basis and later inventory illustration. Selected relevant sections only, not necessarily the entire work.",
+      "usedFor": "Nonanticipation and differing quantifier order are established",
+      "date": "2026-10-13",
+      "evidenceLocator": "[Ben-Tal et al. 2004](https://www2.isye.gatech.edu/~nemirovs/MP_Elana_2004.pdf); Printed pp. 352–354; definitions (5)/(6), Example 1.2; information basis and later inventory illustration"
+    },
+    {
+      "citation": "S09 [Ben-Tal, Boyd and Nemirovski 2006](https://web.stanford.edu/~boyd/papers/pdf/rob_opt.pdf)",
+      "readWhat": "Printed pp. 64–65, decision rules based on observed data; introduction. Selected relevant sections only, not necessarily the entire work.",
+      "usedFor": "Decision-specific information and limits of general adjustability",
+      "date": "2026-10-13",
+      "evidenceLocator": "[Ben-Tal, Boyd and Nemirovski 2006](https://web.stanford.edu/~boyd/papers/pdf/rob_opt.pdf); Printed pp. 64–65, decision rules based on observed data; introduction"
+    },
+    {
+      "citation": "S10 [Gorissen, Yanıkoğlu and den Hertog, 2015 preprint](https://arxiv.org/html/1501.02634)",
+      "readWhat": "Sections 2–4 and section 6 framing. Selected relevant sections only, not necessarily the entire work.",
+      "usedFor": "Uncertainty sets, information bases and reformulation cautions",
+      "date": "2026-10-13",
+      "evidenceLocator": "[Gorissen, Yanıkoğlu and den Hertog, 2015 preprint](https://arxiv.org/html/1501.02634); Sections 2–4 and section 6 framing"
+    },
+    {
+      "citation": "S11 [Asonuma, Niepelt and Rancière, WP 17/119](https://www.imf.org/-/media/files/publications/wp/2017/wp17119.pdf)",
+      "readWhat": "Section II.A, printed pp. 5–7; definitions and interpretation of recovery measures. Selected relevant sections only, not necessarily the entire work.",
+      "usedFor": "Accounting recovery differs from price-based loss measurement",
+      "date": "2026-10-13",
+      "evidenceLocator": "[Asonuma, Niepelt and Rancière, WP 17/119](https://www.imf.org/-/media/files/publications/wp/2017/wp17119.pdf); Section II.A, printed pp. 5–7; definitions and interpretation of recovery measures"
+    }
+  ],
+  "sourceFieldNote": "Legacy field name: records specify selected full-text sections actually read, not cover-to-cover reading.",
+  "limitationTriage": [
+    {
+      "limitation": "The original verifier ignored a documented input mutation.",
+      "closingQuestion": "Can the numeric source drive each example and be hash bound?",
+      "triedOrSearched": "Rebuilt the compiler and certificates; six substantive mutations and the exact reviewer mutation are tested.",
+      "estimatedCost": "Completed in this revision",
+      "cheap": true,
+      "decision": "CLOSED",
+      "reasonOpen": "",
+      "whyNotClosedNow": ""
+    },
+    {
+      "limitation": "The version-2 separate checker trusted certificate-supplied domains and would accept a self-consistent shortened-domain certificate.",
+      "closingQuestion": "Can the checker reconstruct the claim domain and trigger ownership from the declared model?",
+      "triedOrSearched": "Rebuilt 16 model domains and 10 trigger regions from contracts.json, including reachability and equality ownership; retained a self-consistent shortened-domain negative control under ordinary and optimised Python.",
+      "estimatedCost": "Completed in version 3",
+      "cheap": true,
+      "decision": "CLOSED",
+      "reasonOpen": "",
+      "whyNotClosedNow": ""
+    },
+    {
+      "limitation": "The duration consequence was shown only by a small counterexample.",
+      "closingQuestion": "Can elementary weighted-average algebra give a reusable condition?",
+      "triedOrSearched": "Proved removal, covariance and exact downward-closure criteria; tested 200 identities.",
+      "estimatedCost": "Completed in this revision",
+      "cheap": true,
+      "decision": "CLOSED",
+      "reasonOpen": "",
+      "whyNotClosedNow": ""
+    },
+    {
+      "limitation": "Examples did not exercise joint triggers and information.",
+      "closingQuestion": "Can a constructed multidimensional benchmark isolate those steps?",
+      "triedOrSearched": "Added four dates, two variables, different old profiles, three triggers, reachability, boundary and denominator checks, and a sharp observable cap.",
+      "estimatedCost": "Completed in this revision",
+      "cheap": true,
+      "decision": "CLOSED",
+      "reasonOpen": "",
+      "whyNotClosedNow": ""
+    },
+    {
+      "limitation": "An unbounded observation-class floor can invalidate a naive extended-real interval criterion.",
+      "closingQuestion": "Does finite sup floor resolve the gap?",
+      "triedOrSearched": "Added nonempty classes and finite supremum floor to the implementability theorem; stated separate measurability requirements.",
+      "estimatedCost": "Completed in this revision",
+      "cheap": true,
+      "decision": "CLOSED",
+      "reasonOpen": "",
+      "whyNotClosedNow": ""
+    },
+    {
+      "limitation": "Exact-example priority and global literature exhaustiveness remain unresolved.",
+      "closingQuestion": "Would broader full-text database coverage or a specialist review settle priority?",
+      "triedOrSearched": "Structured mechanism and title searches, official/author sources and reference following; Semantic Scholar rate-limited; inaccessible texts recorded.",
+      "estimatedCost": "Open-ended specialist research",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "No finite bounded search proves global priority; external databases and expert scrutiny remain incomplete.",
+      "whyNotClosedNow": "No finite bounded search proves global priority; external databases and expert scrutiny remain incomplete."
+    },
+    {
+      "limitation": "No authenticated country application or practitioner acceptance region.",
+      "closingQuestion": "Can complete legal terms and agreed criteria be obtained?",
+      "triedOrSearched": "Inspected official methodological and historical sources; distinguished missing legal instruments and unstated numerical rule from audit findings.",
+      "estimatedCost": "Days to weeks plus external cooperation",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "Public context does not supply complete contractual inputs or practitioner preferences; inventing them would overclaim.",
+      "whyNotClosedNow": "Public context does not supply complete contractual inputs or practitioner preferences; inventing them would overclaim."
+    },
+    {
+      "limitation": "Separate duration veto and weighted criteria are not welfare or affordability rankings.",
+      "closingQuestion": "Would an explicit debtor/practitioner objective justify a rule?",
+      "triedOrSearched": "Derived dominance diagnostics and sensitivity, and separated these from sustainable financing and market valuation.",
+      "estimatedCost": "Separate economic and policy study",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "No welfare function, fiscal model or stated decision-maker preferences are supplied.",
+      "whyNotClosedNow": "No welfare function, fiscal model or stated decision-maker preferences are supplied."
+    },
+    {
+      "limitation": "Quadratic enumeration grows combinatorially; independent checker covers at most two dimensions.",
+      "closingQuestion": "Would larger-case algorithms and independent exact software establish practical scale?",
+      "triedOrSearched": "Reported dimensions 1-5 and 1-16 synthetic regime copies, with candidate counts and one-run times.",
+      "estimatedCost": "Several days for a meaningful broader study",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "Microbenchmarks do not establish production performance; a larger independent solver and representative contracts are beyond the demonstrated implementation.",
+      "whyNotClosedNow": "Microbenchmarks do not establish production performance; a larger independent solver and representative contracts are beyond the demonstrated implementation."
+    },
+    {
+      "limitation": "The original multi-regime cap used deliberately proportional late payments and calibrated old moments, so the oblique trigger cancelled from the cap.",
+      "closingQuestion": "Can a nonproportional family with unmatched old profiles make the oblique trigger change both the cap and the binding metric?",
+      "triedOrSearched": "Added a closed-form family with off-trigger cap 25, on-trigger cap 110/7 at uplift 20 and an exact binding switch at uplift 75/7; producer and separate checker reconstruct both intervals.",
+      "estimatedCost": "Completed in version 3",
+      "cheap": true,
+      "decision": "CLOSED",
+      "reasonOpen": "",
+      "whyNotClosedNow": ""
+    },
+    {
+      "limitation": "Generic quantifier elimination and automatic legal translation are not implemented.",
+      "closingQuestion": "Can a full compiler and CAD backend be reliably validated?",
+      "triedOrSearched": "Provided the finite algebraic formulation and explicit implementation boundary; cited established machinery.",
+      "estimatedCost": "Weeks of software and legal validation",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "The available implementation certifies declared rational affine/quadratic models only.",
+      "whyNotClosedNow": "The available implementation certifies declared rational affine/quadratic models only."
+    },
+    {
+      "limitation": "Decision rules may need measurable, continuous, administratively expressible or bounded-complexity policies.",
+      "closingQuestion": "Can those additional policy restrictions be checked in general?",
+      "triedOrSearched": "Stated separate requirements; the shipped piecewise constant observable policy is explicit and measurable.",
+      "estimatedCost": "Problem-dependent research",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "The scalar set-theoretic interval theorem alone does not solve every additional admissibility constraint.",
+      "whyNotClosedNow": "The scalar set-theoretic interval theorem alone does not solve every additional admissibility constraint."
+    },
+    {
+      "limitation": "Two cited sources have inaccessible full texts; a journal successor was read only at abstract level.",
+      "closingQuestion": "Can lawful full-text access close the source gaps?",
+      "triedOrSearched": "Tried official/publisher routes; used no unread source for a proof-level dependency; supplied direct proofs.",
+      "estimatedCost": "Access-dependent",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "Kozack PDF and Collins chapter were unavailable; Asonuma journal full text not separately inspected. These limits are exposed in the source register.",
+      "whyNotClosedNow": "Kozack PDF and Collins chapter were unavailable; Asonuma journal full text not separately inspected. These limits are exposed in the source register."
+    },
+    {
+      "limitation": "No independent human peer review of version 3.",
+      "closingQuestion": "Would a fresh independent review and separate release workflow add the missing assurance?",
+      "triedOrSearched": "Replayed the supplied version-2 audit, addressed every required correction, and developed a separate checker while disclosing common AI-assisted authorship.",
+      "estimatedCost": "Independent specialist review is separate work",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "Neither a same-process checker nor an author-side response is independent human peer review of the revised contribution.",
+      "whyNotClosedNow": "Publication can disclose this boundary but cannot manufacture an independent verdict."
+    },
+    {
+      "limitation": "Finite tests and hashes cannot establish universal proof validity or authenticity.",
+      "closingQuestion": "Would proof-assistant formalisation or independent reproduction change the evidence boundary?",
+      "triedOrSearched": "Separated written proofs, exact computations, regression coverage, byte integrity and external judgement throughout.",
+      "estimatedCost": "Substantial separate formalisation/reproduction",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "No formal proof-assistant development or digital signature is included; the provided claims remain at the stated proof-and-replay level.",
+      "whyNotClosedNow": "No formal proof-assistant development or digital signature is included; the provided claims remain at the stated proof-and-replay level."
+    }
+  ],
+  "extensionScout": {
+    "by": "Revising Codex agent",
+    "date": "2026-10-15",
+    "proposals": [
+      "general payment-removal and downward-closure criteria",
+      "continuous tolerance, weight and domain sensitivity",
+      "joint triggers with binding information",
+      "data binding, separate checker and semantic mutations",
+      "finite-selection caveat",
+      "strict endpoint perturbation",
+      "nonproportional oblique-trigger family",
+      "independent domain and trigger reconstruction"
+    ],
+    "actions": [
+      "All tractable proposals from the version-1 and version-2 review cycles were implemented; unresolved empirical, legal, scaling, formalisation and external-review limits are recorded individually above."
+    ]
+  }
+}

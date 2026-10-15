@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-10-15",
+  "claimCeiling": "Conditional theory, application-specific synthesis and constructed examples; priority unresolved.",
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Discount sensitivity",
+      "statement": "The duration-effort difference is the negative log derivative of relative normalised recovery, multiplied by 1+r.",
+      "paperLocation": "Theorem 4.1; sec:rates",
+      "positioning": "known-cited",
+      "closestPriorWork": "Discounted weighted-average calculus; Kozack (2005) motivates discount sensitivity, not the proof.",
+      "conditions": "fixed flows; common flat rate r>-1; positive PVs",
+      "evidence": "Written differentiation proof; exact financial examples",
+      "sourceIds": [
+        "S01",
+        "S13"
+      ]
+    },
+    {
+      "id": "C02",
+      "name": "Affine/quadratic reduction",
+      "statement": "Fixed old claims and affine new flows give two affine tests and one quadratic duration test on each regime.",
+      "paperLocation": "thm:finite; sec:finite",
+      "positioning": "partially-known-cited",
+      "closestPriorWork": "Standard positive-denominator clearing; specialised to the declared three comparisons.",
+      "conditions": "fixed old denominators; nonnegative flows; positive PVs on bounded rational closures",
+      "evidence": "Proof; model.py; verify.py; separate checker",
+      "sourceIds": [
+        "S01",
+        "S10"
+      ]
+    },
+    {
+      "id": "C03",
+      "name": "Exact finite method",
+      "statement": "Face-stationary enumeration suffices to minimise a quadratic on a bounded rational polytope, including singular stationary systems.",
+      "paperLocation": "lem:quadratic",
+      "positioning": "known-cited",
+      "closestPriorWork": "Classical facewise stationarity; a direct self-contained proof is supplied, no new general optimiser claimed.",
+      "conditions": "bounded nonempty polytope; exact feasibility for each affine stationary set",
+      "evidence": "Written proof; exact_audit.py; separate 1D/2D checker",
+      "sourceIds": [
+        "S10",
+        "S14"
+      ]
+    },
+    {
+      "id": "C04",
+      "name": "Endpoint failure",
+      "statement": "A constructed stream can pass duration strictly at both endpoints and fail on an interior interval despite lower payments at every date.",
+      "paperLocation": "sec:interior",
+      "positioning": "partially-known-cited",
+      "closestPriorWork": "The mechanism is weighted-average timing; priority of this exact example is unresolved in the bounded search.",
+      "conditions": "specified rational streams and discount factors",
+      "evidence": "Symbolic proof; input-bound exact polynomial; strict eta=1/8 regression; figure",
+      "sourceIds": [
+        "S01",
+        "S13"
+      ]
+    },
+    {
+      "id": "C05",
+      "name": "Payment-removal diagnostic",
+      "statement": "Duration falls exactly when the removed stream has a later discounted mean date than the original; the covariance and downward-closure formulas follow.",
+      "paperLocation": "prop:removal; prop:downward",
+      "positioning": "partially-known-cited",
+      "closestPriorWork": "Elementary weighted-average algebra; application-specific consequence for a duration veto.",
+      "conditions": "fixed old claims/reference; positive discount factors; residual PV>0",
+      "evidence": "Two written propositions; 200 exact identities",
+      "sourceIds": [
+        "S01",
+        "S07"
+      ]
+    },
+    {
+      "id": "C06",
+      "name": "Complete payment interval",
+      "statement": "A nonnegative scalar payment has a feasible interval that can include a strictly positive floor.",
+      "paperLocation": "thm:cap",
+      "positioning": "known-cited",
+      "closestPriorWork": "Intersection of affine half-lines, with timing-specific financial coefficients.",
+      "conditions": "fixed comparator and payment direction; positive denominators",
+      "evidence": "Proof; 100 varied models, 4100 comparisons and two floor cases",
+      "sourceIds": [
+        "S03",
+        "S08"
+      ]
+    },
+    {
+      "id": "C07",
+      "name": "Information constraint",
+      "statement": "A finite payment selected from observed information is feasible exactly when every nonempty observation class has finite supremum floor no greater than its infimum cap.",
+      "paperLocation": "thm:information",
+      "positioning": "known-cited",
+      "closestPriorWork": "Scalar specialisation of adjustable robust optimisation and nonanticipation.",
+      "conditions": "nonempty observation classes; sup floor finite; any additional measurability/expressibility restrictions stated separately",
+      "evidence": "Interval-intersection proof; floor and multi-regime examples",
+      "sourceIds": [
+        "S08",
+        "S09",
+        "S10"
+      ]
+    },
+    {
+      "id": "C08",
+      "name": "Sharp cap and sensitivity",
+      "statement": "In the specified early-upside example, separate zero-tolerance screens cap p at 8; value alone permits 6410/441; the stated weighted rule permits about 11.842053.",
+      "paperLocation": "sec:examplecap; sec:sensitivity",
+      "positioning": "partially-known-cited",
+      "closestPriorWork": "Contract-specific calculations using established metrics; caps/floors are not new instruments.",
+      "conditions": "specified constructed contracts; 5% for numeric value/weighted comparisons; separate cap8 also has all-discount proof",
+      "evidence": "Exact polynomial/caps and continuous sensitivity brackets",
+      "sourceIds": [
+        "S01",
+        "S03"
+      ]
+    },
+    {
+      "id": "C09",
+      "name": "Joint-trigger and information example",
+      "statement": "The constructed two-variable four-date contract has six reachable regimes and sharp observable policy p(u)=8+2 1[u>=1/2].",
+      "paperLocation": "sec:multi",
+      "positioning": "partially-known-cited",
+      "closestPriorWork": "Application of branch decomposition and nonanticipative bounds; engineered proportionality limits generality.",
+      "conditions": "three explicit triggers; equality on true branch; u known early, v known later; calibrated old profiles",
+      "evidence": "6 exact repaired and 6 raw branch audits; reachability and boundary tests",
+      "sourceIds": [
+        "S08",
+        "S09",
+        "S10"
+      ]
+    },
+    {
+      "id": "C10",
+      "name": "General algebraic formulation",
+      "statement": "Finite algebraic contracts and acceptance rules admit real quantifier formulations, with a more limited scenario-tree reduction under a fixed comparator.",
+      "paperLocation": "sec:general",
+      "positioning": "known-cited",
+      "closestPriorWork": "Established real quantifier elimination and robust optimisation, not implemented as a generic compiler.",
+      "conditions": "finite algebraic model and explicit quantifier order",
+      "evidence": "Written formulation only; no generic CAD execution claimed",
+      "sourceIds": [
+        "S08",
+        "S14"
+      ]
+    },
+    {
+      "id": "C11",
+      "name": "Institutional interpretation",
+      "statement": "The separate-veto rule is distinct from Paris Club flexibility; exact verification does not establish efficiency, affordability, welfare or market-value equality.",
+      "paperLocation": "sec:literature; sec:general; sec:benchmark",
+      "positioning": "known-cited",
+      "closestPriorWork": "Paris Club methodology, IMF design discussions and Powell's efficiency critique.",
+      "conditions": "historical dated source versions; no inferred official acceptance set",
+      "evidence": "Source-to-claim register and direct institutional passages",
+      "sourceIds": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S11",
+        "S12"
+      ]
+    },
+    {
+      "id": "C12",
+      "name": "Nonproportional oblique-trigger family",
+      "statement": "In the declared unmatched-old-profile family, the oblique trigger lowers the implementable early-payment cap from 25 to 110/7 at uplift 20, and duration replaces programme service as the binding constraint exactly at uplift 75/7.",
+      "paperLocation": "sec:obliquefamily",
+      "positioning": "partially-known-cited",
+      "closestPriorWork": "An exact scalar specialisation of established nonanticipative robust optimisation; priority of this financial construction is unresolved.",
+      "conditions": "zero accounting discount; stated old and new cash flows; uplift 0<=lambda<75; equality assigned to the trigger-on branch; early payment chosen before the second state component is observed",
+      "evidence": "Closed-form manuscript derivation; producer reconstruction; independently rebuilt scalar rows and intervals; exact switch and binding-label assertions",
+      "sourceIds": [
+        "S03",
+        "S08",
+        "S09",
+        "S10"
+      ]
+    }
+  ]
+}

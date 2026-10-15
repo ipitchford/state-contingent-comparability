@@ -1,0 +1,394 @@
+{
+  "currency": "unspecified common monetary unit; constructed examples are per 100 of old year-1 service",
+  "cashflow_sign": "positive means contractual sovereign payment to creditor",
+  "default_rate": "1/20",
+  "claim_status": "The synthetic agreements below are fully specified mathematical examples, not the terms of any named sovereign restructuring.",
+  "cap_example": {
+    "old": {
+      "1": "100"
+    },
+    "reference": {
+      "1": "20",
+      "3": "50"
+    },
+    "candidate_base": {
+      "1": "10",
+      "3": "45"
+    },
+    "bonus_shape": {
+      "1": "1"
+    },
+    "state_domain": [
+      "0",
+      "1"
+    ],
+    "observation": "x is observed and contractually verifiable before the year-1 bonus is fixed",
+    "programme_start": 1,
+    "programme_end": 1,
+    "raw_bonus_affine": [
+      "0",
+      "20"
+    ],
+    "weighted_weights": [
+      "1",
+      "1",
+      "1/10"
+    ]
+  },
+  "interior_failure": {
+    "old": {
+      "1": "100"
+    },
+    "reference_affine": {
+      "1": [
+        "2",
+        "2"
+      ],
+      "3": [
+        "2",
+        "0"
+      ]
+    },
+    "candidate_affine": {
+      "1": [
+        "1",
+        "3"
+      ],
+      "3": [
+        "1",
+        "1"
+      ]
+    },
+    "state_domain": [
+      "0",
+      "1"
+    ],
+    "programme_start": 1,
+    "programme_end": 1
+  },
+  "mixed_triggers": {
+    "old": {
+      "1": "100"
+    },
+    "reference_base": {
+      "1": "20",
+      "3": "50"
+    },
+    "reference_enhanced": {
+      "1": "30",
+      "3": "60"
+    },
+    "candidate_base": {
+      "1": "18",
+      "3": "45"
+    },
+    "candidate_enhanced": {
+      "1": "27",
+      "3": "54"
+    },
+    "state_domain": [
+      "0",
+      "1"
+    ],
+    "programme_start": 1,
+    "programme_end": 1,
+    "candidate_threshold": "2/5",
+    "reference_threshold": "3/5"
+  },
+  "floor_and_information": {
+    "old": {
+      "1": "100"
+    },
+    "candidate_base": {
+      "1": "1"
+    },
+    "bonus_shape": {
+      "3": "1"
+    },
+    "unobserved_K_values": [
+      "1",
+      "2"
+    ],
+    "policy": "p must be fixed before K is observed",
+    "reference_early": {
+      "1": "1"
+    },
+    "reference_late_shape": {
+      "3": "1"
+    }
+  },
+  "paris_club_example_I": {
+    "provenance": "Paris Club Methodology, Box 2, Example I; https://clubdeparis.org/en/sites/clubdeparis/accueil/club-de-paris/methodologie.html",
+    "classification": "institutional illustrative benchmark, not a named-country agreement",
+    "rounding_assumption": "The source prints creditor-1 principal instalments rounded to 17 and total principal 200. We explicitly interpret the twelve equal principal instalments as 200/12. Copying the displayed 17 literally gives 204 of principal and 249 total debt service, inconsistent with printed totals 200 and 245.",
+    "rate": "1/20",
+    "programme_start": 1,
+    "programme_end": 3,
+    "old_cashflows": {
+      "1": "24",
+      "2": "24",
+      "3": "24",
+      "4": "24",
+      "5": "24",
+      "6": "24",
+      "7": "24",
+      "8": "24",
+      "9": "24",
+      "10": "24"
+    },
+    "new_cashflows_1": {
+      "1": "3",
+      "2": "3",
+      "3": "3",
+      "4": "59/3",
+      "5": "59/3",
+      "6": "59/3",
+      "7": "59/3",
+      "8": "59/3",
+      "9": "59/3",
+      "10": "59/3",
+      "11": "59/3",
+      "12": "59/3",
+      "13": "59/3",
+      "14": "59/3",
+      "15": "59/3"
+    },
+    "new_cashflows_2": {
+      "1": "3",
+      "2": "3",
+      "3": "17",
+      "4": "17",
+      "5": "17",
+      "6": "17",
+      "7": "17",
+      "8": "17",
+      "9": "17",
+      "10": "17",
+      "11": "17",
+      "12": "17"
+    }
+  },
+  "version": "3.0.0",
+  "as_of": "2026-10-15",
+  "multi_regime": {
+    "classification": "Synthetic engineering test. No country contract or institutional rule is reconstructed.",
+    "rate": "1/20",
+    "programme_start": 1,
+    "programme_end": 2,
+    "state_variables": [
+      "u",
+      "v"
+    ],
+    "lower": [
+      "0",
+      "0"
+    ],
+    "upper": [
+      "1",
+      "1"
+    ],
+    "observed_for_early_payment": [
+      "u"
+    ],
+    "observation_times": {
+      "u": "before year 1",
+      "v": "after year 1 and before year 2"
+    },
+    "old_reference": {
+      "1": "70",
+      "6": "30"
+    },
+    "old_candidate": {
+      "1": "221887070/4084101",
+      "4": "20000/441"
+    },
+    "old_design_note": "Old PV and discounted duration are matched exactly at 5 percent; old programme service differs. This is an explicit synthetic calibration.",
+    "triggers": [
+      {
+        "id": "a",
+        "coefficients": [
+          "1",
+          "0"
+        ],
+        "threshold": "1/2",
+        "true_operator": ">=",
+        "false_operator": "<"
+      },
+      {
+        "id": "b",
+        "coefficients": [
+          "0",
+          "1"
+        ],
+        "threshold": "1/2",
+        "true_operator": ">=",
+        "false_operator": "<"
+      },
+      {
+        "id": "g",
+        "coefficients": [
+          "1",
+          "1"
+        ],
+        "threshold": "1",
+        "true_operator": ">=",
+        "false_operator": "<"
+      }
+    ],
+    "reference_affine": {
+      "1": [
+        "20",
+        "0",
+        "0"
+      ],
+      "2": [
+        "10",
+        "4",
+        "0"
+      ],
+      "4": [
+        "20",
+        "0",
+        "4"
+      ],
+      "6": [
+        "40",
+        "4",
+        "0"
+      ]
+    },
+    "reference_trigger_additions": {
+      "g": {
+        "4": [
+          "10",
+          "0",
+          "0"
+        ]
+      }
+    },
+    "candidate_late_scale": {
+      "base": "1/2",
+      "a": "1/10",
+      "b": "1/10"
+    },
+    "candidate_early_base": "2",
+    "payment_date": 1,
+    "raw_payment_affine": [
+      "12",
+      "4",
+      "0"
+    ],
+    "implemented_payment": {
+      "base": "8",
+      "a": "2"
+    },
+    "equality_ownership": "Each equality belongs to the true branch. Strict false branches must be reachable before their closures are audited."
+  },
+  "nonproportional_oblique_family": {
+    "classification": "Synthetic exact family. It removes the matched-old-claim and proportional-late-payment simplifications of the multi-regime engineering example; it is not a country contract.",
+    "rate": "0",
+    "programme_start": 1,
+    "programme_end": 2,
+    "state_variables": [
+      "u",
+      "v"
+    ],
+    "lower": [
+      "0",
+      "0"
+    ],
+    "upper": [
+      "1",
+      "1"
+    ],
+    "observed_for_early_payment": [
+      "u"
+    ],
+    "triggers": [
+      {
+        "id": "g",
+        "coefficients": [
+          "1",
+          "1"
+        ],
+        "threshold": "1",
+        "true_operator": ">=",
+        "false_operator": "<"
+      }
+    ],
+    "old_candidate": {
+      "1": "100"
+    },
+    "old_reference": {
+      "2": "80"
+    },
+    "reference_base": {
+      "1": "20",
+      "4": "40"
+    },
+    "reference_trigger_addition_shape": {
+      "6": "1"
+    },
+    "candidate_base": {
+      "3": "20",
+      "5": "10"
+    },
+    "payment_shape": {
+      "1": "1"
+    },
+    "late_uplift_parameter": "20",
+    "late_uplift_parameter_range": [
+      "0",
+      "75"
+    ],
+    "raw_payment_upper": "30",
+    "equality_ownership": "The line u+v=1 belongs to the triggered branch. The early payment is fixed after u but before v is observed."
+  },
+  "sensitivity": {
+    "duration_tolerances": [
+      "0",
+      "1/100",
+      "1/20",
+      "1/10",
+      "1/5",
+      "1/2"
+    ],
+    "duration_weights": [
+      "0",
+      "1/100",
+      "1/20",
+      "1/10",
+      "1/2",
+      "1",
+      "2",
+      "10"
+    ],
+    "state_domains": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "3/4"
+      ],
+      [
+        "3/4",
+        "1"
+      ]
+    ],
+    "rate_regressions": [
+      "-1/2",
+      "0",
+      "1/50",
+      "1/20",
+      "1/10",
+      "1/5",
+      "1"
+    ]
+  }
+}
