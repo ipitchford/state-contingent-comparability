@@ -1,7 +1,7 @@
 {
   "code/benchmark.py": "cdc958d54e21b461ec36a8e7a6770f93991f0798f2fc69800faae22775e0050c",
   "code/check_certificates.py": "46967f69d88ad7eb73df360055093a45a6562b92ad111af00cf855314b854c5f",
-  "code/check_manifest.py": "c166d6d9727b75fdaa13dcc6801f9a0331d2c91234a8046b28cd9e03e00f8f8a",
+  "code/check_manifest.py": "b826471dc071cb4d8284669c696beaaa8d9ce70370517b89ca3f6a787586e0a4",
   "code/exact_audit.py": "bc26925d2b19739a4fa58d63ae67609e0f5804fd92518bbb82636a3236484d1f",
   "code/model.py": "5d6895bc7d263430516a5c39dcbcdb85eccdf8faf2a3c861b5100256915c9f4f",
   "code/render_figures.py": "fe24085aa19a898b70a6ed3b4efc97d10fcaf19c74a157c01db37d09461085b8",
